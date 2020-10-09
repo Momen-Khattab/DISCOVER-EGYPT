@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,46 +15,33 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
+Route::get('/', 'HomeController@index');
+
+Route::get('/rooms','RoomController@index');
+
+Route::get('/restaurants', 'RestaurantsController@index');
+
+Route::get('/booking.php', 'BookingController@index');
+
+Route::get('/offers.php', 'OffersController@index');
+
+
+Route::get('/about', function () {
+    return view('website.about');
 });
 
-Route::get('/about.php', function () {
-    return view('about');
-});
-
-Route::get('/Amenities.php', function () {
-    return view('Amenities');
-});
-
-Route::get('/booking.php', function () {
-    return view('booking');
+Route::get('/amenities', function () {
+    return view('website.Amenities');
 });
 
 Route::get('/contact.php', function () {
-    return view('contact');
+    return view('website.contact');
 });
-
 
 Route::get('/index.php', function () {
-    return view('index');
+    return view('website.index');
 });
-
-Route::get('/offers.php', function () {
-    return view('offers');
-});
-
 
 Route::get('/profile.php', function () {
-    return view('profile');
-});
-
-
-Route::get('/rest.php', function () {
-    return view('rest');
-});
-
-
-Route::get('/rooms.php', function () {
-    return view('rooms');
+    return view('website.profile');
 });
