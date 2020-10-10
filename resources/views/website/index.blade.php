@@ -70,14 +70,14 @@
           </div>
         </div>
       </div>
+          <!-- END slider -->
     </section>
-    <!-- END slider -->
 
     <section class="ftco-section room-section">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-5">
           <div class="col-md-7 text-center heading-section ftco-animate">
-            <span class="subheading">CAIRO HOTELS</span>
+            <span class="subheading">HOTELS</span>
             <h2>BEST OFFERS TODAY</h2>
           </div>
         </div>
@@ -141,9 +141,9 @@
                       <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span>Meridien</p>
                       <h3><a href="#">Deluxe Room</a></h3>
                     </div>
+                    </div>
                     <div class="one-forth text-center">
                       <p class="price">$99 <br><span>/night</span></p>
-                    </div>
                   </div>
                   <p class="features">
                     <span class="d-block mb-2"><i class="icon-check mr-2"></i> Perfect for traveling couples</span>
@@ -185,6 +185,7 @@
         </div>
       </div>
     </section>
+
     <section class="ftco-section-parallax">
       <div class="parallax-img d-flex align-items-md-center align-items-sm-end" style="background-image: url('images/PYRAMIDS.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
@@ -193,7 +194,7 @@
             <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
               <span class="subheading">Our Trips</span>
               <h2 class="h1 font-weight-bold">Offers Centre</h2>
-              <p><a href="<?php echo asset('offers.php');?>" class="btn btn-primary btn-outline-white mt-3 py-3 px-4">View more details</a></p>
+              <p><a href="{{ url('offers') }}" class="btn btn-primary btn-outline-white mt-3 py-3 px-4">View more details</a></p>
             </div>
           </div>
         </div>

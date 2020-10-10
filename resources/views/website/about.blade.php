@@ -15,8 +15,6 @@
       </div>
     </section>
 
-
-  
     <section class="ftco-section-2">
       <div class="container d-flex">
         <div class="section-2-blocks-wrapper row d-flex">
@@ -127,7 +125,6 @@
       </div>
     </section>
 
-
     <section class="instagram">
       <div class="container-fluid">
         <div class="row no-gutters justify-content-center pb-5">
@@ -174,4 +171,5 @@
         </div>
       </div>
     </section>
+    
 @endsection

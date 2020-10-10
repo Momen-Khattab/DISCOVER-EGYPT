@@ -21,9 +21,9 @@ Route::get('/rooms','RoomController@index');
 
 Route::get('/restaurants', 'RestaurantsController@index');
 
-Route::get('/booking.php', 'BookingController@index');
+Route::get('/booking', 'BookingController@index');
 
-Route::get('/offers.php', 'OffersController@index');
+Route::get('/offers', 'OffersController@index');
 
 
 Route::get('/about', function () {
@@ -34,14 +34,14 @@ Route::get('/amenities', function () {
     return view('website.Amenities');
 });
 
-Route::get('/contact.php', function () {
+Route::get('/contact', function () {
     return view('website.contact');
 });
 
-Route::get('/index.php', function () {
+Route::get('/index', function () {
     return view('website.index');
 });
 
-Route::get('/profile.php', function () {
+Route::get('/profile', function () {
     return view('website.profile');
 });
