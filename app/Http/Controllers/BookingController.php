@@ -14,6 +14,9 @@ class BookingController extends Controller
     public function booking(){
         return view('website.booking');
     }
+    public function index(){
+        return view('admin.booking.index');
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -23,6 +26,8 @@ class BookingController extends Controller
     public function create()
     {
         //
+        return view('admin.booking.create');
+
     }
 
     /**
@@ -45,6 +50,8 @@ class BookingController extends Controller
     public function show($id)
     {
         //
+        return view('admin.booking.show');
+
     }
 
     /**
@@ -56,6 +63,8 @@ class BookingController extends Controller
     public function edit($id)
     {
         //
+        return view('admin.booking.edit');
+
     }
 
     /**

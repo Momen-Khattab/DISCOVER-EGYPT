@@ -15,6 +15,10 @@ class RestaurantsController extends Controller
         return view('website.restaurants');
     }
 
+    public function index(){
+        return view('admin.restaurants.index');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -23,6 +27,8 @@ class RestaurantsController extends Controller
     public function create()
     {
         //
+        return view('admin.restaurants.create');
+
     }
 
     /**
@@ -45,6 +51,8 @@ class RestaurantsController extends Controller
     public function show($id)
     {
         //
+        return view('admin.restaurants.show');
+
     }
 
     /**
@@ -56,6 +64,7 @@ class RestaurantsController extends Controller
     public function edit($id)
     {
         //
+        return view('admin.restaurants.edit');
     }
 
     /**

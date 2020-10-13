@@ -15,6 +15,10 @@ class OffersController extends Controller
         return view('website.offers');
     }
 
+    public function index(){
+        return view('admin.offers.index');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -23,6 +27,8 @@ class OffersController extends Controller
     public function create()
     {
         //
+        return view('admin.offers.create');
+
     }
 
     /**
@@ -45,6 +51,8 @@ class OffersController extends Controller
     public function show($id)
     {
         //
+        return view('admin.offers.show');
+
     }
 
     /**
@@ -56,6 +64,8 @@ class OffersController extends Controller
     public function edit($id)
     {
         //
+        return view('admin.offers.edit');
+
     }
 
     /**

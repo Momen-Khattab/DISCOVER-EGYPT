@@ -16,9 +16,10 @@
             </div><!-- /.col -->
         </div><!-- /.row -->
     </div><!-- /.container-fluid -->
+    <!-- /.content-header -->
 </div>
 
-<!-- /.content-header -->
+
 <div class="content">
     <div class="container-fluid">
 

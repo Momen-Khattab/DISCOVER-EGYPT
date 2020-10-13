@@ -20,11 +20,11 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/rooms','RoomController@rooms')->name('visitorRooms');
 
-Route::get('/restaurants', 'RestaurantsController@restaurants');
+Route::get('/restaurants', 'RestaurantsController@restaurants')->name('visitorRestaurants');
 
-Route::get('/booking', 'BookingController@booking');
+Route::get('/booking', 'BookingController@booking')->name('visitorBooking');
 
-Route::get('/offers', 'OffersController@offers');
+Route::get('/offers', 'OffersController@offers')->name('visitorOffers');;
 
 
 Route::get('/about', function () {
@@ -80,3 +80,7 @@ Route::get('/admin/test_db', function(){
 });
 
 Route::resource('/admin/rooms','RoomController')->name('*', 'rooms');
+Route::resource('/admin/restaurants','RestaurantsController')->name('*', 'restaurants');
+Route::resource('/admin/booking','BookingController')->name('*', 'booking');
+Route::resource('/admin/offers','OffersController')->name('*', 'offers');
+
