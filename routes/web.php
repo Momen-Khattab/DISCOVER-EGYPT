@@ -17,13 +17,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/rooms','RoomController@index');
+Route::get('/rooms','RoomController@rooms');
 
-Route::get('/restaurants', 'RestaurantsController@index');
+Route::get('/restaurants', 'RestaurantsController@restaurants');
 
-Route::get('/booking', 'BookingController@index');
+Route::get('/booking', 'BookingController@booking');
 
-Route::get('/offers', 'OffersController@index');
+Route::get('/offers', 'OffersController@offers');
 
 
 Route::get('/about', function () {

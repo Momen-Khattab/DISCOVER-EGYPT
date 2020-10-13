@@ -11,7 +11,7 @@ class RoomController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
+    public function rooms(){
         return view('website.rooms');
     }
 

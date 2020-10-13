@@ -11,7 +11,7 @@ class OffersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
+    public function offers(){
         return view('website.offers');
     }
 

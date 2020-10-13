@@ -11,7 +11,7 @@ class BookingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
+    public function booking(){
         return view('website.booking');
     }
 

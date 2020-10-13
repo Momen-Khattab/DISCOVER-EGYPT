@@ -30,10 +30,9 @@
              <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Contact Information</h2>
               <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">198 West 21th Street,New cairo 721 New Capital B 10016</a></li>
+                <li><a href="#" class="py-2 d-block">56 Zayed city 21th Street,New cairo 721 New Capital B 10016</a></li>
                 <li><a href="#" class="py-2 d-block">HOTLINE: <span>19877</span></a></li>
                 <li><a href="#" class="py-2 d-block">info@DICOVER-EGYPT.com</a></li>
-                <li><a href="#" class="py-2 d-block">DISOVER-EGYPT@email.com</a></li>
               </ul>
             </div>
           </div>
@@ -53,12 +52,11 @@
         
         <div class="row">
           <div class="col-md-12 text-center">
-
-            <p><!-- Link back to DISCOVER-EGYPT can't be removed. SITE is licensed under CC BY 36.8. -->
-              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This site is made by <a href="https://DISCOVER-EGYPT.com" target="#">PROJECT TEAM</a>
-              <!-- Link back to DISCOVER-EGYPT can't be removed. SITE is licensed under CC BY 36.8. -->
+            <p>
+              <!-- Link back to DISCOVER-EGYPT cant be removed. SITE is licensed under CC BY 36.8. -->
+              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This site is made by <a href="https://DISCOVER-EGYPT.com" target="#">Momen khattab WDT subject</a>
+              <!-- Link back to DISCOVER-EGYPT cant be removed. SITE is licensed under CC BY 36.8. -->
             </p>
-
           </div>
         </div>
 

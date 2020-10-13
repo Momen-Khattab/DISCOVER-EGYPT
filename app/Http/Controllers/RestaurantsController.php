@@ -11,7 +11,7 @@ class RestaurantsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
+    public function restaurants(){
         return view('website.restaurants');
     }
 
