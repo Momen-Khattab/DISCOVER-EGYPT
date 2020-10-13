@@ -18,7 +18,6 @@
     <section class="ftco-section bg-light">
       <div class="container">
         <div class="row">
-
           <div class="col-md-3 ftco-animate">
             <div class="blog-entry">
               <a href="#" class="block-20" style="background-image: url('images/offers/1.jpg');">

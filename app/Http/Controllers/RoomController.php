@@ -15,6 +15,10 @@ class RoomController extends Controller
         return view('website.rooms');
     }
 
+    public function index(){
+        return view('admin.rooms.index');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -22,7 +26,7 @@ class RoomController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.rooms.create');
     }
 
     /**
@@ -44,7 +48,7 @@ class RoomController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('admin.rooms.show');
     }
 
     /**
@@ -55,7 +59,7 @@ class RoomController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.rooms.edit');
     }
 
     /**

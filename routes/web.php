@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\RoomController;
+use App\Models\Room;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/rooms','RoomController@rooms');
+Route::get('/rooms','RoomController@rooms')->name('visitorRooms');
 
 Route::get('/restaurants', 'RestaurantsController@restaurants');
 
@@ -45,3 +46,37 @@ Route::get('/index', function () {
 Route::get('/profile', function () {
     return view('website.profile');
 });
+
+/**
+ * Admin routes
+ */
+Route::get('/admin', function(){
+    return view('admin.index');   
+});
+
+Route::get('/admin/test_db', function(){
+    // \DB::insert('insert into users (id, name) values (?, ?)', [1, 'Dayle'])
+
+    // $room = Room::create(['room_no' => 'A02', 
+    //     'hotel_name' => 'Hilton', 
+    //     'size' => 'double', 
+    //     'cost_per_night' => 150, 
+    //     'has_offer' => 0, 
+    //     'booked_date_start' => '2020-10-10', 
+    //     'booked_date_end'  => '2020-10-11',
+    //     'state' => 'Gize', 
+    //     'notes' => 'Amazing view!'
+    //     ]);
+
+    // By creating new room object
+    $room = new Room;
+    $room->room_no = 'A03';
+    $room->hotel_name = 'Sameramis';
+    $room->size = 'triple';
+    $room->has_offer = '1';
+    $room->save();
+
+    dd($room);
+});
+
+Route::resource('/admin/rooms','RoomController')->name('*', 'rooms');
