@@ -2,7 +2,7 @@
 
 @section('content')      
     <section class="home-slider owl-carousel">
-      <div class="slider-item" style="background-image: url('images/lonely_island_ocean_nature_landscape_sea_water_trees_palms_84673_1920x1080.jpg');" data-stellar-background-ratio="0.5">
+      <div class="slider-item" style="background-image: url('images/Luxor-karnak-temple.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
           <div class="row slider-text align-items-end">
