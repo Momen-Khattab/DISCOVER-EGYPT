@@ -19,6 +19,7 @@ class CreateCompaniesTable extends Migration
             $table->integer('fax_number');
             $table->string('address');
             $table->longText('program')->nullable();
+            $table->string('email');
             $table->timestamps();
         });
     }

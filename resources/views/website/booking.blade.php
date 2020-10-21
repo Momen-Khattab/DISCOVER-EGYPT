@@ -62,41 +62,7 @@
                   </div>
                 </div>
               </div>
-              <div class="row mb-5">
-                <div class="col-md-12">
-                  <h2 class="mb-4">Guest Details</h2>
-                </div>
-                <div class="col-md-12">
-                  <h3 class="h4">Superior Room - Twin - Best available</h3>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="name">First Name</label>
-                    <input type="text" class="form-control" placeholder="First Name">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="name">Last Name</label>
-                    <input type="text" class="form-control" placeholder="Last Name">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="">Select Country</label>
-                    <div class="select-wrap one-third">
-                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                      <select class="countrypicker form-control" data-live-search="true" data-default="Country of Passport" data-flag="false"></select>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label for="">Date of Birth</label>
-                    <input type="text" class="form-control" id="birth_date" placeholder="Birth Date">
-                  </div>
-                </div>
-              </div>
+              
 
               <div class="row mb-5">
                 <div class="col-md-12">
@@ -104,23 +70,20 @@
                 </div>
                 <div class="col-md-6 d-flex">
                   <div class="form-group mr-4">
-                    <label for="">Arrival Date</label>
+                    <label for="">Check in</label>
                     <input type="text" class="form-control" id="arrival_date" placeholder="Date">
                   </div>
                   <div class="form-group">
-                    <label for="">Arrival Time</label>
+                    <label for="">Check out</label>
                     <input type="text" class="form-control" id="arrival_time" placeholder="Time">
                   </div>
                 </div>
                 <div class="col-md-6 d-flex">
                   <div class="form-group mr-4">
-                    <label for="">Departure Date</label>
-                    <input type="text" class="form-control" id="departure_date" placeholder="Date">
+                    <label for="">Your destination</label>
+                    <input type="text" class="form-control" id="destination" placeholder="Select country">
                   </div>
-                  <div class="form-group">
-                    <label for="">Departure Time</label>
-                    <input type="text" class="form-control" id="arrival_time" placeholder="Time">
-                  </div>
+                 
                 </div>
               </div>
 
@@ -134,6 +97,7 @@
                     <div class="select-wrap one-third">
                       <div class="icon"><span class="ion-ios-arrow-down"></span></div>
                       <select name="" id="" class="form-control">
+                        <option value="">Recipe</option>
                         <option value="">Visa</option>
                         <option value="">Master Card</option>
                         <option value="">Credit Card</option>

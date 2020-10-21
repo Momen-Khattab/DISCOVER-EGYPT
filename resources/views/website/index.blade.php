@@ -73,6 +73,7 @@
           <!-- END slider -->
     </section>
 
+    //rooms
     <section class="ftco-section room-section">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-5">
@@ -83,7 +84,7 @@
         </div>
         <div class="row">
           <div class="col-md-12 ftco-animate">
-           <div class="carousel-room owl-carousel">
+            <div class="carousel-room owl-carousel">
             <div class="item">
               <div class="room-wrap">
                 <a href="#" class="room-img" style="background-image: url(images/room-1.jpg);"></a>
@@ -180,12 +181,45 @@
                 </div>
               </div>
             </div>
-           </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    //restaurants
+    <section class="ftco-section-parallax">
+      <div class="parallax-img d-flex align-items-md-center align-items-sm-end" style="background-image: url('images/food/foodcover.jpg');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row desc d-flex justify-content-center">
+            <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+              <span class="subheading">RESTAURANTS</span>
+              <h2 class="h1 font-weight-bold">Food Centre</h2>
+              <p><a href="{{ url('restaurants') }}" class="btn btn-primary btn-outline-white mt-3 py-3 px-4">View more details</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    //booking
+    <section class="ftco-section-parallax">
+      <div class="parallax-img d-flex align-items-md-center align-items-sm-end" style="background-image: url('images/booking/fl.jpg');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row desc d-flex justify-content-center">
+            <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+              <span class="subheading">Our Flights</span>
+              <h2 class="h1 font-weight-bold">Booking Centre</h2>
+              <p><a href="{{ url('booking') }}" class="btn btn-primary btn-outline-white mt-3 py-3 px-4">View more details</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    //offers
     <section class="ftco-section-parallax">
       <div class="parallax-img d-flex align-items-md-center align-items-sm-end" style="background-image: url('images/PYRAMIDS.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
@@ -201,67 +235,5 @@
       </div>
     </section>
 
-<section class="ftco-section-parallax">
-      <div class="parallax-img d-flex align-items-md-center align-items-sm-end" style="background-image: url('images/food/foodcover.jpg');" data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
-        <div class="container">
-          <div class="row desc d-flex justify-content-center">
-            <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-              <span class="subheading">RESTAURANTS</span>
-              <h2 class="h1 font-weight-bold">Food Centre</h2>
-              <p><a href="{{ url('restaurants') }}" class="btn btn-primary btn-outline-white mt-3 py-3 px-4">View more details</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-
-
-    <section class="ftco-section bg-light">
-      <div class="container-fluid section-event">
-        <div class="row no-gutters justify-content-center mb-5 pb-5">
-          <div class="col-md-7 text-center heading-section ftco-animate">
-            <span class="subheading">Join Event</span>
-            <h2>Our Events</h2>
-          </div>
-        </div>
-        <div class="row d-flex no-gutters">
-          <div class="col-md-6 event-big-img" style="background-image: url(images/event.jpg);"></div>
-          <div class="col-md-6 event-wrap">
-            <div class="event mb-5 ftco-animate">
-              <div class="text">
-                <p class="meta p-2 text-center">
-                  <span class="day">12</span>
-                  <span class="mos">OCT</span>
-                  <span class="year">2020</span>
-                </p>
-                <h3><a href="#">Big summer meetups</a></h3>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts</p>
-                <p>
-                  <a href="#" class="btn btn-primary">Join event</a>
-                  <a href="#" class="btn btn-primary btn-outline-primary">See details</a>
-                </p>
-              </div>
-            </div>
-            <div class="event mb-5 ftco-animate">
-              <div class="text">
-                <p class="meta p-2 text-center">
-                  <span class="day">26</span>
-                  <span class="mos">NOV</span>
-                  <span class="year">2020</span>
-                </p>
-                <h3><a href="#">Big summer meetups</a></h3>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts</p>
-                <p>
-                  <a href="#" class="btn btn-primary">Join event</a>
-                  <a href="#" class="btn btn-primary btn-outline-primary">See details</a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+   
 @endsection

@@ -31,9 +31,6 @@ Route::get('/about', function () {
     return view('website.about');
 });
 
-Route::get('/amenities', function () {
-    return view('website.Amenities');
-});
 
 Route::get('/contact', function () {
     return view('website.contact');

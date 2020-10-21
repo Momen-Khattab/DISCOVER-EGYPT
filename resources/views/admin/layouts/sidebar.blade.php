@@ -1,5 +1,4 @@
   <aside class="main-sidebar sidebar-dark-warning elevation-4">
-    <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="{{ asset('admin_panel') }}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
@@ -25,7 +24,7 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
             <a href="{{ url('/admin') }}" class="nav-link active">
-              <i class="nav-icon fab fa-500px"></i>
+              <i class="nav-icon fas fa-home"></i>
               <p>
                 Home
               </p>
@@ -34,7 +33,7 @@
           
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-home"></i>
+              <i class="nav-icon fab fa-500px"></i>
               <p>
                 Rooms
                 <i class="fas fa-angle-left right"></i>
@@ -42,7 +41,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ url('/admin/rooms/show') }}" class="nav-link">
                   <i class="fas fa-home nav-icon"></i>
                   <p>View</p>
                 </a>
@@ -54,9 +53,85 @@
                   <p>Create</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{ url('/admin/rooms/edit') }}" class="nav-link">
+                  <i class="fas fa-plus nav-icon"></i>
+                  <p>Update</p>
+                </a>
+              </li>
+
+              
 
             </ul>
           </li>
+
+          <!--Restaurants -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-star"></i>
+              <p>
+                Restaurants
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ url('/admin/restaurants/show') }}" class="nav-link">
+                  <i class="fas fa-home nav-icon"></i>
+                  <p>View</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('/admin/restaurants/create') }}" class="nav-link">
+                  <i class="fas fa-plus nav-icon"></i>
+                  <p>Create</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('/admin/restaurants/edit') }}" class="nav-link">
+                  <i class="fas fa-plus nav-icon"></i>
+                  <p>Update</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+
+          
+          <!--Offers -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-star"></i>
+              <p>
+                Offers
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ url('/admin/offers/show') }}" class="nav-link">
+                  <i class="fas fa-home nav-icon"></i>
+                  <p>View</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{ url('/admin/offers/create') }}" class="nav-link">
+                  <i class="fas fa-plus nav-icon"></i>
+                  <p>Create</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{ url('/admin/offers/edit') }}" class="nav-link">
+                  <i class="fas fa-plus nav-icon"></i>
+                  <p>Update</p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+
 
 {{--  
           <li class="nav-item has-treeview">
@@ -116,7 +191,5 @@
 
         </ul>
       </nav>
-      <!-- /.sidebar-menu -->
     </div>
-    <!-- /.sidebar -->
   </aside>

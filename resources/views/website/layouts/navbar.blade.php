@@ -13,7 +13,6 @@
             <li class="nav-item"><a href="{{ url('rooms') }}" class="nav-link">Rooms</a></li>
 
             <li class="nav-item"><a href="{{ url('restaurants') }}" class="nav-link">Restaurants</a></li>
-            <li class="nav-item"><a href="{{ url('amenities') }}" class="nav-link">Amenities</a></li>
             <li class="nav-item"><a href="{{ url('booking') }}" class="nav-link">Booking</a></li>
             <li class="nav-item"><a href="{{ url('offers') }}" class="nav-link">Offers</a></li>
             <li class="nav-item"><a href="{{ url('about') }}" class="nav-link">About us</a></li>

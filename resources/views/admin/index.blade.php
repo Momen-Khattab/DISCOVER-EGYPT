@@ -13,17 +13,13 @@
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
                     <li class="breadcrumb-item active">Dashboard</li>
                 </ol>
-            </div><!-- /.col -->
-        </div><!-- /.row -->
-    </div><!-- /.container-fluid -->
-    <!-- /.content-header -->
+            </div>
+        </div>
 </div>
 
 
 <div class="content">
     <div class="container-fluid">
-
     </div>
-    <!-- /.container-fluid -->
 </div>
 @stop

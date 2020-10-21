@@ -26,7 +26,7 @@
             <p><span>Address:</span> 198 West 21th Street, Suite 721 New Cairo NY 10016</p>
           </div>
           <div class="col-md-3">
-            <p><span>Phone:</span> <a href="tel://1234567920">19868</a></p>
+            <p><span>Phone:</span> <a href="tel://1234567920">01124337323</a></p>
           </div>
           <div class="col-md-3">
             <p><span>Email:</span> <a href="mailto:info@DISCOVER-EGYPT.com">info@DISCOVER-EGYPT.com.com</a></p>

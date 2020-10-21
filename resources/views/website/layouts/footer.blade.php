@@ -21,8 +21,6 @@
                 <li><a href="#" class="py-2 d-block">Tuesday: <span>08: - 16:00</span></a></li>
                 <li><a href="#" class="py-2 d-block">Wednesday: <span>08: - 16:00</span></a></li>
                 <li><a href="#" class="py-2 d-block">Thursday: <span>08: - 16:00</span></a></li>
-                <li><a href="#" class="py-2 d-block">Friday: <span>CLOSED</span></a></li>
-                <li><a href="#" class="py-2 d-block">Saturday: <span>CLOSED</span></a></li>
               </ul>
             </div>
           </div>
@@ -31,7 +29,7 @@
               <h2 class="ftco-heading-2">Contact Information</h2>
               <ul class="list-unstyled">
                 <li><a href="#" class="py-2 d-block">56 Zayed city 21th Street,New cairo 721 New Capital B 10016</a></li>
-                <li><a href="#" class="py-2 d-block">HOTLINE: <span>19877</span></a></li>
+                <li><a href="#" class="py-2 d-block">HOTLINE: <span>01124337323</span></a></li>
                 <li><a href="#" class="py-2 d-block">info@DICOVER-EGYPT.com</a></li>
               </ul>
             </div>
@@ -54,7 +52,7 @@
           <div class="col-md-12 text-center">
             <p>
               <!-- Link back to DISCOVER-EGYPT cant be removed. SITE is licensed under CC BY 36.8. -->
-              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This site is made by <a href="https://DISCOVER-EGYPT.com" target="#">Momen khattab WDT subject</a>
+              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This site is made by <a href="https://DISCOVER-EGYPT.com" target="#">IT PROJECT TEAM</a>
               <!-- Link back to DISCOVER-EGYPT cant be removed. SITE is licensed under CC BY 36.8. -->
             </p>
           </div>

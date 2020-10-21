@@ -2,7 +2,7 @@
 
 @section('content')    
     <section class="home-slider owl-carousel">
-      <div class="slider-item" style="background-image: url('images/food/egyfood.jpg');" data-stellar-background-ratio="0.5">
+      <div class="slider-item" style="background-image: url('images/food/food3.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
           <div class="row slider-text align-items-end">
@@ -297,7 +297,7 @@
                 <div class="row">
                   <div class="col-lg-6">
                     <div class="menus d-flex ftco-animate">
-                      <div class="menu-img" style="background-image: url(images/food/drink-7.jpg);"></div>
+                      <div class="menu-img" style="background-image: url(images/food/drink-10.jpg);"></div>
                       <div class="text d-flex">
                         <div class="one-half">
                           <h3>Lemon Juice</h3>
@@ -309,7 +309,7 @@
                       </div>
                     </div>
                     <div class="menus d-flex ftco-animate">
-                      <div class="menu-img" style="background-image: url(images/food/drink-2.jpg);"></div>
+                      <div class="menu-img" style="background-image: url(images/food/drink-9.jpg);"></div>
                       <div class="text d-flex">
                         <div class="one-half">
                           <h3>Guava Juice</h3>
@@ -321,7 +321,7 @@
                       </div>
                     </div>
                     <div class="menus d-flex ftco-animate">
-                      <div class="menu-img" style="background-image: url(images/food/drink-3.jpg);"></div>
+                      <div class="menu-img" style="background-image: url(images/food/drink-7.jpg);"></div>
                       <div class="text d-flex">
                         <div class="one-half">
                           <h3>Sprite</h3>
@@ -348,7 +348,7 @@
 
                   <div class="col-lg-6">
                     <div class="menus d-flex ftco-animate">
-                      <div class="menu-img" style="background-image: url(images/food/drink-10.jpg);"></div>
+                      <div class="menu-img" style="background-image: url(images/food/drink-3.jpg);"></div>
                       <div class="text d-flex">
                         <div class="one-half">
                           <h3>Mango Juice</h3>
@@ -360,7 +360,7 @@
                       </div>
                     </div>
                     <div class="menus d-flex ftco-animate">
-                      <div class="menu-img" style="background-image: url(images/food/drink-8.jpg);"></div>
+                      <div class="menu-img" style="background-image: url(images/food/drink-2.jpg);"></div>
                       <div class="text d-flex">
                         <div class="one-half">
                           <h3>Apple Juice</h3>
@@ -372,7 +372,7 @@
                       </div>
                     </div>
                     <div class="menus d-flex ftco-animate">
-                      <div class="menu-img" style="background-image: url(images/food/drink-9.jpg);"></div>
+                      <div class="menu-img" style="background-image: url(images/food/drink-8.jpg);"></div>
                       <div class="text d-flex">
                         <div class="one-half">
                           <h3>Strawberry Juice</h3>
