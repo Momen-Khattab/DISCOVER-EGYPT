@@ -56,7 +56,7 @@ class RestaurantsController extends Controller
 
 
         ]);
-        $restaurants=restaurants::create($request->all());
+        $restaurants=Restaurants::create($request->all());
         return redirect()->route('restaurants.index')->withSuccess('added successfully');
 
     }

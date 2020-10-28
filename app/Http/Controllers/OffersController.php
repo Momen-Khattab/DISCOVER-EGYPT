@@ -5,6 +5,8 @@ use App\Models\Offers;
 
 use Illuminate\Http\Request;
 
+use function GuzzleHttp\Promise\all;
+
 class OffersController extends Controller
 {
     /**
@@ -17,7 +19,8 @@ class OffersController extends Controller
     }
 
     public function index(){
-        return view('admin.offers.index');
+        $offers=Offers::orderByDesc('id')->paginate(10);
+        return view('admin.offers.index',compact('offers'));
     }
 
     /**
@@ -41,6 +44,24 @@ class OffersController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request,[
+            "offer_no"=>'required|string',
+            "offer_name"=>'required|string',
+            "capacity"=>'required|string',
+            "cost"=>'required|string',
+            "has_discount"=>'required|boolean',
+            "notes"=>'required|string'
+            
+        ],[],[
+            "offer_no"=>'Offer Number',
+            "offer_name"=>'Offer Name',
+            "capacity"=>'Capacity',
+            "cost"=>'Cost',
+            "has_discount"=>'Has Discount',
+            "notes"=>'Notes'
+        ]);
+        $offers=Offers::create($request->all());
+        return redirect()->route('offers.index')->withSuccess('Saved successfully');
     }
 
     /**

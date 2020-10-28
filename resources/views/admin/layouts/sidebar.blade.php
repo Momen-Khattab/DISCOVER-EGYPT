@@ -30,6 +30,35 @@
               </p>
             </a>
           </li>
+
+
+            <!--mails-->
+            <li class="nav-item has-treeview {{ request()->segment(2) == 'mail' ? 'menu-open' : ''}}">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-envelope-square"></i>
+              <p>
+                Emails
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ url('/admin/mail/show') }}" class="nav-link {{ \Route::current()->getName() == 'mail.show' ? 'active' : ''}}">
+                  <i class="fas fa-envelope-open-text nav-icon"></i>
+                  <p>Inbox</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{ url('/admin/mail/create') }}" class="nav-link {{ \Route::current()->getName() == 'mail.create' ? 'active' : ''}}">
+                  <i class="fas fa-reply nav-icon"></i>
+                  <p>Replay</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+
           <!--Rooms-->
           <li class="nav-item has-treeview {{ request()->segment(2) == 'rooms' ? 'menu-open' : ''}}">
             <a href="#" class="nav-link">
@@ -120,7 +149,7 @@
           <!--Booking flights -->
           <li class="nav-item has-treeview {{ request()->segment(2) == 'booking' ? 'menu-open' : ''}}">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-fire"></i>
+              <i class="nav-icon fas fa-plane"></i>
               <p>
                 Booking
                 <i class="fas fa-angle-left right"></i>
