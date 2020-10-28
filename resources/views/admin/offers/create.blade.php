@@ -2,79 +2,157 @@
 @section('content')
 
 
+<!-- Content Header (Page header) -->
 <div class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Home</h1>
+                <h1 class="m-0 text-dark">Create new offer</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item">Restaurants</li>
+                    <li class="breadcrumb-item">Offer</li>
                     <li class="breadcrumb-item active">Create</li>
-                    <li class="breadcrumb-item active">Offers</li>
-
                 </ol>
             </div>
         </div>
     </div>
 </div>
 
+<!-- /.content-header -->
 <div class="content">
     <div class="container-fluid">
-        <form role="form">
-            <div class="card-body">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">offer_no</label>
-                    <input type="text" class="form-control" id="offer_no" placeholder="offer_no">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">offer_name</label>
-                    <input type="text" class="form-control" id="offer_name" placeholder="offer_name">
-                </div>
-
-                <div class="form-group">
-                    <label for="exampleInputPassword1">capacity</label>
-                    <input type="text" class="form-control" id="capacity" placeholder="capacity">
-                </div>
-
-                
-                <div class="form-group">
-                    <label for="#">cost</label>
-                    <input type="number" class="form-control" id="cost" placeholder="$">
-                </div>
-
-                <div class="form-group">
-                    <label for="#">booked_date</label>
-                    <input type="date" class="form-control" id="booked_date" placeholder="booked_date">
-                </div>
-
-                <div class="form-group">
-                    <label for="#">has_discount</label>
-                    <input type="boolean" class="form-control" id="notes" placeholder="has_discount">
-                </div>
-
-                <div class="form-group">
-                    <label for="#">food Picture</label>
-                    <div class="input-group">
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="foodpicture">
-                            <label class="custom-file-label" for="exampleInputFile">Choose Picture</label>
-                        </div>
-                        <div class="input-group-append">
-                            <span class="input-group-text" id="">Upload</span>
-                        </div>
+        <div class="card card-default">
+            <div class="card-header">
+              <h3 class="card-title">Create new offer</h3>
+  
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+              </div>
+            </div>
+            <!-- /.card-header -->
+            <form action="{{ route('offers.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="card-body" style="display: block;" >
+              <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">offer_no</label>
+                        <input type="text" class="form-control {{ $errors->has('offer_no') ? 'is-invalid' : ''}}" value="{{ old('offer_no') }}" name="offer_no" id="offer_no" placeholder="type...">
+                        <div class="invalid-feedback">
+                            {{ $errors->first('offer_no') }}
+                          </div>
                     </div>
                 </div>
+                <!-- /.col -->
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">offer name</label>
+                        <input type="text" class="form-control {{ $errors->has('offer_name') ? 'is-invalid' : ''}}" name="offer_name" id="offer_name" placeholder="type...">
+                        <div class="invalid-feedback">
+                            {{ $errors->first('offer_name') }}
+                          </div>
+                    </div>
+                </div>
+              </div>
+  
+              <div class="row">
+                <div class="col-12 col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">capacity</label>
+                        <select class="form-control {{ $errors->has('capacity') ? 'is-invalid' : ''}}" name="capacity" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                            <option value="single"><=10</option>
+                            <option value="double"><=15</option>
+                            <option value="family"><=20</option>
+                            <div class="invalid-feedback">
+                                {{ $errors->first('capacity') }}
+                              </div>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Cost</label>
+                        <input type="number" class="form-control {{ $errors->has('cost') ? 'is-invalid' : ''}}" name="cost" id="cost" placeholder="$">
+                        <div class="invalid-feedback">
+                            {{ $errors->first('cost') }}
+                          </div>
+                    </div>
+                </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Notes</label>
+                        <textarea name="notes" class="form-control {{ $errors->has('notes') ? 'is-invalid' : ''}}" id="" cols="30" rows="5" placeholder="Description"></textarea>
+                        <div class="invalid-feedback">
+                            {{ $errors->first('notes') }}
+                          </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputFile">Upload picture</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="uploadpic">
+                                <label class="custom-file-label" for="exampleInputFile">Choose Picture</label>
+                            </div>
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="">Upload</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                          <div class="form-group">
+                              <h5>has discount?</h5>
+                              <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" value="1" name="has_discount" id="customSwitch1">
+                                <label class="custom-control-label" for="customSwitch1">has_discount</label>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
             </div>
+
 
             <div class="card-footer">
                 <button type="submit" class="btn btn-primary">Submit</button>
+
+                @if ($errors->any())
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li> {{ $error}}      
+                    @endforeach
+                </ul>
+                @endif
             </div>
-        </form>
+            </form>
+          </div>
+
     </div>
 </div>
 
+
+@endsection
+
+@section('js')
+<script>
+    $(function () {
+        //Initialize Select2 Elements
+        $('.select2').select2()
+    
+        //Initialize Select2 Elements
+        $('.select2bs4').select2({
+          theme: 'bootstrap4'
+        });
+    });
+</script>
 
 @endsection

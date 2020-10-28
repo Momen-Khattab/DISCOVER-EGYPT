@@ -8,6 +8,8 @@
   <title>Admin | Panel </title>
 
   <link rel="stylesheet" href="{{ asset('admin_panel') }}/plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="{{ asset('admin_panel') }}/plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="{{ asset('admin_panel') }}/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
   <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <link rel="stylesheet" href="{{ asset('admin_panel') }}/dist/css/adminlte.min.css">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
@@ -55,6 +57,9 @@
 <script src="{{ asset('admin_panel') }}/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap -->
 <script src="{{ asset('admin_panel') }}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('admin_panel') }}/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+<script src="{{ asset('admin_panel') }}/plugins/select2/js/select2.full.min.js"></script>
+
 <!-- AdminLTE -->
 <script src="{{ asset('admin_panel') }}/dist/js/adminlte.js"></script>
 
@@ -62,5 +67,6 @@
 <script src="{{ asset('admin_panel') }}/plugins/chart.js/Chart.min.js"></script>
 <script src="{{ asset('admin_panel') }}/dist/js/demo.js"></script>
 <script src="{{ asset('admin_panel') }}/dist/js/pages/dashboard3.js"></script>
+@yield('js')
 </body>
 </html>

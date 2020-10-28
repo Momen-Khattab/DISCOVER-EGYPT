@@ -6,7 +6,11 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="{{ url('/') }}" class="nav-link">Home</a>
+        {{--  <a href="{{ url('/') }}" class="nav-link"> {{ request()->segment(2) == 'rooms' ? 'Yes rooms' : 'Dd' }}</a>  --}}
+        {{--  <a href="{{ url('/') }}" class="nav-link"> {{ request()->is('admin/restaurants/create') == 'res' ? 'Yes rooms' : 'Dd' }}</a>  --}}
+        {{--  <a href="{{ url('/') }}" class="nav-link"> {{ request()->v }}</a>  --}}
+        {{--  <a href="{{ url('/') }}" class="nav-link"> {{ request()->has('v') }}</a>  --}}
+        {{--  <a href="{{ url('/') }}" class="nav-link"> {{ \Route::current()->getName()  }}</a>  --}}
       </li>
     </ul>
 

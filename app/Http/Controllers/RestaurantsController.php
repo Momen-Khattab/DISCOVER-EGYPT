@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Restaurants;
 use Illuminate\Http\Request;
 
 class RestaurantsController extends Controller
@@ -16,7 +17,8 @@ class RestaurantsController extends Controller
     }
 
     public function index(){
-        return view('admin.restaurants.index');
+        $restaurants = restaurants::orderByDesc('id')->paginate(10);
+        return view('admin.restaurants.index',compact('restaurants'));
     }
 
     /**
@@ -40,6 +42,23 @@ class RestaurantsController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request,[
+            "restaurant_name"=>'required|string',
+            "food_type"=>'required|string',
+            "price"=>'required',
+            "notes"=>'required|string',
+
+        ],[],[
+            "restaurant_name"=>'Restaurants Name',
+            "food_type"=>'Food Name',
+            "price"=>'Food Price',
+            "notes"=>'Notes',
+
+
+        ]);
+        $restaurants=restaurants::create($request->all());
+        return redirect()->route('restaurants.index')->withSuccess('added successfully');
+
     }
 
     /**

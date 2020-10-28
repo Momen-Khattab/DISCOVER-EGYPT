@@ -14,12 +14,12 @@
         </div>
       </div>
 
-      <div class="slider-item" style="background-image: url('images/cairo.jpg');">
+      <div class="slider-item" style="background-image: url('images/PYRAMIDS.jpg');">
         <div class="overlay"></div>
         <div class="container">
           <div class="row slider-text align-items-center justify-content-start">
             <div class="col-md-6 col-sm-12 ftco-animate">
-              <h1 class="mb-4">Grand Egyptian Museum</h1>
+              <h1 class="mb-4">Grand SPHINX</h1>
             </div>
           </div>
         </div>
@@ -221,7 +221,7 @@
 
     //offers
     <section class="ftco-section-parallax">
-      <div class="parallax-img d-flex align-items-md-center align-items-sm-end" style="background-image: url('images/PYRAMIDS.jpg');" data-stellar-background-ratio="0.5">
+      <div class="parallax-img d-flex align-items-md-center align-items-sm-end" style="background-image: url('images/pyra2.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
           <div class="row desc d-flex justify-content-center">
