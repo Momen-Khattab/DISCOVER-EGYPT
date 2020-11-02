@@ -17,7 +17,7 @@ class RestaurantsController extends Controller
     }
 
     public function index(){
-        $restaurants = restaurants::orderByDesc('id')->paginate(10);
+        $restaurants = Restaurants::orderByDesc('id')->paginate(10);
         return view('admin.restaurants.index',compact('restaurants'));
     }
 
@@ -46,17 +46,15 @@ class RestaurantsController extends Controller
             "restaurant_name"=>'required|string',
             "food_type"=>'required|string',
             "price"=>'required',
-            "notes"=>'required|string',
+            "notes"=>'required|string'
 
         ],[],[
             "restaurant_name"=>'Restaurants Name',
             "food_type"=>'Food Name',
             "price"=>'Food Price',
-            "notes"=>'Notes',
-
-
+            "notes"=>'Notes'
         ]);
-        $restaurants=Restaurants::create($request->all());
+        $restaurants = Restaurants::create($request->all());
         return redirect()->route('restaurants.index')->withSuccess('added successfully');
 
     }

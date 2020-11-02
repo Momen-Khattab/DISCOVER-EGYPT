@@ -1,6 +1,7 @@
 @extends('website.layouts.front')
 
 @section('content')      
+    //sliders
     <section class="home-slider owl-carousel">
       <div class="slider-item" style="background-image: url('images/valley-of-the-kings.jpg');">
         <div class="overlay"></div>
@@ -226,14 +227,12 @@
         <div class="container">
           <div class="row desc d-flex justify-content-center">
             <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-              <span class="subheading">Our Trips</span>
-              <h2 class="h1 font-weight-bold">Offers Centre</h2>
+              <span class="subheading">Our Offers</span>
+              <h2 class="h1 font-weight-bold">Trips Centre</h2>
               <p><a href="{{ url('offers') }}" class="btn btn-primary btn-outline-white mt-3 py-3 px-4">View more details</a></p>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-   
 @endsection
