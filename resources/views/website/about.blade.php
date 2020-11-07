@@ -1,6 +1,7 @@
 @extends('website.layouts.front')
 
 @section('content')
+    {{--  //slider  --}}
     <section class="home-slider owl-carousel">
       <div class="slider-item" style="background-image: url('images/balloon_flight_plant_91681_1920x1080.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
@@ -14,26 +15,24 @@
         </div>
       </div>
     </section>
-
+    {{--  //intro  --}}
     <section class="ftco-section-2">
       <div class="container d-flex">
         <div class="section-2-blocks-wrapper row d-flex">
-          <div class="img col-sm-12 col-lg-6 order-last" style="background-image: url('images/about-2.jpg');">
+          <div class="img col-sm-12 col-lg-6 order-last" style="background-image: url('images/logo.png');">
           </div>
           <div class="text col-lg-6 order-first ftco-animate">
             <div class="text-inner align-self-start">
               <span class="subheading">About US</span>
               <h3 class="heading">Our Main Goal</h3>
               <p>1-Increasing the rate of foreign investment inside Egypt </br> 2-Promoting the most beautiful places in Egypt </br> 3-Helping those who want to know the tourist attractions and everything related to ancient and modern Egyptian history </br> 4-Facilitating reservations, whether they are booking airline pilots or booking hotel tickets and arrangements for trips</p>
-              
-      
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    
+    {{--  //insta section  --}}
     <section class="instagram">
       <div class="container-fluid">
         <div class="row no-gutters justify-content-center pb-5">

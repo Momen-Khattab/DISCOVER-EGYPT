@@ -37,10 +37,11 @@
                   <td>{{ $item->size }}</td>
                   <td>{{ $item->state }}</td>
                   <td>
-                    <a href="#" class="btn btn-success">
+                    {{--  <a href="{{ url('/admin/rooms/'.$item->id) }}" class="btn btn-success">  --}}
+                    <a href="{{ route('rooms.show', $item->id) }}" class="btn btn-success">
                         <i class="fa fa-eye"></i>
                     </a>
-                    <a href="#" class="btn btn-primary">
+                    <a href="{{ route('rooms.edit', $item->id) }}" class="btn btn-primary">
                         <i class="fa fa-edit"></i>
                     </a>
                     <a href="#" class="btn btn-danger">

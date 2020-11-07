@@ -1,7 +1,6 @@
 @extends('website.layouts.front')
-
 @section('content')      
-    //sliders
+    {{--  //sliders  --}}
     <section class="home-slider owl-carousel">
       <div class="slider-item" style="background-image: url('images/valley-of-the-kings.jpg');">
         <div class="overlay"></div>
@@ -74,7 +73,7 @@
           <!-- END slider -->
     </section>
 
-    //rooms
+    {{--  //rooms  --}}
     <section class="ftco-section room-section">
       <div class="container">
         <div class="row justify-content-center mb-5 pb-5">
@@ -188,7 +187,7 @@
       </div>
     </section>
 
-    //restaurants
+    {{--  //restaurants  --}}
     <section class="ftco-section-parallax">
       <div class="parallax-img d-flex align-items-md-center align-items-sm-end" style="background-image: url('images/food/foodcover.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
@@ -204,7 +203,7 @@
       </div>
     </section>
 
-    //booking
+    {{--  //booking  --}}
     <section class="ftco-section-parallax">
       <div class="parallax-img d-flex align-items-md-center align-items-sm-end" style="background-image: url('images/booking/fl.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
@@ -220,7 +219,7 @@
       </div>
     </section>
 
-    //offers
+    {{--  //offers  --}}
     <section class="ftco-section-parallax">
       <div class="parallax-img d-flex align-items-md-center align-items-sm-end" style="background-image: url('images/pyra2.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>

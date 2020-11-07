@@ -7,12 +7,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Home</h1>
+                <h1 class="m-0 text-dark">Create new restaurant</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item">Restaurants</li>
+                    <li class="breadcrumb-item">restaurant</li>
                     <li class="breadcrumb-item active">Create</li>
                 </ol>
             </div>
@@ -25,38 +25,35 @@
     <div class="container-fluid">
         <div class="card card-default">
             <div class="card-header">
-              <h3 class="card-title">Create new Food Type</h3>
+              <h3 class="card-title">Create new restaurant</h3>
   
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
               </div>
             </div>
             <!-- /.card-header -->
-            <form action="{{ route('restaurants.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('restaurant.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="card-body" style="display: block;" >
               <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Restaurant Name</label>
-                        <input type="text" class="form-control {{ $errors->has('restaurant_name') ? 'is-invalid' : ''}}" value="{{ old('restaurant_name') }}" name="restaurant_name" id="restaurant_name" placeholder="Type...">
+                        {{--  <label for="exampleInputPassword1">{{ trans('app.hotel_name') }}</label>  --}}
+                        <label for="exampleInputPassword1">@lang('app.hotel_name')</label>
+                        <input type="text" class="form-control {{ $errors->has('hotel_name') ? 'is-invalid' : ''}}" value="{{ old('hotel_name') }}" name="hotel_name" id="hotelname" placeholder="Hotel Name">
                         <div class="invalid-feedback">
-                            {{ $errors->first('restaurant_name') }}
+                            {{ $errors->first('hotel_name') }}
                           </div>
                     </div>
                 </div>
                 <!-- /.col -->
-                <div class="col-12 col-sm-6">
+                <div class="col-sm-6">
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Food Type</label>
-                        <select class="form-control {{ $errors->has('food_type') ? 'is-invalid' : ''}}" name="food_type" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
-                            <option value="single">Main</option>
-                            <option value="double">Desert</option>
-                            <option value="family">Drinks</option>
-                            <div class="invalid-feedback">
-                                {{ $errors->first('food_type') }}
-                              </div>
-                        </select>
+                        <label for="exampleInputEmail1">Rome Number</label>
+                        <input type="text" class="form-control {{ $errors->has('restaurant_no') ? 'is-invalid' : ''}}" name="restaurant_no" id="romenumber" placeholder="Enter Number">
+                        <div class="invalid-feedback">
+                            {{ $errors->first('restaurant_no') }}
+                          </div>
                     </div>
                 </div>
               </div>
@@ -64,25 +61,50 @@
               <div class="row">
                 <div class="col-12 col-sm-6">
                     <div class="form-group">
-                        <label for="exampleInputPassword1">price</label>
-                        <input type="number" class="form-control {{ $errors->has('price') ? 'is-invalid' : ''}}" name="price" id="cost" placeholder="$">
+                        <label for="exampleInputPassword1">Rome Size</label>
+                        <select class="form-control {{ $errors->has('size') ? 'is-invalid' : ''}}" name="size" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                            <option value="single">Single</option>
+                            <option value="double">Double</option>
+                            <option value="family">Family</option>
+                            <div class="invalid-feedback">
+                                {{ $errors->first('size') }}
+                              </div>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Cost per night</label>
+                        <input type="number" class="form-control {{ $errors->has('cost_per_night') ? 'is-invalid' : ''}}" name="cost_per_night" id="cost" placeholder="$">
                         <div class="invalid-feedback">
-                            {{ $errors->first('price') }}
+                            {{ $errors->first('cost_per_night') }}
                           </div>
                     </div>
                 </div>
-                <div class="form-group col-sm-6">
-                    <label for="exampleInputFile">Upload picture</label>
-                    <div class="input-group">
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="uploadpic">
-                            <label class="custom-file-label" for="exampleInputFile">Choose Picture</label>
-                        </div>
-                        <div class="input-group-append">
-                            <span class="input-group-text" id="">Upload</span>
-                        </div>
+              </div>
+
+              <div class="row">
+                <div class="col-sm-6">    
+                    <h5>restaurant status</h5>                    
+                    <div class="custom-control custom-radio">
+                        <input class="custom-control-input" type="radio" id="customRadio1" checked value="1" name="status">
+                        <label for="customRadio1" class="custom-control-label">Available</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input class="custom-control-input" type="radio" id="customRadio2" value="0" name="status">
+                        <label for="customRadio2" class="custom-control-label">Not available</label>
                     </div>
                 </div>
+
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                        <h5>Has offer?</h5>
+                        <div class="custom-control custom-switch">
+                          <input type="checkbox" class="custom-control-input" value="1" name="has_offer" id="customSwitch1">
+                          <label class="custom-control-label" for="customSwitch1">Has offer</label>
+                        </div>
+                      </div>
+                  </div>
               </div>
               <br>
               <div class="row">
@@ -93,6 +115,24 @@
                         <div class="invalid-feedback">
                             {{ $errors->first('notes') }}
                           </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputFile">Upload picture</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input {{ $errors->has('image') ? 'is-invalid' : ''}}" name="image" id="uploadpic">
+                                <label class="custom-file-label" for="exampleInputFile">Choose Picture</label>
+                            </div>
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="">Upload</span>
+                            </div>
+
+                            <div class="invalid-feedback">
+                                {{ $errors->first('image') }}
+                              </div>
+                        </div>
                     </div>
                   </div>
               </div>
@@ -117,6 +157,9 @@
 </div>
 
 
+@endsection
+
+@section('js')
 <script>
     $(function () {
         //Initialize Select2 Elements
@@ -128,4 +171,5 @@
         });
     });
 </script>
+
 @endsection

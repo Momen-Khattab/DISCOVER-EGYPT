@@ -76,8 +76,15 @@ Route::get('/admin/test_db', function(){
     dd($room);
 });
 
-Route::resource('/admin/rooms','RoomController')->name('*', 'rooms');
-Route::resource('/admin/restaurants','RestaurantsController')->name('*', 'restaurants');
-Route::resource('/admin/booking','BookingController')->name('*', 'booking');
-Route::resource('/admin/offers','OffersController')->name('*', 'offers');
+Route::group(['prefix' => '/admin'], function(){
+    Route::resource('/rooms','RoomController')->name('*', 'rooms');
+    Route::resource('/restaurants','RestaurantsController')->name('*', 'restaurants');
+    Route::resource('/booking','BookingController')->name('*', 'booking');
+    Route::resource('/offers','OffersController')->name('*', 'offers');
+});
+
+// Route::resource('/admin/rooms','RoomController')->name('*', 'rooms');
+// Route::resource('/admin/restaurants','RestaurantsController')->name('*', 'restaurants');
+// Route::resource('/admin/booking','BookingController')->name('*', 'booking');
+// Route::resource('/admin/offers','OffersController')->name('*', 'offers');
 

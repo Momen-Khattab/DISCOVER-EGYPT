@@ -50,25 +50,34 @@ class RoomController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
         // dd($request->except('_token'));
         $this->validate($request, [
-            "hotel_name" => 'required|string',
-            "room_no" => 'required|string',
-            "size" => 'required',
+            // Validation rules
+            "hotel_name"     => 'required|string',
+            "room_no"        => 'required|string',
+            "size"           => 'required',
             "cost_per_night" => 'nullable',
-            "state" => 'required|boolean',
-            "has_offer" => 'nullable|boolean',
-            "notes" => "required|string"
+            "status"          => 'required|boolean',
+            "has_offer"      => 'nullable|boolean',
+            // "image"          => "required|mime_types:jpeg,bmp,png,gif,jpg,tiff",
+            "image"          => "nullable",
+            "notes"          => "required|string"
         ], [], [
-            "hotel_name" => 'Hotel name',
-            "room_no" => 'Room Number',
-            "size" => 'Size',
+            // Translation 
+            "hotel_name"     => trans('app.hotel_name'),
+            "room_no"        => 'Room Number',
+            "size"           => 'Size',
             "cost_per_night" => 'The Cost',
-            "state" => 'The Room Status',
-            "has_offer" => 'Has Offer?',
-            "notes" => "Room Notes"
+            "status"          => 'The Room Status',
+            "has_offer"      => 'Has Offer?',
+            "image"          => 'Room image',
+            "notes"          => "Room Notes"
         ]);
+        
+        // if($request->hasFile('image')){
+        //     $path = $request->file('image')->store('public/rooms');
+        //     dd($path);
+        // }
 
         $room = Room::create($request->all());
         return redirect()->route('rooms.index')->withSuccess('Saved successfully');
@@ -83,7 +92,10 @@ class RoomController extends Controller
      */
     public function show($id)
     {
-        return view('admin.rooms.show');
+        $room = Room::findOrFail($id);
+        
+        // return view('admin.rooms.show', ['room' => $room]);
+        return view('admin.rooms.show', compact('room'));
     }
 
     /**
@@ -94,7 +106,8 @@ class RoomController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.rooms.edit');
+        $room = Room::findOrFail($id);
+        return view('admin.rooms.edit', compact('room'));
     }
 
     /**

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBookingTable extends Migration
+class AddImageFieldToTripsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateBookingTable extends Migration
      */
     public function up()
     {
-        Schema::create('booking', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('trips', function (Blueprint $table) {
+            //
         });
     }
 
@@ -26,6 +25,10 @@ class CreateBookingTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('booking');
+        Schema::table('trips', function (Blueprint $table) {
+            //
+            $table->dropIfExists('image');
+
+        });
     }
 }

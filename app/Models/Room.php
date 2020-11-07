@@ -8,6 +8,10 @@ class Room extends Model
 {
     protected $table = 'rooms';
     protected $fillable = ['room_no', 'hotel_name', 'size', 
-                            'cost_per_night', 'has_offer', 'booked_date_start', 'booked_date_end',
-                             'state', 'notes'];
+                            'cost_per_night', 'has_offer', 'image',
+                             'status', 'notes'];
+
+    public static function roomSizes(){
+        return ['single', 'double', 'family'];
+    }
 }

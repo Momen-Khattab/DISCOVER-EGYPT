@@ -38,7 +38,8 @@
               <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Hotel Name</label>
+                        {{--  <label for="exampleInputPassword1">{{ trans('app.hotel_name') }}</label>  --}}
+                        <label for="exampleInputPassword1">@lang('app.hotel_name')</label>
                         <input type="text" class="form-control {{ $errors->has('hotel_name') ? 'is-invalid' : ''}}" value="{{ old('hotel_name') }}" name="hotel_name" id="hotelname" placeholder="Hotel Name">
                         <div class="invalid-feedback">
                             {{ $errors->first('hotel_name') }}
@@ -84,13 +85,13 @@
 
               <div class="row">
                 <div class="col-sm-6">    
-                    <h5>Room State</h5>                    
+                    <h5>Room status</h5>                    
                     <div class="custom-control custom-radio">
-                        <input class="custom-control-input" type="radio" id="customRadio1" checked value="1" name="state">
+                        <input class="custom-control-input" type="radio" id="customRadio1" checked value="1" name="status">
                         <label for="customRadio1" class="custom-control-label">Available</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input class="custom-control-input" type="radio" id="customRadio2" value="0" name="state">
+                        <input class="custom-control-input" type="radio" id="customRadio2" value="0" name="status">
                         <label for="customRadio2" class="custom-control-label">Not available</label>
                     </div>
                 </div>
@@ -121,12 +122,16 @@
                         <label for="exampleInputFile">Upload picture</label>
                         <div class="input-group">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="uploadpic">
+                                <input type="file" class="custom-file-input {{ $errors->has('image') ? 'is-invalid' : ''}}" name="image" id="uploadpic">
                                 <label class="custom-file-label" for="exampleInputFile">Choose Picture</label>
                             </div>
                             <div class="input-group-append">
                                 <span class="input-group-text" id="">Upload</span>
                             </div>
+
+                            <div class="invalid-feedback">
+                                {{ $errors->first('image') }}
+                              </div>
                         </div>
                     </div>
                   </div>

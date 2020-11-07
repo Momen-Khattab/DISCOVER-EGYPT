@@ -4,43 +4,44 @@
     <div class="container-fluid">
 <div class="card">
     <div class="card-header">
-      <h3 class="card-title">Rooms</h3>
+      <h3 class="card-title">restaurant</h3>
       <div class="card-tools">
-        @if (!$restaurants->isEmpty())
-            {{ $restaurants->render() }}
+        @if (!$restaurant->isEmpty())
+            {{ $restaurant->render() }}
         @endif
       </div>
     </div>
     
     <!-- /.card-header -->
     <div class="card-body table-responsive p-0" style="height: 300px;">
-        @if ($restaurants->isEmpty())
+        @if ($restaurant->isEmpty())
             <div class="alert alert-danger">
-                No data founded!
+                No data found!
             </div>
         @else
       <table class="table table-head-fixed text-nowrap">
         <thead>
           <tr>
-            <th>Restaurant Name</th>
-            <th>Food Type</th>
-            <th>Price</th>
-            <th>Notes</th>
+            <th>Room No.</th>
+            <th>Hotel name</th>
+            <th>Size</th>
+            <th>State</th>
             <th>Control</th>
           </tr>
         </thead>
         <tbody>
-          @foreach ($restaurants as $item)
+          @foreach ($restaurant as $item)
               <tr>
-                  <td>{{ $item->restaurant_name }}</td>
-                  <td>{{ $item->food_type }}</td>
-                  <td>{{ $item->price }}</td>
-                  <td>{{ $item->notes }}</td>
+                  <td>{{ $item->room_no }}</td>
+                  <td>{{ $item->hotel_name }}</td>
+                  <td>{{ $item->size }}</td>
+                  <td>{{ $item->state }}</td>
                   <td>
-                    <a href="#" class="btn btn-success">
+                    {{--  <a href="{{ url('/admin/restaurant/'.$item->id) }}" class="btn btn-success">  --}}
+                    <a href="{{ route('restaurant.show', $item->id) }}" class="btn btn-success">
                         <i class="fa fa-eye"></i>
                     </a>
-                    <a href="#" class="btn btn-primary">
+                    <a href="{{ route('restaurant.edit', $item->id) }}" class="btn btn-primary">
                         <i class="fa fa-edit"></i>
                     </a>
                     <a href="#" class="btn btn-danger">
