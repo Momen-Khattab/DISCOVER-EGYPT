@@ -57,21 +57,21 @@ class RoomController extends Controller
             "room_no"        => 'required|string',
             "size"           => 'required',
             "cost_per_night" => 'nullable',
-            "status"          => 'required|boolean',
+            "status"         => 'required|boolean',
             "has_offer"      => 'nullable|boolean',
-            // "image"          => "required|mime_types:jpeg,bmp,png,gif,jpg,tiff",
+            // "image"       => "required|mime_types:jpeg,bmp,png,gif,jpg,tiff",
             "image"          => "nullable",
             "notes"          => "required|string"
         ], [], [
             // Translation 
             "hotel_name"     => trans('app.hotel_name'),
-            "room_no"        => 'Room Number',
-            "size"           => 'Size',
-            "cost_per_night" => 'The Cost',
-            "status"          => 'The Room Status',
-            "has_offer"      => 'Has Offer?',
-            "image"          => 'Room image',
-            "notes"          => "Room Notes"
+            "room_no"        => trans('app.room_no'),
+            "size"           => trans('app.size'),
+            "cost_per_night" => trans('app.cost_per_night'),
+            "status"         => trans('app.status'),
+            "has_offer"      => trans('app.has_offer'),
+            "image"          => trans('app.image'),
+            "notes"          => trans('app.notes')
         ]);
         
         // if($request->hasFile('image')){

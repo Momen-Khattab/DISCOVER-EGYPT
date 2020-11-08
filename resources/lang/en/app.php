@@ -1,6 +1,46 @@
 <?php
 
 return [
-    'hotel_name' => 'Hotel name',
+    // translate for rooms
+    'hotel_name'     => 'Hotel Name',
+    "room_no"        => 'Room Number',
+    "size"           => 'Room Size',
+    "cost_per_night" => 'Room Cost',
+    "status"         => 'Room Status',
+
+
+
+
+    // Translate for Trips
+    "trip_no"               => 'Trip Number',
+    "trip_name"             => 'Trip Name',
+    "capacity"              => 'Trip Capacity',
+    "has_offer"             => 'Trip Has Offer?',
+    "dead_line"             => 'Trip Dead Line',
+    "company_number"        => 'Company Number',
+
+
+    // Translate for Foods
+    "food_no"               => 'Food Number',
+    "Restaurant_name"       => 'Restaurant Name',
+    "has_offer"             => 'This Food Has Offer?',
+    "number"                => 'Restaurant Number',
+
+
+
+    // Translate for flights
+    "flight_no"             => 'Flight Number',
+    "company_name"          => 'Company Name',
+    "airport_name"          => 'Airport Name',
+    "flight_destinaion"     => 'Flight Destinaion',
+    "travil_date"           => 'Travil Date',
+    "company_number"        => 'Company Number',
+
+    //for all
+    "cost"                  => 'The Cost',
+    "has_offer"             => 'This Offer Has Discount',
+    "image"                 => 'Offer Image',
+    "address"               => 'The Place',
+    "notes"                 => "Additional Information",
 
 ];
