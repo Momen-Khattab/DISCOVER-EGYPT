@@ -33,7 +33,7 @@
 
 
             <!--mails-->
-            <li class="nav-item has-treeview {{ request()->segment(2) == 'mail' ? 'menu-open' : ''}}">
+          <li class="nav-item has-treeview {{ request()->segment(2) == 'mail' ? 'menu-open' : ''}}">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-envelope-square"></i>
               <p>
@@ -43,7 +43,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ url('/admin/mail/show') }}" class="nav-link {{ \Route::current()->getName() == 'mail.show' ? 'active' : ''}}">
+                <a href="{{ url('/admin/mail') }}" class="nav-link {{ \Route::current()->getName() == 'mail.index' ? 'active' : ''}}">
                   <i class="fas fa-envelope-open-text nav-icon"></i>
                   <p>Inbox</p>
                 </a>
@@ -82,10 +82,6 @@
                   <p>Create</p>
                 </a>
               </li>
-             
-
-              
-
             </ul>
           </li>
 
@@ -100,7 +96,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ url('/admin/restaurants/show') }}" class="nav-link {{ \Route::current()->getName() == 'restaurants.show' ? 'active' : ''}}">
+                <a href="{{ url('/admin/restaurants') }}" class="nav-link {{ \Route::current()->getName() == 'restaurants.index' ? 'active' : ''}}">
                   <i class="fas fa-eye nav-icon"></i>
                   <p>View</p>
                 </a>
@@ -111,8 +107,6 @@
                   <p>Create</p>
                 </a>
               </li>
-             
-
             </ul>
           </li>
 
@@ -128,7 +122,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ url('/admin/offers/show') }}" class="nav-link {{ \Route::current()->getName() == 'offers.show' ? 'active' : ''}}">
+                <a href="{{ url('/admin/offers') }}" class="nav-link {{ \Route::current()->getName() == 'offers.index' ? 'active' : ''}}">
                   <i class="fas fa-eye nav-icon"></i>
                   <p>View</p>
                 </a>
@@ -157,7 +151,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ url('/admin/booking/show') }}" class="nav-link {{ \Route::current()->getName() == 'booking.show' ? 'active' : ''}}">
+                <a href="{{ url('/admin/booking') }}" class="nav-link {{ \Route::current()->getName() == 'booking.index' ? 'active' : ''}}">
                   <i class="fas fa-eye nav-icon"></i>
                   <p>View</p>
                 </a>

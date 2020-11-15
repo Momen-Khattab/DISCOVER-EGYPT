@@ -6,15 +6,15 @@
     <div class="card-header">
       <h3 class="card-title">booking</h3>
       <div class="card-tools">
-        @if (!$booking->isEmpty())
-            {{ $booking->render() }}
+        @if (!$flights->isEmpty())
+            {{ $flights->render() }}
         @endif
       </div>
     </div>
     
     <!-- /.card-header -->
     <div class="card-body table-responsive p-0" style="height: 300px;">
-        @if ($booking->isEmpty())
+        @if ($flights->isEmpty())
             <div class="alert alert-danger">
                 No data found!
             </div>
@@ -31,7 +31,7 @@
           </tr>
         </thead>
         <tbody>
-          @foreach ($booking as $item)
+          @foreach ($flights as $item)
               <tr>
                   <td>{{ $item->airport_name }}</td>
                   <td>{{ $item->flight_no }}</td>

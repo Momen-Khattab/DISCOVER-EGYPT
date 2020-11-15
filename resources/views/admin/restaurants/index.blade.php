@@ -6,15 +6,15 @@
     <div class="card-header">
       <h3 class="card-title">restaurant</h3>
       <div class="card-tools">
-        @if (!$restaurant->isEmpty())
-            {{ $restaurant->render() }}
+        @if (!$foods->isEmpty())
+            {{ $foods->render() }}
         @endif
       </div>
     </div>
     
     <!-- /.card-header -->
     <div class="card-body table-responsive p-0" style="height: 300px;">
-        @if ($restaurant->isEmpty())
+        @if ($foods->isEmpty())
             <div class="alert alert-danger">
                 No data found!
             </div>
@@ -32,7 +32,7 @@
           </tr>
         </thead>
         <tbody>
-          @foreach ($restaurant as $item)
+          @foreach ($foods as $item)
               <tr>
                   <td>{{ $item->food_no }}</td>
                   <td>{{ $item->Restaurant_name }}</td>

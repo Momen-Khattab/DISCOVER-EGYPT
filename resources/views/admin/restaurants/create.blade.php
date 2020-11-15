@@ -32,7 +32,7 @@
               </div>
             </div>
             <!-- /.card-header -->
-            <form action="{{ route('foods.store', $food->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('restaurants.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body" style="display: block;" >
                   <div class="row">

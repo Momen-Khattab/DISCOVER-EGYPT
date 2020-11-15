@@ -75,7 +75,7 @@
                   </div>
                   <div class="form-group">
                     <label for="">Check out</label>
-                    <input type="text" class="form-control" id="arrival_time" placeholder="Time">
+                    <input type="text" class="form-control" id="arrival_date" placeholder="Date">
                   </div>
                 </div>
                 <div class="col-md-6 d-flex">
@@ -91,39 +91,7 @@
                 <div class="col-md-12">
                   <h2 class="mb-4">Payment Details</h2>
                 </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="">Card Type</label>
-                    <div class="select-wrap one-third">
-                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                      <select name="" id="" class="form-control">
-                        <option value="">Recipe</option>
-                        <option value="">Visa</option>
-                        <option value="">Master Card</option>
-                        <option value="">Credit Card</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="name">Card No</label>
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="name">Name on Card</label>
-                    <input type="text" class="form-control" placeholder="">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group mr-4">
-                    <label for="">Expiration Date</label>
-                    <input type="text" class="form-control" id="expiration_date" placeholder="">
-                  </div>
-                </div>
-                
+                <h3>Recipe</h3>
               </div>
               <button type="submit" class="btn btn-primary pull-right">Confirm</button>
 

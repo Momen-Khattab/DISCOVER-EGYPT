@@ -6,15 +6,15 @@
     <div class="card-header">
       <h3 class="card-title">offers</h3>
       <div class="card-tools">
-        @if (!$offers->isEmpty())
-            {{ $offers->render() }}
+        @if (!$trips->isEmpty())
+            {{ $trips->render() }}
         @endif
       </div>
     </div>
     
     <!-- /.card-header -->
     <div class="card-body table-responsive p-0" style="height: 300px;">
-        @if ($offers->isEmpty())
+        @if ($trips->isEmpty())
             <div class="alert alert-danger">
                 No data found!
             </div>
@@ -31,7 +31,7 @@
           </tr>
         </thead>
         <tbody>
-          @foreach ($offers as $item)
+          @foreach ($trips as $item)
               <tr>
                   <td>{{ $item->offer_no }}</td>
                   <td>{{ $item->offer_name }}</td>
