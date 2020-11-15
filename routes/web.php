@@ -20,11 +20,11 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/rooms','RoomController@rooms')->name('visitorRooms');
 
-Route::get('/restaurants', 'RestaurantsController@restaurants')->name('visitorRestaurants');
+Route::get('/restaurants', 'FoodController@restaurants')->name('visitorRestaurants');
 
-Route::get('/booking', 'BookingController@booking')->name('visitorBooking');
+Route::get('/booking', 'FlightController@booking')->name('visitorBooking');
 
-Route::get('/offers', 'OffersController@offers')->name('visitorOffers');;
+Route::get('/offers', 'TripController@offers')->name('visitorOffers');;
 
 
 Route::get('/about', function () {
@@ -78,9 +78,9 @@ Route::get('/admin/test_db', function(){
 
 Route::group(['prefix' => '/admin'], function(){
     Route::resource('/rooms','RoomController')->name('*', 'rooms');
-    Route::resource('/restaurants','RestaurantsController')->name('*', 'restaurants');
-    Route::resource('/booking','BookingController')->name('*', 'booking');
-    Route::resource('/offers','OffersController')->name('*', 'offers');
+    Route::resource('/restaurants','FoodController')->name('*', 'restaurants');
+    Route::resource('/booking','FlightController')->name('*', 'booking');
+    Route::resource('/offers','TripController')->name('*', 'offers');
 });
 
 // Route::resource('/admin/rooms','RoomController')->name('*', 'rooms');

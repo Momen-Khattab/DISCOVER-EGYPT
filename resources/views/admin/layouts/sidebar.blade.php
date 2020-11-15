@@ -13,7 +13,7 @@
           <img src="{{ asset('admin_panel') }}/dist/img/AdminLTELogo.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">SuperAdmin_1 </a>
+          <a href="#" class="d-block">SuperAdmin </a>
         </div>
       </div>
 
@@ -94,7 +94,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-utensils"></i>
               <p>
-                Restaurants
+                Foods
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>

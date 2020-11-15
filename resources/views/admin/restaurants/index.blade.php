@@ -22,20 +22,24 @@
       <table class="table table-head-fixed text-nowrap">
         <thead>
           <tr>
-            <th>Room No.</th>
-            <th>Hotel name</th>
-            <th>Size</th>
-            <th>State</th>
+            <th>food no.</th>
+            <th>Restaurant name</th>
+            <th>cost</th>
+            <th>has_offer</th>
+            <th>address</th>
+            <th>number</th>
             <th>Control</th>
           </tr>
         </thead>
         <tbody>
           @foreach ($restaurant as $item)
               <tr>
-                  <td>{{ $item->room_no }}</td>
-                  <td>{{ $item->hotel_name }}</td>
-                  <td>{{ $item->size }}</td>
-                  <td>{{ $item->state }}</td>
+                  <td>{{ $item->food_no }}</td>
+                  <td>{{ $item->Restaurant_name }}</td>
+                  <td>{{ $item->cost }}</td>
+                  <td>{{ $item->has_offer }}</td>
+                  <td>{{ $item->address }}</td>
+                  <td>{{ $item->number }}</td>
                   <td>
                     {{--  <a href="{{ url('/admin/restaurant/'.$item->id) }}" class="btn btn-success">  --}}
                     <a href="{{ route('restaurant.show', $item->id) }}" class="btn btn-success">

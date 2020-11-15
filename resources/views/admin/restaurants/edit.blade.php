@@ -4,85 +4,68 @@
     <div class="container-fluid">
         <div class="card card-default">
             <div class="card-header">
-              <h3 class="card-title">Create new restaurant</h3>
+              <h3 class="card-title">Create new food</h3>
   
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
               </div>
             </div>
             <!-- /.card-header -->
-            <form action="{{ route('restaurants.update', $restaurant->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('foods.update', $food->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="card-body" style="display: block;" >
               <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group">
-                        {{--  <label for="exampleInputPassword1">{{ trans('app.hotel_name') }}</label>  --}}
-                        <label for="exampleInputPassword1">@lang('app.hotel_name')</label>
-                        <input type="text" class="form-control {{ $errors->has('hotel_name') ? 'is-invalid' : ''}}" value="{{ $restaurant->hotel_name }}" name="hotel_name" id="hotelname" placeholder="Hotel Name">
+                        {{--  <label for="exampleInputPassword1">{{ trans('app.Restaurant_name') }}</label>  --}}
+                        <label for="exampleInputPassword1">@lang('app.Restaurant_name')</label>
+                        <input type="text" class="form-control {{ $errors->has('Restaurant_name') ? 'is-invalid' : ''}}" value="{{ $food->Restaurant_name }}" name="Restaurant_name" id="Restaurant_name" placeholder="Restaurant Name">
                         <div class="invalid-feedback">
-                            {{ $errors->first('hotel_name') }}
+                            {{ $errors->first('Restaurant_name') }}
                           </div>
                     </div>
                 </div>
                 <!-- /.col -->
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Rome Number</label>
-                        <input type="text" class="form-control {{ $errors->has('restaurant_no') ? 'is-invalid' : ''}}" name="restaurant_no" id="romenumber" value="{{ $restaurant->restaurant_no }}" placeholder="Enter Number">
+                        <label for="exampleInputEmail1">@lang('app.food_no')</label>
+                        <input type="text" class="form-control {{ $errors->has('food_no') ? 'is-invalid' : ''}}" name="food_no" id="romenumber" value="{{ $food->food_no }}" placeholder="Enter Number">
                         <div class="invalid-feedback">
-                            {{ $errors->first('restaurant_no') }}
+                            {{ $errors->first('food_no') }}
                           </div>
                     </div>
                 </div>
               </div>
   
               <div class="row">
+                
                 <div class="col-12 col-sm-6">
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Rome Size</label>
-                        <select class="form-control {{ $errors->has('size') ? 'is-invalid' : ''}}" name="size" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
-                            {{--  <option value="single">Single</option>
-                            <option value="double">Double</option>
-                            <option value="family">Family</option>  --}}
-                            @foreach (App\Models\restaurant::restaurantSizes() as $item)
-                                <option value="{{ $item }}" {{ $restaurant->size == $item ? 'selected' : ''}} >{{ ucfirst($item) }}</option>
-                            @endforeach
-                            <div class="invalid-feedback">
-                                {{ $errors->first('size') }}
-                              </div>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6">
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Cost per night</label>
-                        <input type="number" class="form-control {{ $errors->has('cost_per_night') ? 'is-invalid' : ''}}" name="cost_per_night" id="cost" value="{{ $restaurant->cost_per_night }}" placeholder="$">
+                        <label for="exampleInputPassword1">@lang('app.cost')</label>
+                        <input type="number" class="form-control {{ $errors->has('cost') ? 'is-invalid' : ''}}" name="cost" id="cost" value="{{ $food->cost }}" placeholder="$">
                         <div class="invalid-feedback">
-                            {{ $errors->first('cost_per_night') }}
+                            {{ $errors->first('cost') }}
                           </div>
                     </div>
                 </div>
               </div>
 
               <div class="row">
-                <div class="col-sm-6">    
-                    <h5>restaurant status</h5>                    
-                    <div class="custom-control custom-radio">
-                        <input class="custom-control-input" type="radio" id="customRadio1" checked value="1" name="status">
-                        <label for="customRadio1" class="custom-control-label">Available</label>
-                    </div>
-                    <div class="custom-control custom-radio">
-                        <input class="custom-control-input" type="radio" id="customRadio2" value="0" {{ $restaurant->status == '0' ? 'checked' : '' }} name="status">
-                        <label for="customRadio2" class="custom-control-label">Not available</label>
-                    </div>
-                </div>
+                <div class="col-12 col-sm-6">
+                  <div class="form-group">
+                      <label for="exampleInputPassword1">@lang('app.number')</label>
+                      <input type="number" class="form-control {{ $errors->has('number') ? 'is-invalid' : ''}}" name="number" id="number" value="{{ $food->number }}" placeholder="$">
+                      <div class="invalid-feedback">
+                          {{ $errors->first('number') }}
+                        </div>
+                  </div>
+              </div>
 
                   <div class="col-sm-6">
                     <div class="form-group">
                         <h5>Has offer?</h5>
                         <div class="custom-control custom-switch">
-                          <input type="checkbox" class="custom-control-input" value="1" name="has_offer" id="customSwitch1" {{ $restaurant->status == '1' ? 'checked' : '' }}>
+                          <input type="checkbox" class="custom-control-input" value="1" name="has_offer" id="customSwitch1" {{ $food->has_offer == '1' ? 'checked' : '' }}>
                           <label class="custom-control-label" for="customSwitch1">Has offer</label>
                         </div>
                       </div>
@@ -90,10 +73,23 @@
               </div>
               <br>
               <div class="row">
+
+                <div class="row">
+                  <div class="col-12 col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">@lang('app.address')</label>
+                        <input type="text" class="form-control {{ $errors->has('address') ? 'is-invalid' : ''}}" name="address" id="address" value="{{ $food->address }}" placeholder="address">
+                        <div class="invalid-feedback">
+                            {{ $errors->first('address') }}
+                          </div>
+                    </div>
+                </div>
+
+
                   <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">Notes</label>
-                        <textarea name="notes" class="form-control {{ $errors->has('notes') ? 'is-invalid' : ''}}" id="" cols="30" rows="5" placeholder="Description">{{ $restaurant->notes }}</textarea>
+                        <textarea name="notes" class="form-control {{ $errors->has('notes') ? 'is-invalid' : ''}}" id="" cols="30" rows="5" placeholder="Description">{{ $food->notes }}</textarea>
                         <div class="invalid-feedback">
                             {{ $errors->first('notes') }}
                           </div>

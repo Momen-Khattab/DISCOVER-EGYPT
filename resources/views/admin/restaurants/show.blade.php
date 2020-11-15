@@ -8,7 +8,7 @@
                 <div class="d-flex mb-1">
                   <div class="one-third">
                     <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span></p>
-                    <h3><a href="#">{{ $restaurant->hotel_name }}</a></h3>
+                    <h3><a href="#">{{ $restaurant->Restaurant_name }}</a></h3>
                   </div>
                   <div class="one-forth text-center">
                     <p class="price">$99 <br><span>/night</span></p>

@@ -32,106 +32,105 @@
               </div>
             </div>
             <!-- /.card-header -->
-            <form action="{{ route('restaurant.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <div class="card-body" style="display: block;" >
-              <div class="row">
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        {{--  <label for="exampleInputPassword1">{{ trans('app.hotel_name') }}</label>  --}}
-                        <label for="exampleInputPassword1">@lang('app.hotel_name')</label>
-                        <input type="text" class="form-control {{ $errors->has('hotel_name') ? 'is-invalid' : ''}}" value="{{ old('hotel_name') }}" name="hotel_name" id="hotelname" placeholder="Hotel Name">
-                        <div class="invalid-feedback">
-                            {{ $errors->first('hotel_name') }}
-                          </div>
-                    </div>
-                </div>
-                <!-- /.col -->
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Rome Number</label>
-                        <input type="text" class="form-control {{ $errors->has('restaurant_no') ? 'is-invalid' : ''}}" name="restaurant_no" id="romenumber" placeholder="Enter Number">
-                        <div class="invalid-feedback">
-                            {{ $errors->first('restaurant_no') }}
-                          </div>
-                    </div>
-                </div>
-              </div>
-  
-              <div class="row">
-                <div class="col-12 col-sm-6">
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Rome Size</label>
-                        <select class="form-control {{ $errors->has('size') ? 'is-invalid' : ''}}" name="size" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
-                            <option value="single">Single</option>
-                            <option value="double">Double</option>
-                            <option value="family">Family</option>
+            <form action="{{ route('foods.store', $food->id) }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="card-body" style="display: block;" >
+                  <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            {{--  <label for="exampleInputPassword1">{{ trans('app.Restaurant_name') }}</label>  --}}
+                            <label for="exampleInputPassword1">@lang('app.Restaurant_name')</label>
+                            <input type="text" class="form-control {{ $errors->has('Restaurant_name') ? 'is-invalid' : ''}}" value="{{ $food->Restaurant_name }}" name="Restaurant_name" id="Restaurant_name" placeholder="Restaurant Name">
                             <div class="invalid-feedback">
-                                {{ $errors->first('size') }}
+                                {{ $errors->first('Restaurant_name') }}
                               </div>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6">
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Cost per night</label>
-                        <input type="number" class="form-control {{ $errors->has('cost_per_night') ? 'is-invalid' : ''}}" name="cost_per_night" id="cost" placeholder="$">
-                        <div class="invalid-feedback">
-                            {{ $errors->first('cost_per_night') }}
-                          </div>
-                    </div>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-sm-6">    
-                    <h5>restaurant status</h5>                    
-                    <div class="custom-control custom-radio">
-                        <input class="custom-control-input" type="radio" id="customRadio1" checked value="1" name="status">
-                        <label for="customRadio1" class="custom-control-label">Available</label>
-                    </div>
-                    <div class="custom-control custom-radio">
-                        <input class="custom-control-input" type="radio" id="customRadio2" value="0" name="status">
-                        <label for="customRadio2" class="custom-control-label">Not available</label>
-                    </div>
-                </div>
-
-                  <div class="col-sm-6">
-                    <div class="form-group">
-                        <h5>Has offer?</h5>
-                        <div class="custom-control custom-switch">
-                          <input type="checkbox" class="custom-control-input" value="1" name="has_offer" id="customSwitch1">
-                          <label class="custom-control-label" for="customSwitch1">Has offer</label>
                         </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">@lang('app.food_no')</label>
+                            <input type="text" class="form-control {{ $errors->has('food_no') ? 'is-invalid' : ''}}" name="food_no" id="romenumber" value="{{ $food->food_no }}" placeholder="Enter Number">
+                            <div class="invalid-feedback">
+                                {{ $errors->first('food_no') }}
+                              </div>
+                        </div>
+                    </div>
+                  </div>
+      
+                  <div class="row">
+                    
+                    <div class="col-12 col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">@lang('app.cost')</label>
+                            <input type="number" class="form-control {{ $errors->has('cost') ? 'is-invalid' : ''}}" name="cost" id="cost" value="{{ $food->cost }}" placeholder="$">
+                            <div class="invalid-feedback">
+                                {{ $errors->first('cost') }}
+                              </div>
+                        </div>
+                    </div>
+                  </div>
+    
+                  <div class="row">
+                    <div class="col-12 col-sm-6">
+                      <div class="form-group">
+                          <label for="exampleInputPassword1">@lang('app.number')</label>
+                          <input type="number" class="form-control {{ $errors->has('number') ? 'is-invalid' : ''}}" name="number" id="number" value="{{ $food->number }}" placeholder="$">
+                          <div class="invalid-feedback">
+                              {{ $errors->first('number') }}
+                            </div>
                       </div>
                   </div>
-              </div>
-              <br>
-              <div class="row">
-                  <div class="col-sm-6">
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Notes</label>
-                        <textarea name="notes" class="form-control {{ $errors->has('notes') ? 'is-invalid' : ''}}" id="" cols="30" rows="5" placeholder="Description"></textarea>
-                        <div class="invalid-feedback">
-                            {{ $errors->first('notes') }}
+    
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                            <h5>Has offer?</h5>
+                            <div class="custom-control custom-switch">
+                              <input type="checkbox" class="custom-control-input" value="1" name="has_offer" id="customSwitch1" {{ $food->has_offer == '1' ? 'checked' : '' }}>
+                              <label class="custom-control-label" for="customSwitch1">Has offer</label>
+                            </div>
                           </div>
-                    </div>
+                      </div>
                   </div>
-                  <div class="col-sm-6">
-                    <div class="form-group">
-                        <label for="exampleInputFile">Upload picture</label>
-                        <div class="input-group">
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input {{ $errors->has('image') ? 'is-invalid' : ''}}" name="image" id="uploadpic">
-                                <label class="custom-file-label" for="exampleInputFile">Choose Picture</label>
-                            </div>
-                            <div class="input-group-append">
-                                <span class="input-group-text" id="">Upload</span>
-                            </div>
-
+                  <br>
+                  <div class="row">
+    
+                    <div class="row">
+                      <div class="col-12 col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">@lang('app.address')</label>
+                            <input type="text" class="form-control {{ $errors->has('address') ? 'is-invalid' : ''}}" name="address" id="address" value="{{ $food->address }}" placeholder="address">
                             <div class="invalid-feedback">
-                                {{ $errors->first('image') }}
+                                {{ $errors->first('address') }}
                               </div>
+                        </div>
+                    </div>
+    
+    
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Notes</label>
+                            <textarea name="notes" class="form-control {{ $errors->has('notes') ? 'is-invalid' : ''}}" id="" cols="30" rows="5" placeholder="Description">{{ $food->notes }}</textarea>
+                            <div class="invalid-feedback">
+                                {{ $errors->first('notes') }}
+                              </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputFile">Upload picture</label>
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input {{ $errors->has('image') ? 'is-invalid' : ''}}" name="image" id="uploadpic">
+                                    <label class="custom-file-label" for="exampleInputFile">Choose Picture</label>
+                                </div>
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="">Upload</span>
+                                </div>
+    
+                                <div class="invalid-feedback">
+                                    {{ $errors->first('image') }}
+                                  </div>
                         </div>
                     </div>
                   </div>
