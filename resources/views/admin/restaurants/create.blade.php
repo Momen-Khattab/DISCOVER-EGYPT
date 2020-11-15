@@ -7,7 +7,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Create new restaurant</h1>
+                <h1 class="m-0 text-dark">Create new Food</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -25,7 +25,7 @@
     <div class="container-fluid">
         <div class="card card-default">
             <div class="card-header">
-              <h3 class="card-title">Create new restaurant</h3>
+              <h3 class="card-title">Add Food Info</h3>
   
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>

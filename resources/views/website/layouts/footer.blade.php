@@ -34,18 +34,6 @@
               </ul>
             </div>
           </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">FEEDBACKS</h2>
-              <p>IF YOU FACED ANY PROPLEM, WRITE YOUR EMAIL AND WE WILL CONTACT WITH YOU.</p>
-              <form action="#" class="subscribe-form">
-                <div class="form-group">
-                  <span class="icon icon-paper-plane"></span>
-                  <input type="text" class="form-control" placeholder="EMAIL">
-                </div>
-              </form>
-            </div>
-          </div>
         </div>
         
         <div class="row">

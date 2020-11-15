@@ -40,7 +40,7 @@ return [
     "cost"                  => 'The Cost',
     "has_offer"             => 'This Offer Has Discount',
     "image"                 => 'Offer Image',
-    "address"               => 'The Place',
+    "address"               => 'The Address',
     "notes"                 => "Additional Information",
 
 ];

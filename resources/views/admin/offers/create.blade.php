@@ -7,7 +7,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Create new offer</h1>
+                <h1 class="m-0 text-dark">Create new Trip</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -25,7 +25,7 @@
     <div class="container-fluid">
         <div class="card card-default">
             <div class="card-header">
-              <h3 class="card-title">Create new offer</h3>
+              <h3 class="card-title">Add Trip Info</h3>
   
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
@@ -36,28 +36,25 @@
             @csrf
             <div class="card-body" style="display: block;" >
               <div class="row">
-                <div class="col-sm-6">
+                  
+                <div class="col-12 col-sm-6">
                     <div class="form-group">
-                        <label for="exampleInputPassword1">offer_no</label>
-                        <input type="text" class="form-control {{ $errors->has('offer_no') ? 'is-invalid' : ''}}" value="{{ old('offer_no') }}" name="offer_no" id="offer_no" placeholder="type...">
+                        <label for="exampleInputPassword1">Trip Number</label>
+                        <input type="number" class="form-control {{ $errors->has('trip_no') ? 'is-invalid' : ''}}" name="trip_no" id="trip_no" placeholder="$">
                         <div class="invalid-feedback">
-                            {{ $errors->first('offer_no') }}
+                            {{ $errors->first('trip_no') }}
                           </div>
                     </div>
                 </div>
-                <!-- /.col -->
-                <div class="col-sm-6">
+                <div class="col-12 col-sm-6">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">offer name</label>
-                        <input type="text" class="form-control {{ $errors->has('offer_name') ? 'is-invalid' : ''}}" name="offer_name" id="offer_name" placeholder="type...">
+                        <label for="exampleInputPassword1">Trip name</label>
+                        <input type="number" class="form-control {{ $errors->has('trip_name') ? 'is-invalid' : ''}}" name="trip_name" id="trip_name" placeholder="$">
                         <div class="invalid-feedback">
-                            {{ $errors->first('offer_name') }}
+                            {{ $errors->first('trip_name') }}
                           </div>
                     </div>
                 </div>
-              </div>
-  
-              <div class="row">
                 <div class="col-12 col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">capacity</label>
@@ -80,6 +77,8 @@
                           </div>
                     </div>
                 </div>
+
+              </div>
               </div>
 
               <div class="row">
