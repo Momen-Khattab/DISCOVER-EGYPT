@@ -119,7 +119,35 @@ class RoomController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $room = Room::findOrFail($id);
+        
+        $this->validate($request, [
+            // Validation rules
+            "hotel_name"     => 'required|string',
+            "room_no"        => 'required|string',
+            "size"           => 'required',
+            "cost_per_night" => 'nullable',
+            "status"         => 'required|boolean',
+            "has_offer"      => 'nullable|boolean',
+            // "image"       => "required|mime_types:jpeg,bmp,png,gif,jpg,tiff",
+            "image"          => "nullable",
+            "notes"          => "required|string"
+        ], [], [
+            // Translation 
+            "hotel_name"     => trans('app.hotel_name'),
+            "room_no"        => trans('app.room_no'),
+            "size"           => trans('app.size'),
+            "cost_per_night" => trans('app.cost_per_night'),
+            "status"         => trans('app.status'),
+            "has_offer"      => trans('app.has_offer'),
+            "image"          => trans('app.image'),
+            "notes"          => trans('app.notes')
+        ]);
+
+        $room->update($request->all());
+
+        return redirect()->route('rooms.index')->withSuccess('Saved successfully');
+        
     }
 
     /**
@@ -130,6 +158,10 @@ class RoomController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $room = Room::findOrFail($id);
+        
+        $room->delete();
+        return redirect()->route('rooms.index')->withSuccess('Saved successfully');
+
     }
 }

@@ -44,9 +44,14 @@
                     <a href="{{ route('rooms.edit', $item->id) }}" class="btn btn-primary">
                         <i class="fa fa-edit"></i>
                     </a>
-                    <a href="#" class="btn btn-danger">
+                    {{--  <a href="#" onclick="" class="btn btn-danger">
                         <i class="fa fa-trash"></i>
-                    </a>
+                    </a>  --}}
+                    <form action="{{ route('rooms.destroy', $item->id)}}" method="POST" style="display: inline;">
+                      @method("DELETE")
+                      @csrf
+                      <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                  </form>
                 </td>
               </tr>
           @endforeach

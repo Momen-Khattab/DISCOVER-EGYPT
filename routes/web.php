@@ -47,9 +47,9 @@ Route::get('/profile', function () {
 /**
  * Admin routes
  */
-Route::get('/admin', function(){
-    return view('admin.index');   
-});
+// Route::get('/admin', function(){
+//     return view('admin.index');   
+// });
 
 Route::get('/admin/test_db', function(){
     // \DB::insert('insert into users (id, name) values (?, ?)', [1, 'Dayle'])
@@ -76,7 +76,16 @@ Route::get('/admin/test_db', function(){
     dd($room);
 });
 
-Route::group(['prefix' => '/admin'], function(){
+Route::group(['prefix' => '/admin', 'middleware' => 'admin.guest'], function(){
+    Route::get('/login','AdminLoginController@loginView')->name('adminLoginView');
+    Route::post('/login','AdminLoginController@login')->name('adminLogin');
+});
+
+Route::group(['prefix' => '/admin', 'middleware' => 'admin.auth'], function(){
+    Route::get('/', function(){
+        return view('admin.index');
+    });
+
     Route::resource('/rooms','RoomController')->name('*', 'rooms');
     Route::resource('/restaurants','FoodController')->name('*', 'restaurants');
     Route::resource('/booking','FlightController')->name('*', 'booking');
@@ -88,3 +97,7 @@ Route::group(['prefix' => '/admin'], function(){
 // Route::resource('/admin/booking','BookingController')->name('*', 'booking');
 // Route::resource('/admin/offers','OffersController')->name('*', 'offers');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

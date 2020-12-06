@@ -4,7 +4,7 @@
     <div class="container-fluid">
 <div class="card">
     <div class="card-header">
-      <h3 class="card-title">offers</h3>
+      <h3 class="card-title">Trips</h3>
       <div class="card-tools">
         @if (!$trips->isEmpty())
             {{ $trips->render() }}
@@ -38,14 +38,28 @@
                   <td>{{ $item->capacity }}</td>
                   <td>{{ $item->has_discount }}</td>
                   <td>{{ $item->notes }}</td>
+                  <a href="{{ route('offes.show', $item->id) }}" class="btn btn-success">
+                    <i class="fa fa-eye"></i>
+                </a>
+                <a href="{{ route('offers.edit', $item->id) }}" class="btn btn-primary">
+                    <i class="fa fa-edit"></i>
+                </a>
+                {{--  <a href="#" onclick="" class="btn btn-danger">
+                    <i class="fa fa-trash"></i>
+                </a>  --}}
+                <form action="{{ route('offers.destroy', $item->id)}}" method="POST" style="display: inline;">
+                  @method("DELETE")
+                  @csrf
+                  <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+              </form>
                   <td>
                     <a href="#" class="btn btn-success">
                         <i class="fa fa-eye"></i>
                     </a>
-                    <a href="#" class="btn btn-primary">
+                    <a href="{{ route('offers.edit', $item->id) }}" class="btn btn-primary">
                         <i class="fa fa-edit"></i>
                     </a>
-                    <a href="#" class="btn btn-danger">
+                    <a href="{{ route('offers.destroy', $item->id)}}" class="btn btn-danger">
                         <i class="fa fa-trash"></i>
                     </a>
                 </td>

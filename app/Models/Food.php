@@ -8,7 +8,7 @@ class Food extends Model
 {
     //
     protected $table = 'foods';
-    protected $fillable = ['food_no', 'Restaurant_name', 
-                            'cost', 'has_offer', 'image','address', 'number',
+    protected $fillable = ['food_no', 'restaurant_name', 
+                            'cost', 'has_offer', 'image','address', 'rest_no',
                             'notes'];
 }

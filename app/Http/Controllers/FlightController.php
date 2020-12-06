@@ -116,6 +116,35 @@ class FlightController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $flight = flight::findOrFail($id);
+        $this->validate($request, [
+            // Validation rules
+            "flight_no"             => 'required|string',
+            "company_name"          => 'required|string',
+            "airport_name"          => 'required|string',
+            "flight_destinaion"     => 'required|string',
+            "cost"                  => 'nullable',
+            "has_offer"             => 'nullable|boolean',
+            "travil_date"           => 'nullable',
+            "address"               => 'required|string',
+            "company_number"        => 'nullable',
+        
+        ], [], [
+            // Translation 
+            "flight_no"             => trans('app.flight_no'),
+            "company_name"          => trans('app.company_name'),
+            "airport_name"          => trans('app.airport_name'),
+            "flight_destinaion"     => trans('app.flight_destinaion'),
+            "cost"                  => trans('app.cost'),
+            "has_offer"             => trans('app.has_offer'),
+            "travil_date"           => trans('app.travil_date'),
+            "address"               => trans('app.address'),
+            "company_number"        => trans('app.company_number')
+        ]);
+
+        $flight->update($request->except(['_token', '_method']));
+        return redirect()->route('booking.index')->withSuccess('Saved successfully');
     }
 
     /**
@@ -127,5 +156,8 @@ class FlightController extends Controller
     public function destroy($id)
     {
         //
+        $flight = flight::findOrFail($id);
+        $flight->delete();
+        return redirect()->route('booking.index')->withSuccess('Deleted successfully');
     }
 }

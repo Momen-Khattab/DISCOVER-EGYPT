@@ -12,7 +12,7 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item">Offer</li>
+                    <li class="breadcrumb-item">Trip</li>
                     <li class="breadcrumb-item active">Create</li>
                 </ol>
             </div>
@@ -39,7 +39,7 @@
                   
                 <div class="col-12 col-sm-6">
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Trip Number</label>
+                        <label for="exampleInputPassword1">@lang('app.trip_no')</label>
                         <input type="number" class="form-control {{ $errors->has('trip_no') ? 'is-invalid' : ''}}" name="trip_no" id="trip_no" placeholder="$">
                         <div class="invalid-feedback">
                             {{ $errors->first('trip_no') }}
@@ -48,8 +48,8 @@
                 </div>
                 <div class="col-12 col-sm-6">
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Trip name</label>
-                        <input type="number" class="form-control {{ $errors->has('trip_name') ? 'is-invalid' : ''}}" name="trip_name" id="trip_name" placeholder="$">
+                        <label for="exampleInputPassword1">@lang('app.trip_name')</label>
+                        <input type="number" class="form-control {{ $errors->has('trip_name') ? 'is-invalid' : ''}}" value="{{ old('trip_name') }}" name="trip_name" id="trip_name" placeholder="$">
                         <div class="invalid-feedback">
                             {{ $errors->first('trip_name') }}
                           </div>
@@ -57,8 +57,8 @@
                 </div>
                 <div class="col-12 col-sm-6">
                     <div class="form-group">
-                        <label for="exampleInputPassword1">capacity</label>
-                        <select class="form-control {{ $errors->has('capacity') ? 'is-invalid' : ''}}" name="capacity" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                        <label for="exampleInputPassword1">@lang('app.capacity')</label>
+                        <select class="form-control {{ $errors->has('capacity') ? 'is-invalid' : ''}}" value="{{ old('capacity') }}" name="capacity" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
                             <option value="single"><=10</option>
                             <option value="double"><=15</option>
                             <option value="family"><=20</option>
@@ -70,8 +70,19 @@
                 </div>
                 <div class="col-12 col-sm-6">
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Cost</label>
-                        <input type="number" class="form-control {{ $errors->has('cost') ? 'is-invalid' : ''}}" name="cost" id="cost" placeholder="$">
+                        <label for="exampleInputPassword1">@lang('app.address')</label>
+                        <input type="text" class="form-control {{ $errors->has('address') ? 'is-invalid' : ''}}" value="{{ old('address') }}" name="address" id="address" placeholder="address">
+                        <div class="invalid-feedback">
+                            {{ $errors->first('address') }}
+                          </div>
+                    </div>
+                
+                </div>
+
+                <div class="col-12 col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">@lang('app.cost')</label>
+                        <input type="number" class="form-control {{ $errors->has('cost') ? 'is-invalid' : ''}}" value="{{ old('cost') }}" name="cost" id="cost" placeholder="$">
                         <div class="invalid-feedback">
                             {{ $errors->first('cost') }}
                           </div>
@@ -84,8 +95,8 @@
               <div class="row">
                   <div class="col-sm-6">
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Notes</label>
-                        <textarea name="notes" class="form-control {{ $errors->has('notes') ? 'is-invalid' : ''}}" id="" cols="30" rows="5" placeholder="Description"></textarea>
+                        <label for="exampleInputPassword1">@lang('app.notes')</label>
+                        <textarea name="notes" class="form-control {{ $errors->has('notes') ? 'is-invalid' : ''}}" value="{{ old('notes') }}" id="" cols="30" rows="5" placeholder="Description"></textarea>
                         <div class="invalid-feedback">
                             {{ $errors->first('notes') }}
                           </div>
@@ -93,7 +104,7 @@
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group">
-                        <label for="exampleInputFile">Upload picture</label>
+                        <label for="exampleInputFile">@lang('app.image')</label>
                         <div class="input-group">
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="uploadpic">
@@ -108,9 +119,9 @@
                     <div class="row">
                         <div class="col-sm-6">
                           <div class="form-group">
-                              <h5>has discount?</h5>
+                              <h5>@lang('app.status')</h5>
                               <div class="custom-control custom-switch">
-                                <input type="checkbox" class="custom-control-input" value="1" name="has_discount" id="customSwitch1">
+                                <input type="checkbox" class="custom-control-input" value="1" name="has_discount" id="customSwitch1" {{ old('has_discount') == '1' ? 'checked' : '' }}>
                                 <label class="custom-control-label" for="customSwitch1">has_discount</label>
                               </div>
                             </div>

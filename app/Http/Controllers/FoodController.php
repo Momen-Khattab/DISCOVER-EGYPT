@@ -15,13 +15,12 @@ class FoodController extends Controller
     public function restaurants(){
         return view('website.restaurants');
     }
+
     public function index()
     {
         $foods = Food::orderByDesc('id')->paginate(10);
 
         return view('admin.restaurants.index', compact('foods'));
-   
-        
     }
 
     /**
@@ -31,7 +30,6 @@ class FoodController extends Controller
      */
     public function create()
     {
-        //
         return view('admin.restaurants.create');
     }
 
@@ -43,25 +41,25 @@ class FoodController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
         $this->validate($request, [
             // Validation rules
             "food_no"           => 'required|string',
-            "Restaurant_name"   => 'required|string',
+            "restaurant_name"   => 'required|string',
             "cost"              => 'required',
             "has_offer"         => 'nullable',
-            "number"            => 'nullable',
-            "address"           => 'nullable|boolean',
+            "rest_no"            => 'nullable',
+            "address"           => 'nullable|string',
             // "image"          => "required|mime_types:jpeg,bmp,png,gif,jpg,tiff",
             "image"             => "nullable",
             "notes"             => "required|string"
         ], [], [
             // Translation 
             "food_no"           => trans('app.hotel_name'),
-            "Restaurant_name"   => trans('app.Restaurant_name'),
+            "restaurant_name"   => trans('app.restaurant_name'),
             "cost"              => trans('app.cost'),
             "has_offer"         => trans('app.has_offer'),
-            "number"            => trans('app.number'),
+            "rest_no"            => trans('app.rest_no'),
             "address"           => trans('app.address'),
             "image"             => trans('app.image'),
             "notes"             => trans('app.notes')
@@ -84,11 +82,8 @@ class FoodController extends Controller
      */
     public function show($id)
     {
-        //
-        $food = Food::findOrFail($id);
-        
-        // return view('admin.rooms.show', ['room' => $food]);
-        return view('admin.restaurants.show', compact('food'));
+        $restaurant = Food::findOrFail($id);
+        return view('admin.restaurants.show', compact('restaurant'));
     }
 
     /**
@@ -113,7 +108,33 @@ class FoodController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $food = Food::findOrFail($id);
+
+        $this->validate($request, [
+            // Validation rules
+            "food_no"           => 'required|string',
+            "restaurant_name"   => 'required|string',
+            "cost"              => 'required',
+            "has_offer"         => 'nullable',
+            "rest_no"            => 'nullable',
+            "address"           => 'nullable|string',
+            // "image"          => "required|mime_types:jpeg,bmp,png,gif,jpg,tiff",
+            "image"             => "nullable",
+            "notes"             => "required|string"
+        ], [], [
+            // Translation 
+            "food_no"           => trans('app.hotel_name'),
+            "restaurant_name"   => trans('app.restaurant_name'),
+            "cost"              => trans('app.cost'),
+            "has_offer"         => trans('app.has_offer'),
+            "rest_no"            => trans('app.rest_no'),
+            "address"           => trans('app.address'),
+            "image"             => trans('app.image'),
+            "notes"             => trans('app.notes')
+        ]);
+        
+        $food->update($request->except(['_token', '_method']));
+        return redirect()->route('restaurants.index')->withSuccess('Saved successfully');
     }
 
     /**
@@ -124,6 +145,8 @@ class FoodController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $food = Food::findOrFail($id);
+        $food->delete();
+        return redirect()->route('restaurants.index')->withSuccess('Deleted successfully');
     }
 }

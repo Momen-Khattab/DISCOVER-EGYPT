@@ -22,9 +22,9 @@ return [
 
     // Translate for Foods
     "food_no"               => 'Food Number',
-    "Restaurant_name"       => 'Restaurant Name',
+    "restaurant_name"       => 'Restaurant Name',
     "has_offer"             => 'This Food Has Offer?',
-    "number"                => 'Restaurant Number',
+    "rest_no"                => 'Restaurant Number',
 
 
 

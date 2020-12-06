@@ -40,13 +40,13 @@
                   <td>{{ $item->seat_no }}</td>
 
                   <td>
-                    <a href="#" class="btn btn-success">
+                    <a href="{{ route('booking.show', $item->id) }}" class="btn btn-success">
                         <i class="fa fa-eye"></i>
                     </a>
-                    <a href="#" class="btn btn-primary">
+                    <a href="{{ route('booking.edit', $item->id) }}" class="btn btn-primary">
                         <i class="fa fa-edit"></i>
                     </a>
-                    <a href="#" class="btn btn-danger">
+                    <a href="{{ route('booking.destroy', $item->id) }}" class="btn btn-danger">
                         <i class="fa fa-trash"></i>
                     </a>
                 </td>

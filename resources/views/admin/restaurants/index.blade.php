@@ -35,22 +35,26 @@
           @foreach ($foods as $item)
               <tr>
                   <td>{{ $item->food_no }}</td>
-                  <td>{{ $item->Restaurant_name }}</td>
+                  <td>{{ $item->restaurant_name }}</td>
                   <td>{{ $item->cost }}</td>
                   <td>{{ $item->has_offer }}</td>
                   <td>{{ $item->address }}</td>
-                  <td>{{ $item->number }}</td>
+                  <td>{{ $item->rest_no }}</td>
                   <td>
                     {{--  <a href="{{ url('/admin/restaurant/'.$item->id) }}" class="btn btn-success">  --}}
-                    <a href="{{ route('restaurant.show', $item->id) }}" class="btn btn-success">
+                    <a href="{{ route('restaurants.show', $item->id) }}" class="btn btn-success">
                         <i class="fa fa-eye"></i>
                     </a>
-                    <a href="{{ route('restaurant.edit', $item->id) }}" class="btn btn-primary">
+                    <a href="{{ route('restaurants.edit', $item->id) }}" class="btn btn-primary">
                         <i class="fa fa-edit"></i>
                     </a>
-                    <a href="#" class="btn btn-danger">
-                        <i class="fa fa-trash"></i>
-                    </a>
+                    
+                    <form action="{{ route('restaurants.destroy', $item->id)}}" method="POST" style="display: inline;">
+                      @method("DELETE")
+                      @csrf
+                      <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                  </form>
+
                 </td>
               </tr>
           @endforeach
