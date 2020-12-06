@@ -34,6 +34,7 @@
             <!-- /.card-header -->
             <form action="{{ route('offers.update', $offer->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
+            @method("PUT")
             <div class="card-body" style="display: block;" >
               <div class="row">
                 <div class="col-12 col-sm-6">
