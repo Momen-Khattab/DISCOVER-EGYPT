@@ -82,22 +82,14 @@
               <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">@lang('app.flight_distination')</label>
-                        <input type="text" class="form-control {{ $errors->has('flight_distination') ? 'is-invalid' : ''}}" name="flight_destinaion" id="flight_distination" placeholder="Type...">
+                        <label for="exampleInputEmail1">@lang('app.flight_destinaion')</label>
+                        <input type="text" class="form-control {{ $errors->has('flight_destinaion') ? 'is-invalid' : ''}}" name="flight_destination" id="flight_destinaion" placeholder="Type...">
                         <div class="invalid-feedback">
-                            {{ $errors->first('flight_distination') }}
+                            {{ $errors->first('flight_destinaion') }}
                           </div>
                     </div>
                 </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">@lang('app.company_name')</label>
-                        <input type="text" class="form-control {{ $errors->has('company_name') ? 'is-invalid' : ''}}" name="company_name" id="company_name" placeholder="Type...">
-                        <div class="invalid-feedback">
-                            {{ $errors->first('company_name') }}
-                          </div>
-                    </div>
-                </div>
+                
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputEmail1">@lang('app.address')</label>
@@ -110,7 +102,7 @@
 
                   <div class="col-sm-6">
                     <div class="form-group">
-                        <h5>Has offer?</h5>
+                        <h5>@lang('app.has_offer')</h5>
                         <div class="custom-control custom-switch">
                           <input type="checkbox" class="custom-control-input" value="1" name="has_offer" id="customSwitch1">
                           <label class="custom-control-label" for="customSwitch1">Has offer</label>

@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-md-4 ftco-animate fadeInUp ftco-animated">
             <div class="room-wrap">
-              <a href="#" class="room-img" style="background-image: url(images/room-2.jpg);"></a>
+              <a href="#" class="room-img" style="background-image: url(images/#);"></a>
               <div class="text p-4">
                 <div class="d-flex mb-1">
                   <div class="one-third">
@@ -20,7 +20,6 @@
                   <span class="d-block mb-2"><i class="icon-check mr-2"></i>Room has offer? {{ $room->has_offer }}</span>
                   <span class="d-block mb-2"><i class="icon-check mr-2"></i>Room status: {{ $room->status }}</span>
                 </p>
-                <p><a href="#" class="btn btn-primary">Reserve a room</a></p>
               </div>
             </div>
           </div>

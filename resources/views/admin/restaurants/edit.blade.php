@@ -64,7 +64,7 @@
 
                   <div class="col-sm-6">
                     <div class="form-group">
-                        <h5>lang('app.has_offer')</h5>
+                        <h5>Has offer?</h5>
                         <div class="custom-control custom-switch">
                           <input type="checkbox" class="custom-control-input" value="1" name="has_offer" id="customSwitch1" {{ $food->has_offer == '1' ? 'checked' : '' }}>
                           <label class="custom-control-label" for="customSwitch1">Has offer</label>
@@ -89,7 +89,7 @@
 
                   <div class="col-sm-6">
                     <div class="form-group">
-                        <label for="exampleInputPassword1">lang('app.notes')</label>
+                        <label for="exampleInputPassword1">Notes</label>
                         <textarea name="notes" class="form-control {{ $errors->has('notes') ? 'is-invalid' : ''}}" id="" cols="30" rows="5" placeholder="Description">{{ $food->notes }}</textarea>
                         <div class="invalid-feedback">
                             {{ $errors->first('notes') }}

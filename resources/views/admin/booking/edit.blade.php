@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="card card-default">
             <div class="card-header">
-              <h3 class="card-title">edit Flight Info</h3>
+              <h3 class="card-title">Edit Flight Info</h3>
   
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
@@ -65,19 +65,10 @@
               <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">@lang('app.flight_distination')</label>
-                        <input type="text" class="form-control {{ $errors->has('flight_distination') ? 'is-invalid' : ''}}" value="{{ $booking->flight_distination }}" name="flight_destinaion" id="flight_distination" placeholder="Type...">
+                        <label for="exampleInputEmail1">@lang('app.flight_destinaion')</label>
+                        <input type="text" class="form-control {{ $errors->has('flight_destinaion') ? 'is-invalid' : ''}}" value="{{ $booking->flight_destinaion }}" name="flight_destinaion" id="flight_destinaion" placeholder="Type...">
                         <div class="invalid-feedback">
-                            {{ $errors->first('flight_distination') }}
-                          </div>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">@lang('app.company_name')</label>
-                        <input type="text" class="form-control {{ $errors->has('company_name') ? 'is-invalid' : ''}}" value="{{ $booking->company_name }}" name="company_name" id="company_name" placeholder="Type...">
-                        <div class="invalid-feedback">
-                            {{ $errors->first('company_name') }}
+                            {{ $errors->first('flight_destinaion') }}
                           </div>
                     </div>
                 </div>
@@ -96,7 +87,7 @@
                         <h5>Flight status</h5>
                         <div class="custom-control custom-switch">
                           <input type="checkbox" class="custom-control-input" value="1" name="has_offer" id="customSwitch1" {{ $booking->status == '1' ? 'checked' : '' }}>
-                          <label class="custom-control-label" for="customSwitch1">Has offer</label>
+                          <label class="custom-control-label" for="customSwitch1">@lang('app.has_offer')</label>
                         </div>
                       </div>
                   </div>

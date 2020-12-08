@@ -30,15 +30,16 @@ return [
 
     // Translate for flights
     "flight_no"             => 'Flight Number',
-    "company_name"          => 'Company Name',
+    "flight_company"        => 'Company Name',
+    "flight_cost"           => 'Flight Cost',
     "airport_name"          => 'Airport Name',
-    "flight_destinaion"     => 'Flight Destinaion',
+    "flight_destinaion"     => 'Flight Destination',
     "travil_date"           => 'Travil Date',
     "company_number"        => 'Company Number',
 
     //for all
     "cost"                  => 'The Cost',
-    "has_offer"             => 'This Offer Has Discount',
+    "has_offer"             => 'This Offer Has Discount?',
     "image"                 => 'Offer Image',
     "address"               => 'The Address',
     "notes"                 => "Additional Information",
