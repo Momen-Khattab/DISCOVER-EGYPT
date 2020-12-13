@@ -25,8 +25,8 @@ class RoomController extends Controller
         // $rooms = Room::orderByDesc('id')->get(); // Retrun latest rooms added
         // $rooms = Room::orderByDesc('id')->first(); // Retrun latest rooms added
         // $rooms = Room::limit(1)->get(); // Retrun latest rooms added
-
         // Pagination
+        
         $rooms = Room::orderByDesc('id')->paginate(10);
 
         return view('admin.rooms.index', compact('rooms'));
@@ -74,10 +74,10 @@ class RoomController extends Controller
             "notes"          => trans('app.notes')
         ]);
         
-        // if($request->hasFile('image')){
-        //     $path = $request->file('image')->store('public/rooms');
-        //     dd($path);
-        // }
+        if($request->hasFile('image')){
+            $path = $request->file('image')->store('public/rooms');
+            dd($path);
+        }
 
         $room = Room::create($request->all());
         return redirect()->route('rooms.index')->withSuccess('Saved successfully');

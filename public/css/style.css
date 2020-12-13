@@ -9146,3 +9146,27 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+.main-color{
+  color: #ff6138 !important;
+}
+
+.profile-name{
+  color: #ff6138 !important;
+  font-weight: bolder !important;
+}
+.profile-name:hover{
+  transition: all ease-in-out .5s;
+}
+
+.alert {
+  position: relative;
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+}
+.alert-success {
+  color: #0f5132;
+  background-color: #d1e7dd;
+  border-color: #badbcc;
+}

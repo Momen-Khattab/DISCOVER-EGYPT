@@ -84,10 +84,10 @@
     
                       <div class="col-sm-6">
                         <div class="form-group">
-                            <h5>Has offer?</h5>
+                            <h5>@lang('app.has_offer')</h5>
                             <div class="custom-control custom-switch">
                               <input type="checkbox" class="custom-control-input" value="1" name="has_offer" id="customSwitch1" {{ old('has_offer') == '1' ? 'checked' : '' }}>
-                              <label class="custom-control-label" for="customSwitch1">Has offer</label>
+                              <label class="custom-control-label" for="customSwitch1"></label>
                             </div>
                           </div>
                       </div>

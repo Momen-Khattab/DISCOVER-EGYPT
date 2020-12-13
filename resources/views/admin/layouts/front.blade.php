@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="{{ asset('admin_panel') }}/plugins/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="{{ asset('admin_panel') }}/plugins/select2/css/select2.min.css">
   <link rel="stylesheet" href="{{ asset('admin_panel') }}/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+  <link rel="stylesheet" href="{{ asset('admin_panel') }}/plugins/datepicker-out/css/datepicker.css">
+
   <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <link rel="stylesheet" href="{{ asset('admin_panel') }}/dist/css/adminlte.min.css">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
@@ -59,6 +61,12 @@
 <script src="{{ asset('admin_panel') }}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="{{ asset('admin_panel') }}/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
 <script src="{{ asset('admin_panel') }}/plugins/select2/js/select2.full.min.js"></script>
+
+<!-- InputMask -->
+<script src="{{ asset('admin_panel') }}/plugins/moment/moment.min.js"></script>
+<script src="{{ asset('admin_panel') }}/plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+<!-- date-range-picker -->
+<script src="{{ asset('admin_panel') }}/plugins/datepicker-out/js/bootstrap-datepicker.js"></script>
 
 <!-- AdminLTE -->
 <script src="{{ asset('admin_panel') }}/dist/js/adminlte.js"></script>

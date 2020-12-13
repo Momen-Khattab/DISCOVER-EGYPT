@@ -6,15 +6,15 @@
     <div class="card-header">
       <h3 class="card-title">mail</h3>
       <div class="card-tools">
-        @if (!$mail->isEmpty())
-            {{ $mail->render() }}
+        @if (!$contacts->isEmpty())
+            {{ $contacts->render() }}
         @endif
       </div>
     </div>
     
     <!-- /.card-header -->
     <div class="card-body table-responsive p-0" style="height: 300px;">
-        @if ($mail->isEmpty())
+        @if ($contact->isEmpty())
             <div class="alert alert-danger">
                 No data found!
             </div>
@@ -30,12 +30,12 @@
           </tr>
         </thead>
         <tbody>
-          @foreach ($mail as $item)
+          @foreach ($contacts as $item)
               <tr>
-                  <td>{{ $item->mail_no }}</td>
-                  <td>{{ $item->mail_name }}</td>
-                  <td>{{ $item->sender }}</td>
+                  <td>{{ $item->name }}</td>
+                  <td>{{ $item->email }}</td>
                   <td>{{ $item->subject }}</td>
+                  <td>{{ $item->message }}</td>
                   <td>
                     <a href="#" class="btn btn-success">
                         <i class="fa fa-eye"></i>

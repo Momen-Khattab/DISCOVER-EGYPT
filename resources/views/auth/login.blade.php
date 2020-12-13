@@ -1,11 +1,19 @@
-@extends('layouts.app')
-
+@extends('website.layouts.front')
+@section('css')
+<style>
+    #ftco-navbar{
+      background-color: #ff6138 !important;  
+    }
+</style>
+@endsection
 @section('content')
-<div class="container">
+<div style="margin: 200px 0px 100px 0px;">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+        <div class="col-md-6">
+            <div class="card login-card" style="box-shadow: 1px 1px 10px #ccc ;">
+                <div class="card-header text-center">
+                    <h5>Login</h5>
+                </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -62,6 +70,9 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+                                <a class="btn btn-link" href="{{ url('/register') }}">
+                                    {{ __('Register') }}
+                                </a>
                             </div>
                         </div>
                     </form>

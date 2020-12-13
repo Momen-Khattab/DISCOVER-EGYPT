@@ -20,8 +20,6 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column nav-flat" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview">
             <a href="{{ url('/admin') }}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
               <i class="nav-icon fas fa-home"></i>
@@ -33,29 +31,11 @@
 
 
             <!--mails-->
-          <li class="nav-item has-treeview {{ request()->segment(2) == 'mail' ? 'menu-open' : ''}}">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-envelope-square"></i>
-              <p>
-                Emails
-                <i class="fas fa-angle-left right"></i>
-              </p>
+          <li class="nav-item has-treeview {{ request()->segment(2) == 'Contact' ? 'menu-open' : ''}}">
+            <a href="{{ url('/admin/contact') }}" class="nav-link {{ \Route::current()->getName() == 'contact.index' ? 'active' : ''}}">
+              <i class="fas fa-envelope-open-text nav-icon"></i>
+              <p>contact</p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ url('/admin/mail') }}" class="nav-link {{ \Route::current()->getName() == 'mail.index' ? 'active' : ''}}">
-                  <i class="fas fa-envelope-open-text nav-icon"></i>
-                  <p>Inbox</p>
-                </a>
-              </li>
-
-              <li class="nav-item">
-                <a href="{{ url('/admin/mail/create') }}" class="nav-link {{ \Route::current()->getName() == 'mail.create' ? 'active' : ''}}">
-                  <i class="fas fa-reply nav-icon"></i>
-                  <p>Replay</p>
-                </a>
-              </li>
-            </ul>
           </li>
 
 
@@ -77,7 +57,6 @@
               </li>
               <li class="nav-item">
                 <a href="{{ url('/admin/rooms/create') }}" class="nav-link {{ \Route::current()->getName() == 'rooms.create' ? 'active' : ''}}">
-                {{--  <a href="{{ route('rooms.create') }}" class="nav-link">  --}}
                   <i class="fas fa-plus nav-icon"></i>
                   <p>Create</p>
                 </a>

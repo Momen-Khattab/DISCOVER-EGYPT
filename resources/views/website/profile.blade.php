@@ -14,22 +14,25 @@
         </div>
       </div>
     </section>
-
-      
+        @if (session()->has('success'))
+        <div class="alert alert-success">
+          <h5>{{ session()->get('success')}}</h5>
+        </div>
+        @endif
                 <div class="card-body">
-                  <form>
-
+                  <form action="{{ url('/profileSave') }}" method="POST">
+                    @csrf
                   <div class="row">
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Fist Name</label>
-                          <input type="text" class="form-control">
+                          <input type="text" name="first_name" value="{{ $user->first_name }}" class="form-control">
                         </div>
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Last Name</label>
-                          <input type="text" class="form-control">
+                          <input type="text" name="last_name" value="{{ $user->last_name }}" class="form-control">
                         </div>
                       </div>
                     </div>
@@ -39,14 +42,14 @@
                      <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Phone</label>
-                          <input type="Phone" class="form-control">
+                          <input type="Phone" name="phone" value="{{ $user->phone }}" class="form-control">
                         </div>
                       </div>
 
                       <div class="col-md-4">
                         <div class="form-group">
                           <label class="bmd-label-floating">Email</label>
-                          <input type="email" class="form-control">
+                          <input type="email" readonly value="{{ $user->email }}" class="disabled form-control">
                         </div>
                       </div>
                     </div>
@@ -78,8 +81,8 @@
 
                       <div class="col-md-4">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Postal Code</label>
-                          <input type="text" class="form-control">
+                          <label class="bmd-label-floating">Passport ID</label>
+                          <input type="text" name="passport_id" value="{{ $user->passport_id }}" class="form-control">
                         </div>
                       </div>
                     </div>
@@ -106,8 +109,8 @@
                         <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating" class="form-control">Gender </label></br>
-                            <input type="radio" name="gender" value="male">Male</br>
-                            <input type="radio" name="gender" value="female">Female
+                            <input type="radio" name="gender" value="male" {{ $user->isMale() ? 'checked' : ''}} >Male</br>
+                            <input type="radio" name="gender" value="female" {{ !$user->isMale() ? 'checked' : ''}}>Female
                           </div>
                         </div>
                     

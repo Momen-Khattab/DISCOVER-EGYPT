@@ -33,6 +33,9 @@
                 <li><a href="#" class="py-2 d-block">info@DICOVER-EGYPT.com</a></li>
               </ul>
             </div>
+            
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
           </div>
         </div>
         
@@ -48,3 +51,47 @@
 
       </div>
     </footer>
+
+{{--  style for scroll to top button  --}}
+    <style>
+      #myBtn {
+        display: none; 
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        border: none;
+        outline: none;
+        background-color: #ff6138;
+        color: white; 
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 18px;
+      }
+      
+      #myBtn:hover {
+        background-color: white;
+        color: #ff6138; 
+      }
+    </style>
+
+{{--  script for scroll to top button  --}}
+    <script>
+        mybutton = document.getElementById("myBtn");
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+          if (document.body.scrollTop > 900 || document.documentElement.scrollTop > 900) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+
+        function topFunction() {
+          document.body.scrollTop = 0; // For Safari
+          document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+    </script>
+    

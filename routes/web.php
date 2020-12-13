@@ -20,6 +20,8 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/rooms','RoomController@rooms')->name('visitorRooms');
 
+Route::get('/contact','ContactController@contact')->name('contact');
+
 Route::get('/restaurants', 'FoodController@restaurants')->name('visitorRestaurants');
 
 Route::get('/booking', 'FlightController@booking')->name('visitorBooking');
@@ -40,9 +42,9 @@ Route::get('/index', function () {
     return view('website.index');
 });
 
-Route::get('/profile', function () {
-    return view('website.profile');
-});
+Route::get('/profile', 'FrontController@profile')->middleware('auth');
+Route::post('/profileSave', 'FrontController@profileSave')->middleware('auth');
+Route::post('/contactSave', 'FrontController@contactSave');
 
 /**
  * Admin routes
@@ -87,6 +89,7 @@ Route::group(['prefix' => '/admin', 'middleware' => 'admin.auth'], function(){
     });
 
     Route::resource('/rooms','RoomController')->name('*', 'rooms');
+    Route::resource('/contact','ContactController')->name('*', 'contact');
     Route::resource('/restaurants','FoodController')->name('*', 'restaurants');
     Route::resource('/booking','FlightController')->name('*', 'booking');
     Route::resource('/offers','TripController')->name('*', 'offers');
@@ -101,3 +104,6 @@ Route::group(['prefix' => '/admin', 'middleware' => 'admin.auth'], function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/phpinfo', function() {
+    phpinfo();
+});

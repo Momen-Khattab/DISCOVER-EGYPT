@@ -45,15 +45,14 @@ class TripController extends Controller
     public function store(Request $request)
     {
         //
-        $this->validate($request, [
+        $data = $this->validate($request, [
             // Validation rules
             "trip_no"               => 'required|string',
             "trip_name"             => 'required|string',
             "capacity"              => 'required|string',
             "cost"                  => 'nullable',
             "has_offer"             => 'nullable|boolean',
-            "dead_line"             => 'nullable',
-            "address"               => 'required|string',
+            "dead_line"             => 'required|date_format:',
             "company_number"        => 'nullable',
             "image"                 => "nullable",
             "notes"                 => "nullable"
@@ -72,9 +71,9 @@ class TripController extends Controller
             "notes"                 => trans('app.notes')
         ]);
         
-      
-
-        $trip = Trip::create($request->all());
+        $data['status'] = 1;
+        // dd($data);
+        $trip = Trip::create($data);
         return redirect()->route('offers.index')->withSuccess('Saved successfully');
     }
 
@@ -125,7 +124,6 @@ class TripController extends Controller
             "cost"                  => 'nullable',
             "has_offer"             => 'nullable|boolean',
             "dead_line"             => 'nullable',
-            "address"               => 'required|string',
             "company_number"        => 'nullable',
             "image"                 => "nullable",
             "notes"                 => "nullable"

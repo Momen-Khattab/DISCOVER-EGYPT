@@ -83,7 +83,7 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputEmail1">@lang('app.flight_destinaion')</label>
-                        <input type="text" class="form-control {{ $errors->has('flight_destinaion') ? 'is-invalid' : ''}}" name="flight_destination" id="flight_destinaion" placeholder="Type...">
+                        <input type="text" class="form-control {{ $errors->has('flight_destinaion') ? 'is-invalid' : ''}}" name="flight_destinaion" id="flight_destinaion" placeholder="Type...">
                         <div class="invalid-feedback">
                             {{ $errors->first('flight_destinaion') }}
                           </div>
@@ -105,7 +105,7 @@
                         <h5>@lang('app.has_offer')</h5>
                         <div class="custom-control custom-switch">
                           <input type="checkbox" class="custom-control-input" value="1" name="has_offer" id="customSwitch1">
-                          <label class="custom-control-label" for="customSwitch1">Has offer</label>
+                          <label class="custom-control-label" for="customSwitch1"></label>
                         </div>
                       </div>
                   </div>

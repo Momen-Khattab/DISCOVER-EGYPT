@@ -49,7 +49,7 @@
                 <div class="col-12 col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">@lang('app.trip_name')</label>
-                        <input type="number" class="form-control {{ $errors->has('trip_name') ? 'is-invalid' : ''}}" value="{{ old('trip_name') }}" name="trip_name" id="trip_name" placeholder="$">
+                        <input type="text" class="form-control {{ $errors->has('trip_name') ? 'is-invalid' : ''}}" value="{{ old('trip_name') }}" name="trip_name" id="trip_name" placeholder="Enter trip name!">
                         <div class="invalid-feedback">
                             {{ $errors->first('trip_name') }}
                           </div>
@@ -68,16 +68,6 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6">
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">@lang('app.address')</label>
-                        <input type="text" class="form-control {{ $errors->has('address') ? 'is-invalid' : ''}}" value="{{ old('address') }}" name="address" id="address" placeholder="address">
-                        <div class="invalid-feedback">
-                            {{ $errors->first('address') }}
-                          </div>
-                    </div>
-                
-                </div>
 
                 <div class="col-12 col-sm-6">
                     <div class="form-group">
@@ -87,6 +77,18 @@
                             {{ $errors->first('cost') }}
                           </div>
                     </div>
+                </div>
+
+                <div class="col-12 col-sm-6">
+                    <div class="form-group">
+                        <label>Deadline:</label>
+                          <div class="input-group" id="deadline" data-target-input="nearest">
+                              <input type="text" name="dead_line" class="form-control datepicker" data-target="#deadline">
+                              <div class="input-group-append" data-target="#deadline" data-toggle="datetimepicker">
+                                  <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                              </div>
+                          </div>
+                      </div>
                 </div>
 
               </div>
@@ -119,10 +121,10 @@
                     <div class="row">
                         <div class="col-sm-6">
                           <div class="form-group">
-                              <h5>@lang('app.status')</h5>
+                              <h5>@lang('app.has_offer')</h5>
                               <div class="custom-control custom-switch">
                                 <input type="checkbox" class="custom-control-input" value="1" name="has_discount" id="customSwitch1" {{ old('has_discount') == '1' ? 'checked' : '' }}>
-                                <label class="custom-control-label" for="customSwitch1">has_discount</label>
+                                <label class="custom-control-label" for="customSwitch1"></label>
                               </div>
                             </div>
                         </div>
@@ -161,6 +163,11 @@
         //Initialize Select2 Elements
         $('.select2bs4').select2({
           theme: 'bootstrap4'
+        });
+
+        //Initialize Datepicker
+        $('.datepicker').datepicker({
+            format: 'mm-dd-yyyy'
         });
     });
 </script>

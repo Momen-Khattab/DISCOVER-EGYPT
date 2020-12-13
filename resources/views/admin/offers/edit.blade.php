@@ -32,7 +32,7 @@
               </div>
             </div>
             <!-- /.card-header -->
-            <form action="{{ route('offers.update', $offer->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('offers.update', $trip->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method("PUT")
             <div class="card-body" style="display: block;" >
@@ -40,7 +40,7 @@
                 <div class="col-12 col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">@lang('app.trip_no')</label>
-                        <input type="number" class="form-control {{ $errors->has('trip_no') ? 'is-invalid' : ''}}" value="{{ $offer->trip_no }}" name="trip_no" id="trip_no" placeholder="$">
+                        <input type="number" class="form-control {{ $errors->has('trip_no') ? 'is-invalid' : ''}}" value="{{ $trip->trip_no }}" name="trip_no" id="trip_no" placeholder="$">
                         <div class="invalid-feedback">
                             {{ $errors->first('trip_no') }}
                           </div>
@@ -49,7 +49,7 @@
                 <div class="col-12 col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">@lang('app.trip_name')</label>
-                        <input type="number" class="form-control {{ $errors->has('trip_name') ? 'is-invalid' : ''}}" value="{{ $offer->trip_name }}" name="trip_name" id="trip_name" placeholder="$">
+                        <input type="text" class="form-control {{ $errors->has('trip_name') ? 'is-invalid' : ''}}" value="{{ $trip->trip_name }}" name="trip_name" id="trip_name" placeholder="$">
                         <div class="invalid-feedback">
                             {{ $errors->first('trip_name') }}
                           </div>
@@ -58,7 +58,7 @@
                 <div class="col-12 col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">@lang('app.capacity')</label>
-                        <select class="form-control {{ $errors->has('capacity') ? 'is-invalid' : ''}}" value="{{ $offer->capacity }}" name="capacity" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                        <select class="form-control {{ $errors->has('capacity') ? 'is-invalid' : ''}}" value="{{ $trip->capacity }}" name="capacity" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
                             <option value="single"><=10</option>
                             <option value="double"><=15</option>
                             <option value="family"><=20</option>
@@ -71,7 +71,7 @@
                 <div class="col-12 col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">@lang('app.cost')</label>
-                        <input type="number" class="form-control {{ $errors->has('cost') ? 'is-invalid' : ''}}" value="{{ $offer->cost }}" name="cost" id="cost" placeholder="$">
+                        <input type="number" class="form-control {{ $errors->has('cost') ? 'is-invalid' : ''}}" value="{{ $trip->cost }}" name="cost" id="cost" placeholder="$">
                         <div class="invalid-feedback">
                             {{ $errors->first('cost') }}
                           </div>
@@ -85,7 +85,7 @@
                   <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">@lang('app.notes')</label>
-                        <textarea name="notes" class="form-control {{ $errors->has('notes') ? 'is-invalid' : ''}}" id="" value="{{ $offer->notes }}" cols="30" rows="5" placeholder="Description"></textarea>
+                        <textarea name="notes" class="form-control {{ $errors->has('notes') ? 'is-invalid' : ''}}" id="" value="{{ $trip->notes }}" cols="30" rows="5" placeholder="Description"></textarea>
                         <div class="invalid-feedback">
                             {{ $errors->first('notes') }}
                           </div>
