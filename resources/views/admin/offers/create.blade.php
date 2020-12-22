@@ -83,7 +83,7 @@
                     <div class="form-group">
                         <label>Deadline:</label>
                           <div class="input-group" id="deadline" data-target-input="nearest">
-                              <input type="text" name="dead_line" class="form-control datepicker" data-target="#deadline">
+                              <input type="text" name="dead_line" autocomplete="off" class="form-control datepicker" data-target="#deadline">
                               <div class="input-group-append" data-target="#deadline" data-toggle="datetimepicker">
                                   <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                               </div>
@@ -163,11 +163,6 @@
         //Initialize Select2 Elements
         $('.select2bs4').select2({
           theme: 'bootstrap4'
-        });
-
-        //Initialize Datepicker
-        $('.datepicker').datepicker({
-            format: 'mm-dd-yyyy'
         });
     });
 </script>

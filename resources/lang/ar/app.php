@@ -33,7 +33,7 @@ return [
     "company_name"          => 'شركة الطائرة',
     "airport_name"          => 'اسم المطار',
     "flight_destinaion"     => 'واجهة السفر',
-    "travil_date"           => 'ميعاد الاقلاع',
+    "travel_date"           => 'ميعاد الاقلاع',
 
     //مشتركة بينهم
     "cost"                  => 'سعر المنتج',

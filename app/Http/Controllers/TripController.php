@@ -44,7 +44,6 @@ class TripController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $data = $this->validate($request, [
             // Validation rules
             "trip_no"               => 'required|string',
@@ -52,7 +51,7 @@ class TripController extends Controller
             "capacity"              => 'required|string',
             "cost"                  => 'nullable',
             "has_offer"             => 'nullable|boolean',
-            "dead_line"             => 'required|date_format:',
+            "dead_line"             => 'required|date_format:d-m-Y',
             "company_number"        => 'nullable',
             "image"                 => "nullable",
             "notes"                 => "nullable"

@@ -68,15 +68,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6">
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">@lang('app.flight_cost')</label>
-                        <input type="number" class="form-control {{ $errors->has('flight_cost') ? 'is-invalid' : ''}}" name="flight_cost" id="flight_cost" placeholder="$">
-                        <div class="invalid-feedback">
-                            {{ $errors->first('flight_cost') }}
-                          </div>
-                    </div>
-                </div>
+
               </div>
 
               <div class="row">
@@ -93,45 +85,32 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputEmail1">@lang('app.address')</label>
-                        <input type="text" class="form-control {{ $errors->has('address') ? 'is-invalid' : ''}}" name="address" id="address" placeholder="Type...">
+                        <input type="text" class="form-control {{ $errors->has('address') ? 'is-invalid' : ''}}" name="address" id="address" placeholder="Airport address..">
                         <div class="invalid-feedback">
                             {{ $errors->first('address') }}
                           </div>
                     </div>
                 </div>
 
-                  <div class="col-sm-6">
-                    <div class="form-group">
-                        <h5>@lang('app.has_offer')</h5>
-                        <div class="custom-control custom-switch">
-                          <input type="checkbox" class="custom-control-input" value="1" name="has_offer" id="customSwitch1">
-                          <label class="custom-control-label" for="customSwitch1"></label>
-                        </div>
-                      </div>
-                  </div>
               </div>
               <br>
               <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">travel date</label>
-                        <input type="text" class="form-control {{ $errors->has('travel_date') ? 'is-invalid' : ''}}" name="travel_date" id="travel_date" placeholder="Type...">
-                        <div class="invalid-feedback">
-                            {{ $errors->first('travel_date') }}
-                          </div>
-                    </div>
-                </div>
-                  <div class="col-sm-6">
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">seat_no</label>
-                            <input type="text" class="form-control {{ $errors->has('seat_no') ? 'is-invalid' : ''}}" name="seat_no" id="seat_no" placeholder="Type...">
+                          <label for="exampleInputEmail1">Travel date</label>
+                          <div class="input-group" id="travel_date" data-target-input="nearest">
+                            <input type="text" name="travel_date" autocomplete="off" class="form-control datepicker {{ $errors->has('travel_date') ? 'is-invalid' : ''}}" data-target="#travel_date">
+                            <div class="input-group-append" data-target="#travel_date" data-toggle="datetimepicker">
+                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                            </div>
                             <div class="invalid-feedback">
-                                {{ $errors->first('seat_no') }}
-                              </div>
+                              {{ $errors->first('travel_date') }}
+                            </div>
                         </div>
+
                     </div>
-                  </div>
+                    
+                </div>
               </div>
             </div>
 

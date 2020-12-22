@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ReplaySent;
 use App\Models\Contact;
-
+use App\Models\ContactReplay;
 use Illuminate\Http\Request;
-use PhpParser\Node\Expr\AssignOp\Concat;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -23,9 +24,9 @@ class ContactController extends Controller
 
     public function index()
     {
-        // $contact = Concat::orderByDesc('id')->paginate(10);
+        $contacts = Contact::orderByDesc('id')->paginate(10);
 
-        return view('admin.contact.show');
+        return view('admin.contact.index', compact('contacts'));
     }
 
     /**
@@ -58,15 +59,32 @@ class ContactController extends Controller
      * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function show(Contact $id)
+    public function show($id)
     {
-        //
-        $contact = Contact::findOrFail($id);
-        
+        $contact = Contact::find($id);
         return view('admin.contact.show', compact('contact'));
-
     }
 
+
+    public function replayForEmail(Contact $contact, Request $request){
+        $this->validate($request, [
+            'content' => 'required|string|min:5'
+        ],[], [
+            'content' => 'Replay content'
+        ]);
+
+        // Add repaly
+        $admin = auth('admin')->user();
+        $replay = new ContactReplay();
+        $replay->contact_id = $contact->id;
+        $replay->admin_id = $admin->id;
+        $replay->content = $request->content;
+        $replay->save();
+
+        Mail::to($replay->contact->email)->send(new ReplaySent($replay));
+
+        return redirect()->route('contact.index')->withSuccess('Email sent successfully');
+    }
     /**
      * Show the form for editing the specified resource.
      *

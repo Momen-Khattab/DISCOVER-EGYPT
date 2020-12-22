@@ -16,7 +16,7 @@ class AdminLoginController extends Controller
         
         $logged = Auth::guard('admin')->attempt($credentials);
         if($logged){
-            Auth::login(Auth::guard('admin')->user());
+            Auth::guard('admin')->login(Auth::guard('admin')->user());
         }
 
         // dd(auth('admin')->check());

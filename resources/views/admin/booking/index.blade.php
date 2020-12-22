@@ -25,8 +25,7 @@
             <th>airport name</th>
             <th>flight number</th>
             <th>flight distination</th>
-            <th>travel date</th>
-            <th>seat number</th>
+            <th>Travel date</th>
             <th>Control</th>
           </tr>
         </thead>
@@ -35,10 +34,8 @@
               <tr>
                   <td>{{ $item->airport_name }}</td>
                   <td>{{ $item->flight_no }}</td>
-                  <td>{{ $item->flight_distination }}</td>
+                  <td>{{ $item->flight_destinaion }}</td>
                   <td>{{ $item->travel_date }}</td>
-                  <td>{{ $item->seat_no }}</td>
-
                   <td>
                     <a href="{{ route('booking.show', $item->id) }}" class="btn btn-success">
                         <i class="fa fa-eye"></i>

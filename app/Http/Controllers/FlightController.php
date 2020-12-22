@@ -49,29 +49,23 @@ class FlightController extends Controller
         $this->validate($request, [
             // Validation rules
             "flight_no"             => 'required|string',
-            "company_name"          => 'required|string',
+            "flight_company"          => 'required|string',
             "airport_name"          => 'required|string',
             "flight_destinaion"     => 'required|string',
-            "cost"                  => 'nullable',
-            "has_offer"             => 'nullable|boolean',
-            "travil_date"           => 'nullable',
+            "travel_date"           => 'nullable|date_format:d-m-Y',
             "address"               => 'required|string',
             "company_number"        => 'nullable',
         
         ], [], [
             // Translation 
             "flight_no"             => trans('app.flight_no'),
-            "company_name"          => trans('app.company_name'),
+            "flight_company"          => trans('app.flight_company'),
             "airport_name"          => trans('app.airport_name'),
             "flight_destinaion"     => trans('app.flight_destinaion'),
-            "cost"                  => trans('app.cost'),
-            "has_offer"             => trans('app.has_offer'),
-            "travil_date"           => trans('app.travil_date'),
+            "travel_date"           => trans('app.travel_date'),
             "address"               => trans('app.address'),
             "company_number"        => trans('app.company_number')
         ]);
-        
-      
 
         $flight = Flight::create($request->all());
         return redirect()->route('booking.index')->withSuccess('Saved successfully');
@@ -126,7 +120,7 @@ class FlightController extends Controller
             "flight_destinaion"     => 'required|string',
             "cost"                  => 'nullable',
             "has_offer"             => 'nullable|boolean',
-            "travil_date"           => 'nullable',
+            "travel_date"           => 'nullable',
             "address"               => 'required|string',
             "company_number"        => 'nullable',
         
@@ -138,7 +132,7 @@ class FlightController extends Controller
             "flight_destinaion"     => trans('app.flight_destinaion'),
             "cost"                  => trans('app.cost'),
             "has_offer"             => trans('app.has_offer'),
-            "travil_date"           => trans('app.travil_date'),
+            "travel_date"           => trans('app.travel_date'),
             "address"               => trans('app.address'),
             "company_number"        => trans('app.company_number')
         ]);

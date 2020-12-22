@@ -19,7 +19,7 @@
                   <span class="d-block mb-2"><i class="icon-check mr-2"></i>Capacity:{{$booking->company_name}} </span>
                   <span class="d-block mb-2"><i class="icon-check mr-2"></i>Capacity:{{$booking->flight_destinaion}} </span>
                   <span class="d-block mb-2"><i class="icon-check mr-2"></i>Has offer?:{{$booking->has_offer}} </span>
-                  <span class="d-block mb-2"><i class="icon-check mr-2"></i>date dl:{{$booking->travil_date}} </span>
+                  <span class="d-block mb-2"><i class="icon-check mr-2"></i>date dl:{{$booking->travel_date}} </span>
                   <span class="d-block mb-2"><i class="icon-check mr-2"></i>Address:{{$booking->address}} </span>
                   <span class="d-block mb-2"><i class="icon-check mr-2"></i>description:{{$booking->company_number}} </span>
                 </p>

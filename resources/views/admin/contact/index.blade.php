@@ -14,7 +14,7 @@
     
     <!-- /.card-header -->
     <div class="card-body table-responsive p-0" style="height: 300px;">
-        @if ($contact->isEmpty())
+        @if ($contacts->isEmpty())
             <div class="alert alert-danger">
                 No data found!
             </div>
@@ -37,16 +37,16 @@
                   <td>{{ $item->subject }}</td>
                   <td>{{ $item->message }}</td>
                   <td>
-                    <a href="#" class="btn btn-success">
-                        <i class="fa fa-eye"></i>
+                    <a href="{{ route('contact.show', $item->id) }}" class="btn btn-success">
+                      <i class="fas fa-reply"></i>
                     </a>
-                    <a href="#" class="btn btn-primary">
+                    {{--  <a href="#" class="btn btn-primary">
                         <i class="fa fa-edit"></i>
                     </a>
                     <a href="#" class="btn btn-danger">
                         <i class="fa fa-trash"></i>
-                    </a>
-                </td>
+                    </a>  --}}
+                  </td>
               </tr>
           @endforeach
         </tbody>

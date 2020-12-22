@@ -93,6 +93,7 @@ Route::group(['prefix' => '/admin', 'middleware' => 'admin.auth'], function(){
     Route::resource('/restaurants','FoodController')->name('*', 'restaurants');
     Route::resource('/booking','FlightController')->name('*', 'booking');
     Route::resource('/offers','TripController')->name('*', 'offers');
+    Route::post('/replayForEmail/{contact}','ContactController@replayForEmail')->name('replayForEmail');
 });
 
 // Route::resource('/admin/rooms','RoomController')->name('*', 'rooms');
@@ -104,6 +105,7 @@ Route::group(['prefix' => '/admin', 'middleware' => 'admin.auth'], function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/mail', 'HomeController@mail');
 Route::get('/phpinfo', function() {
     phpinfo();
 });

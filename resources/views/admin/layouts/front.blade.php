@@ -75,6 +75,12 @@
 <script src="{{ asset('admin_panel') }}/plugins/chart.js/Chart.min.js"></script>
 <script src="{{ asset('admin_panel') }}/dist/js/demo.js"></script>
 <script src="{{ asset('admin_panel') }}/dist/js/pages/dashboard3.js"></script>
+<script>
+    //Initialize Datepicker
+    $('.datepicker').datepicker({
+      format: 'dd-mm-yyyy'
+    });
+</script>
 @yield('js')
 </body>
 </html>

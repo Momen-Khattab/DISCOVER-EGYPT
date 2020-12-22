@@ -20,8 +20,6 @@ class CreateFlightsTable extends Migration
             $table->text('flight_company')->nullable();
             $table->string('airport_name');
             $table->string('flight_destinaion');
-            $table->integer('cost');
-            $table->boolean('has_offer')->default(false);
             $table->longText('notes')->nullable();
 
             $table->timestamps();

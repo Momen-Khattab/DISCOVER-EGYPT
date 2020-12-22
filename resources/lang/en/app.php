@@ -34,7 +34,7 @@ return [
     "flight_cost"           => 'Flight Cost',
     "airport_name"          => 'Airport Name',
     "flight_destinaion"     => 'Flight Destination',
-    "travil_date"           => 'Travil Date',
+    "travel_date"           => 'Travil Date',
     "company_number"        => 'Company Number',
 
     //for all
