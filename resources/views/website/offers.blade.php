@@ -18,142 +18,28 @@
     <section class="ftco-section bg-light">
       <div class="container">
         <div class="row">
-          <div class="col-md-3 ftco-animate">
-            <div class="blog-entry">
-              <a href="#" class="block-20" style="background-image: url('images/offers/1.jpg');">
-              </a>
-              <div class="text p-4 d-block">
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <div class="meta">
-                  <div><a href="#">July 12, 2018</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                  <p><a href="#" class="btn btn-primary">Reserve a Trip</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-3 ftco-animate">
-            <div class="blog-entry">
-              <a href="#" class="block-20" style="background-image: url('images/offers/2.jpg');">
-              </a>
-              <div class="text p-4 d-block">
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <div class="meta">
-                  <div><a href="#">July 12, 2018</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                  <p><a href="#" class="btn btn-primary">Reserve a Trip</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
-          <div class="col-md-3 ftco-animate">
-            <div class="blog-entry">
-              <a href="#" class="block-20" style="background-image: url('images/offers/3.jpg');">
-              </a>
-              <div class="text p-4 d-block">
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <div class="meta">
-                  <div><a href="#">July 12, 2018</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                  <p><a href="#" class="btn btn-primary">Reserve a Trip</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col-md-3 ftco-animate">
-            <div class="blog-entry" data-aos-delay="100">
-              <a href="#" class="block-20" style="background-image: url('images/offers/4.jpg');">
-              </a>
+          <div class="col-md-4 ftco-animate">
+            <div class="room-wrap">
+              <a href="#" class="room-img" style="background-image: url(images/room-1.jpg);"></a>
               <div class="text p-4">
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <div class="meta">
-                  <div><a href="#">July 12, 2018</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                  <p><a href="#" class="btn btn-primary">Reserve a Trip</a></p>
+                <div class="d-flex mb-1">
+                  <div class="one-third">
+                    <p class="star-rate"><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star"></span><span class="icon-star-half-full"></span></p>
+                    <h3><a href="#">Luxury Room</a></h3>
+                  </div>
+                  <div class="one-forth text-center">
+                    <p class="price">$99 <br><span>/night</span></p>
+                  </div>
                 </div>
+                <p class="features">
+                  <span class="d-block mb-2"><i class="icon-check mr-2"></i> Perfect for traveling couples</span>
+                  <span class="d-block mb-2"><i class="icon-check mr-2"></i> Breakfast included</span>
+                  <span class="d-block mb-2"><i class="icon-check mr-2"></i> Two double beds</span>
+                  <span class="d-block mb-2"><i class="icon-check mr-2"></i> Baby sitting facilities</span>
+                  <span class="d-block mb-2"><i class="icon-check mr-2"></i> Free wifi</span>
+                </p>
+                <p><a href="#" class="btn btn-primary">Reserve a room</a></p>
               </div>
-            </div>
-          </div>
-
-
-          <div class="col-md-3 ftco-animate">
-            <div class="blog-entry" data-aos-delay="200">
-              <a href="#" class="block-20" style="background-image: url('images/offers/5.jpg');">
-              </a>
-              <div class="text p-4">
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <div class="meta">
-                  <div><a href="#">July 12, 2018</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                  <p><a href="#" class="btn btn-primary">Reserve a Trip</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col-md-3 ftco-animate">
-            <div class="blog-entry" data-aos-delay="200">
-              <a href="#" class="block-20" style="background-image: url('images/offers/6.jpg');">
-              </a>
-              <div class="text p-4">
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <div class="meta">
-                  <div><a href="#">July 12, 2018</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                  <p><a href="#" class="btn btn-primary">Reserve a Trip</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="col-md-3 ftco-animate">
-            <div class="blog-entry" data-aos-delay="200">
-              <a href="#" class="block-20" style="background-image: url('images/offers/7.jpg');">
-              </a>
-              <div class="text p-4">
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <div class="meta">
-                  <div><a href="#">July 12, 2018</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                  <p><a href="#" class="btn btn-primary">Reserve a Trip</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-3 ftco-animate">
-            <div class="blog-entry" data-aos-delay="200">
-              <a href="#" class="block-20" style="background-image: url('images/offers/8.jpg');">
-              </a>
-              <div class="text p-4">
-                <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <div class="meta">
-                  <div><a href="#">July 12, 2018</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                  <p><a href="#" class="btn btn-primary">Reserve a Trip</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col text-center">
-            <div class="block-27">
-              <ul>
-                <li><a href="#">&lt;</a></li>
-                <li class="active"><span>1</span></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">&gt;</a></li>
-              </ul>
             </div>
           </div>
         </div>

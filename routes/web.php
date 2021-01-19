@@ -38,46 +38,30 @@ Route::get('/contact', function () {
     return view('website.contact');
 });
 
+
+
 Route::get('/index', function () {
     return view('website.index');
 });
 
-Route::get('/profile', 'FrontController@profile')->middleware('auth');
-Route::post('/profileSave', 'FrontController@profileSave')->middleware('auth');
+
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/profile', 'FrontController@profile');
+    Route::post('/profileSave', 'FrontController@profileSave');
+
+    Route::post('/reserve-food', 'FrontController@reserveFood');
+});
+
+Route::get('email-view', function(){
+    return view('emails.food-reservation');
+});
+
+
 Route::post('/contactSave', 'FrontController@contactSave');
 
 /**
  * Admin routes
  */
-// Route::get('/admin', function(){
-//     return view('admin.index');   
-// });
-
-Route::get('/admin/test_db', function(){
-    // \DB::insert('insert into users (id, name) values (?, ?)', [1, 'Dayle'])
-
-    // $room = Room::create(['room_no' => 'A02', 
-    //     'hotel_name' => 'Hilton', 
-    //     'size' => 'double', 
-    //     'cost_per_night' => 150, 
-    //     'has_offer' => 0, 
-    //     'booked_date_start' => '2020-10-10', 
-    //     'booked_date_end'  => '2020-10-11',
-    //     'state' => 'Gize', 
-    //     'notes' => 'Amazing view!'
-    //     ]);
-
-    // By creating new room object
-    $room = new Room;
-    $room->room_no = 'A03';
-    $room->hotel_name = 'Sameramis';
-    $room->size = 'triple';
-    $room->has_offer = '1';
-    $room->save();
-
-    dd($room);
-});
-
 Route::group(['prefix' => '/admin', 'middleware' => 'admin.guest'], function(){
     Route::get('/login','AdminLoginController@loginView')->name('adminLoginView');
     Route::post('/login','AdminLoginController@login')->name('adminLogin');
@@ -87,19 +71,31 @@ Route::group(['prefix' => '/admin', 'middleware' => 'admin.auth'], function(){
     Route::get('/', function(){
         return view('admin.index');
     });
-
+    
     Route::resource('/rooms','RoomController')->name('*', 'rooms');
     Route::resource('/contact','ContactController')->name('*', 'contact');
+
+
+    Route::get('/restaurants/create', 'FoodController@create');
+    Route::get('/restaurants/{id}/edit', 'FoodController@edit');
+    Route::get('/restaurants/{id}', 'FoodController@show');
+    Route::put('/restaurants/{id}', 'FoodController@update');
+
+    Route::get('/rooms/create', 'RoomController@create');
+    Route::get('/rooms/{id}/edit', 'RoomController@edit');
+    Route::get('/rooms/{id}', 'RoomController@show');
+    Route::put('/rooms/{id}', 'RoomController@update');
+
+
+
     Route::resource('/restaurants','FoodController')->name('*', 'restaurants');
     Route::resource('/booking','FlightController')->name('*', 'booking');
     Route::resource('/offers','TripController')->name('*', 'offers');
     Route::post('/replayForEmail/{contact}','ContactController@replayForEmail')->name('replayForEmail');
 });
 
-// Route::resource('/admin/rooms','RoomController')->name('*', 'rooms');
-// Route::resource('/admin/restaurants','RestaurantsController')->name('*', 'restaurants');
-// Route::resource('/admin/booking','BookingController')->name('*', 'booking');
-// Route::resource('/admin/offers','OffersController')->name('*', 'offers');
+Route::resource('/admin/reservations','ReservationsController')->name('*', 'reservations');
+
 
 
 Auth::routes();

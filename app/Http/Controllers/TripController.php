@@ -13,7 +13,8 @@ class TripController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function offers(){
-        return view('website.offers');
+        $trips = Trip::latest('id')->get();
+        return view('website.offers',compact('trips'));
     }
 
     public function index()
@@ -53,7 +54,7 @@ class TripController extends Controller
             "has_offer"             => 'nullable|boolean',
             "dead_line"             => 'required|date_format:d-m-Y',
             "company_number"        => 'nullable',
-            "image"                 => "nullable",
+            "image"                 => "required|image",
             "notes"                 => "nullable"
         
         ], [], [
@@ -72,6 +73,12 @@ class TripController extends Controller
         
         $data['status'] = 1;
         // dd($data);
+        $data = $request->all();
+
+        if($request->hasFile('image')){
+            $path = $request->file('image')->store('public/trips');
+            $data['image'] = $path;
+        }
         $trip = Trip::create($data);
         return redirect()->route('offers.index')->withSuccess('Saved successfully');
     }
@@ -85,9 +92,7 @@ class TripController extends Controller
     public function show($id)
     {
         //
-        $trip = Trip::findOrFail($id);
-        
-        // return view('admin.rooms.show', ['room' => $room]);
+        $trip = Trip::findOrFail($id);        
         return view('admin.offers.show', compact('trip'));
     }
 
@@ -124,7 +129,7 @@ class TripController extends Controller
             "has_offer"             => 'nullable|boolean',
             "dead_line"             => 'nullable',
             "company_number"        => 'nullable',
-            "image"                 => "nullable",
+            "image"                 => "nullable|image",
             "notes"                 => "nullable"
         
         ], [], [
@@ -141,7 +146,17 @@ class TripController extends Controller
             "notes"                 => trans('app.notes')
         ]);
 
-        $trip->update($request->all());
+        $data = $request->all();
+
+        if($request->hasFile('image')){
+            if(!empty($trip->image)){
+                // Delete the old image
+                \Storage::delete($trip->image);
+            }
+            $path = $request->file('image')->store('public/trips');
+            $data['image'] = $path;
+        }
+        $trip->update($data);
 
         return redirect()->route('offers.index')->withSuccess('Saved successfully');
     }

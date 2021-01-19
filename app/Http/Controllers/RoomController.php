@@ -13,20 +13,11 @@ class RoomController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function rooms(){
-        return view('website.rooms');
+        $rooms = Room::latest('id')->get();
+        return view('website.rooms',compact('rooms'));
     }
 
     public function index(){
-        // $rooms = Room::all();
-        // $rooms = Room::select('id', 'room_no', 'hotel_name')->get(); // Return a collection of models
-        // $room = Room::find(1); // Find by ID, returns an object
-        // $rooms = Room::latest('created_at')->get(); // Retrun latest rooms added
-        // $rooms = Room::orderBy('id')->get(); // Retrun latest rooms added
-        // $rooms = Room::orderByDesc('id')->get(); // Retrun latest rooms added
-        // $rooms = Room::orderByDesc('id')->first(); // Retrun latest rooms added
-        // $rooms = Room::limit(1)->get(); // Retrun latest rooms added
-        // Pagination
-        
         $rooms = Room::orderByDesc('id')->paginate(10);
 
         return view('admin.rooms.index', compact('rooms'));
@@ -50,7 +41,6 @@ class RoomController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->except('_token'));
         $this->validate($request, [
             // Validation rules
             "hotel_name"     => 'required|string',
@@ -59,8 +49,7 @@ class RoomController extends Controller
             "cost_per_night" => 'nullable',
             "status"         => 'required|boolean',
             "has_offer"      => 'nullable|boolean',
-            // "image"       => "required|mime_types:jpeg,bmp,png,gif,jpg,tiff",
-            "image"          => "nullable",
+            "image"          => "required|image",
             "notes"          => "required|string"
         ], [], [
             // Translation 
@@ -73,13 +62,13 @@ class RoomController extends Controller
             "image"          => trans('app.image'),
             "notes"          => trans('app.notes')
         ]);
-        
+        $data = $request->all();
         if($request->hasFile('image')){
             $path = $request->file('image')->store('public/rooms');
-            dd($path);
+            $data['image'] = $path;
         }
 
-        $room = Room::create($request->all());
+        $room = Room::create($data);
         return redirect()->route('rooms.index')->withSuccess('Saved successfully');
         // return back()->withSuccess('Saved successfully');
     }
@@ -92,9 +81,8 @@ class RoomController extends Controller
      */
     public function show($id)
     {
-        $room = Room::findOrFail($id);
+        $rooms = Room::findOrFail($id);
         
-        // return view('admin.rooms.show', ['room' => $room]);
         return view('admin.rooms.show', compact('room'));
     }
 
@@ -130,7 +118,7 @@ class RoomController extends Controller
             "status"         => 'required|boolean',
             "has_offer"      => 'nullable|boolean',
             // "image"       => "required|mime_types:jpeg,bmp,png,gif,jpg,tiff",
-            "image"          => "nullable",
+            "image"          => "nullable|image",
             "notes"          => "required|string"
         ], [], [
             // Translation 
@@ -144,8 +132,19 @@ class RoomController extends Controller
             "notes"          => trans('app.notes')
         ]);
 
-        $room->update($request->all());
+        $data = $request->all();
 
+        if($request->hasFile('image')){
+            if(!empty($room->image)){
+                // Delete the old image
+                \Storage::delete($room->image);
+            }
+
+            $path = $request->file('image')->store('public/rooms');
+            $data['image'] = $path;
+        }
+
+        $room->update($data);
         return redirect()->route('rooms.index')->withSuccess('Saved successfully');
         
     }

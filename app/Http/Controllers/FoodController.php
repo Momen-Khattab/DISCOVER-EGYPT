@@ -13,7 +13,8 @@ class FoodController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function restaurants(){
-        return view('website.restaurants');
+        $foods = Food::latest('id')->get();
+        return view('website.restaurants', compact('foods'));
     }
 
     public function index()
@@ -45,17 +46,18 @@ class FoodController extends Controller
         $this->validate($request, [
             // Validation rules
             "food_no"           => 'required|string',
+            "food_name"           => 'required|string',
             "restaurant_name"   => 'required|string',
             "cost"              => 'required',
             "has_offer"         => 'nullable',
             "rest_no"            => 'nullable',
             "address"           => 'nullable|string',
-            // "image"          => "required|mime_types:jpeg,bmp,png,gif,jpg,tiff",
-            "image"             => "nullable",
+            "image"             => "required|image",
             "notes"             => "required|string"
         ], [], [
             // Translation 
             "food_no"           => trans('app.hotel_name'),
+            "food_name"           => "Food name",
             "restaurant_name"   => trans('app.restaurant_name'),
             "cost"              => trans('app.cost'),
             "has_offer"         => trans('app.has_offer'),
@@ -64,13 +66,14 @@ class FoodController extends Controller
             "image"             => trans('app.image'),
             "notes"             => trans('app.notes')
         ]);
-        
-        // if($request->hasFile('image')){
-        //     $path = $request->file('image')->store('public/foods');
-        //     dd($path);
-        // }
+        $data = $request->all();
 
-        $food = Food::create($request->all());
+        if($request->hasFile('image')){
+            $path = $request->file('image')->store('public/foods');
+            $data['image'] = $path;
+        }
+
+        $food = Food::create($data);
         return redirect()->route('restaurants.index')->withSuccess('Saved successfully');
     }
 
@@ -118,8 +121,7 @@ class FoodController extends Controller
             "has_offer"         => 'nullable',
             "rest_no"            => 'nullable',
             "address"           => 'nullable|string',
-            // "image"          => "required|mime_types:jpeg,bmp,png,gif,jpg,tiff",
-            "image"             => "nullable",
+            "image"             => "nullable|image",
             "notes"             => "required|string"
         ], [], [
             // Translation 
@@ -132,8 +134,19 @@ class FoodController extends Controller
             "image"             => trans('app.image'),
             "notes"             => trans('app.notes')
         ]);
-        
-        $food->update($request->except(['_token', '_method']));
+        $data = $request->all();
+
+        if($request->hasFile('image')){
+            if(!empty($food->image)){
+                // Delete the old image
+                \Storage::delete($food->image);
+            }
+
+            $path = $request->file('image')->store('public/foods');
+            $data['image'] = $path;
+        }
+
+        $food->update($data);
         return redirect()->route('restaurants.index')->withSuccess('Saved successfully');
     }
 

@@ -15,4 +15,8 @@ class Trip extends Model
     public static function tripcapacity(){
         return ['10','15', '20'];
     }
+
+    public function getImage(){
+        return env('APP_URL').\Storage::url($this->image);
+    }
 }

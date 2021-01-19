@@ -26,6 +26,15 @@
                           </div>
                     </div>
                 </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Food name</label>
+                        <input type="text" class="form-control {{ $errors->has('food_name') ? 'is-invalid' : ''}}" value="{{ $food->food_name }}" name="food_name" id="food_name" placeholder="Restaurant Name">
+                        <div class="invalid-feedback">
+                            {{ $errors->first('food_name') }}
+                          </div>
+                    </div>
+                </div>
                 <!-- /.col -->
                 <div class="col-sm-6">
                     <div class="form-group">
@@ -114,6 +123,12 @@
                         </div>
                     </div>
                   </div>
+                  @if (!empty($food->image))
+                  <div class="col-sm-6">
+                    <div class="img-responsive"><img src="{{ $food->getImage() }}" style="height: 200px; width: 200px;" alt=""></div>
+                  </div>
+                  @endif
+
               </div>
             </div>
 

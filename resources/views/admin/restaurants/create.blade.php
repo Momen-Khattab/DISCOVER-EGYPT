@@ -46,6 +46,15 @@
                               </div>
                         </div>
                     </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Food name</label>
+                            <input type="text" class="form-control {{ $errors->has('food_name') ? 'is-invalid' : ''}}" value="{{ old('food_name') }}" name="food_name" id="food_name" placeholder="Food Name">
+                            <div class="invalid-feedback">
+                                {{ $errors->first('food_name') }}
+                              </div>
+                        </div>
+                    </div>
                     <!-- /.col -->
                     <div class="col-sm-6">
                         <div class="form-group">

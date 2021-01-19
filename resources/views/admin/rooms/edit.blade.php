@@ -117,6 +117,12 @@
                         </div>
                     </div>
                   </div>
+                  @if (!empty($room->image))
+                  <div class="col-sm-6">
+                    <div class="img-responsive"><img src="{{ $room->getImage() }}" style="height: 200px; width: 200px;" alt=""></div>
+                  </div>
+                  @endif
+
               </div>
             </div>
 

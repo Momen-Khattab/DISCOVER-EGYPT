@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Food;
+use App\Models\FoodReservation;
+use Exception;
 use Illuminate\Http\Request;
+use App\Mail\FoodReservationEmail;
 
 class FrontController extends Controller
 {
@@ -53,5 +57,26 @@ class FrontController extends Controller
         $contact->save();
 
         return redirect()->to('/contact')->withSuccess('Sent successfully!');
+    }
+
+    public function reserveFood(Request $request){
+        $user = auth('web')->user();
+        $food = Food::findOrFail($request->id);
+
+        try{
+            $reservation = new FoodReservation();
+            $reservation->user_id = $user->id;
+            $reservation->food_id = $food->id;
+            $reservation->save();
+
+            // Send the receipt mail
+            \Mail::to($reservation->user->email)->send(new FoodReservationEmail($reservation));
+            return back()->withSuccess('Reservation Done');
+        }catch(Exception $e){
+            // Alert::error('Reservation faild', $e->getMessage());
+            return back();
+        }
+        
+        
     }
 }

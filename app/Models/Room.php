@@ -14,4 +14,7 @@ class Room extends Model
     public static function roomSizes(){
         return ['single', 'double', 'family'];
     }
+    public function getImage(){
+        return env('APP_URL').\Storage::url($this->image);
+    }
 }

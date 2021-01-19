@@ -23,3 +23,9 @@ Route::get('/test', function(){
         'data' => true
     ]);
 });
+Route::get('/test', function(){
+    return response()->json([
+        'status' => true,
+        'message' => 'It works!'
+    ]);
+});

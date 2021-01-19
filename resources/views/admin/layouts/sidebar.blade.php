@@ -38,6 +38,14 @@
             </a>
           </li>
 
+          <!--reservations-->
+          <li class="nav-item has-treeview {{ request()->segment(2) == 'reservations' ? 'menu-open' : ''}}">
+            <a href="{{ url('/admin/reservations') }}" class="nav-link {{ \Route::current()->getName() == 'reservations.index' ? 'active' : ''}}">
+              <i class="fas fa-envelope-open-text nav-icon"></i>
+              <p>Reservations</p>
+            </a>
+          </li>
+
 
           <!--Rooms-->
           <li class="nav-item has-treeview {{ request()->segment(2) == 'rooms' ? 'menu-open' : ''}}">

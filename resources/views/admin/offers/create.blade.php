@@ -109,12 +109,16 @@
                         <label for="exampleInputFile">@lang('app.image')</label>
                         <div class="input-group">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="uploadpic">
+                                <input type="file" class="custom-file-input {{ $errors->has('image') ? 'is-invalid' : ''}}" name="image" id="uploadpic">
                                 <label class="custom-file-label" for="exampleInputFile">Choose Picture</label>
                             </div>
                             <div class="input-group-append">
                                 <span class="input-group-text" id="">Upload</span>
                             </div>
+
+                            <div class="invalid-feedback">
+                                {{ $errors->first('image') }}
+                              </div>
                         </div>
                     </div>
 
