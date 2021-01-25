@@ -81,10 +81,10 @@ class FlightController extends Controller
     public function show($id)
     {
         //
-        $flight = Flight::findOrFail($id);
+        $flights = Flight::findOrFail($id);
         
         // return view('admin.rooms.show', ['room' => $room]);
-        return view('admin.booking.show', compact('flight'));
+        return view('admin.booking.show', compact('flights'));
     }
 
     /**

@@ -22,11 +22,11 @@
       <table class="table table-head-fixed text-nowrap">
         <thead>
           <tr>
-            <th>offer_no</th>
-            <th>offer_name</th>
-            <th>capacity</th>
-            <th>has_discount</th>
-            <th>notes</th>
+            <th>Offer number</th>
+            <th>Offer name</th>
+            <th>Capacity</th>
+            <th>Has discount</th>
+            <th>Notes</th>
             <th>Control</th>
           </tr>
         </thead>
@@ -39,7 +39,7 @@
                   <td>{{ $item->has_discount }}</td>
                   <td>{{ $item->notes }}</td>
                   <td>
-                  <a href="{{ route('offers.show', $item->id) }}" class="btn btn-success">
+                <a href="{{ route('offers.show', $item->id) }}" class="btn btn-success">
                     <i class="fa fa-eye"></i>
                 </a>
                 <a href="{{ route('offers.edit', $item->id) }}" class="btn btn-primary">

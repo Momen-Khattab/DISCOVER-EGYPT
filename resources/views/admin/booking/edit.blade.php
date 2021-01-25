@@ -1,6 +1,5 @@
 @extends('admin.layouts.front')
 @section('content')
-    
 <div class="content">
     <div class="container-fluid">
         <div class="card card-default">
@@ -14,7 +13,7 @@
             <!-- /.card-header -->
             <form action="{{ route('booking.update'),$booking->id }}" method="POST" enctype="multipart/form-data">
             @csrf
-            @method('PUT')
+            @method("PUT")
             <div class="card-body" style="display: block;" >
               <div class="row">
                 <div class="col-sm-6">
@@ -26,7 +25,6 @@
                           </div>
                     </div>
                 </div>
-                <!-- /.col -->
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputEmail1">@lang('app.flight_no')</label>

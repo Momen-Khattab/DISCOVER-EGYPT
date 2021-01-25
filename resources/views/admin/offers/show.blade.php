@@ -58,10 +58,10 @@
           <div class="card-footer">
             <div class="col-sm-12">
               <p class="features">
-                <span class="d-block mb-2"><i class="icon-check mr-2"></i>Trip Number:{{$restaurant->trip_no}} </span>
-                <span class="d-block mb-2"><i class="icon-check mr-2"></i>Capacity:{{$restaurant->capacity}} </span>
-                <span class="d-block mb-2"><i class="icon-check mr-2"></i>Discount?:{{$restaurant->has_offer}} </span>
-                <span class="d-block mb-2"><i class="icon-check mr-2"></i>description:{{$restaurant->notes}} </span>
+                <span class="d-block mb-2"><i class="icon-check mr-2"></i>Trip Number:{{$trip->trip_no}} </span>
+                <span class="d-block mb-2"><i class="icon-check mr-2"></i>Capacity:{{$trip->capacity}} </span>
+                <span class="d-block mb-2"><i class="icon-check mr-2"></i>Discount?:{{$trip->has_offer}} </span>
+                <span class="d-block mb-2"><i class="icon-check mr-2"></i>description:{{$trip->notes}} </span>
               </p>
             </div>
           </div>

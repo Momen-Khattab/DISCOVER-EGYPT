@@ -50,23 +50,23 @@
           <div class="card-body">
             <div class="row">
               <div class="col-sm-9">
-                <h4>{{ $trip->flight_destinaion }}</h4>
+                <h4>{{ $flights->flight_destinaion }}</h4>
               </div>
               <div class="col-sm-3">
-                <h5><span class="">{{ $trip->cost }}$</span></h5>
+                <h5><span class="">{{ $flights->cost }}$</span></h5>
               </div>
             </div>
           </div>
           <div class="card-footer">
             <div class="col-sm-12">
               <p class="features">
-                <span class="d-block mb-2"><i class="icon-check mr-2"></i>Flight Number:{{$booking->flight_no}} </span>
-                <span class="d-block mb-2"><i class="icon-check mr-2"></i>Company Name:{{$booking->company_name}} </span>
-                <span class="d-block mb-2"><i class="icon-check mr-2"></i>Airport Name:{{$booking->airport_name}} </span>
-                <span class="d-block mb-2"><i class="icon-check mr-2"></i>Discount?:{{$booking->has_offer}} </span>
-                <span class="d-block mb-2"><i class="icon-check mr-2"></i>Travel Date:{{$booking->travel_date}} </span>
-                <span class="d-block mb-2"><i class="icon-check mr-2"></i>Airport Address:{{$booking->address}} </span>
-                <span class="d-block mb-2"><i class="icon-check mr-2"></i>Company Number:{{$booking->company_number}} </span>
+                <span class="d-block mb-2"><i class="icon-check mr-2"></i>Flight Number:{{$flights->flight_no}} </span>
+                <span class="d-block mb-2"><i class="icon-check mr-2"></i>Company Name:{{$flights->company_name}} </span>
+                <span class="d-block mb-2"><i class="icon-check mr-2"></i>Airport Name:{{$flights->airport_name}} </span>
+                <span class="d-block mb-2"><i class="icon-check mr-2"></i>Discount?:{{$flights->has_offer}} </span>
+                <span class="d-block mb-2"><i class="icon-check mr-2"></i>Travel Date:{{$flights->travel_date}} </span>
+                <span class="d-block mb-2"><i class="icon-check mr-2"></i>Airport Address:{{$flights->address}} </span>
+                <span class="d-block mb-2"><i class="icon-check mr-2"></i>Company Number:{{$flights->company_number}} </span>
               </p>
             </div>
           </div>

@@ -22,12 +22,13 @@
       <table class="table table-head-fixed text-nowrap">
         <thead>
           <tr>
-            <th>food no.</th>
+            <th>Food number</th>
+            <th>Food name</th>
             <th>Restaurant name</th>
             <th>cost</th>
             <th>has_offer</th>
             <th>address</th>
-            <th>number</th>
+            <th>Restaurant number</th>
             <th>Control</th>
           </tr>
         </thead>
@@ -35,8 +36,9 @@
           @foreach ($foods as $item)
               <tr>
                   <td>{{ $item->food_no }}</td>
+                  <td>{{ $item->food_name }}</td>
                   <td>{{ $item->restaurant_name }}</td>
-                  <td>{{ $item->cost }}</td>
+                  <td>{{ $item->cost }} $</td>
                   <td>{{ $item->has_offer }}</td>
                   <td>{{ $item->address }}</td>
                   <td>{{ $item->rest_no }}</td>

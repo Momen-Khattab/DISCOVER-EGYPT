@@ -72,7 +72,6 @@ Route::group(['prefix' => '/admin', 'middleware' => 'admin.auth'], function(){
         return view('admin.index');
     });
     
-    Route::resource('/rooms','RoomController')->name('*', 'rooms');
     Route::resource('/contact','ContactController')->name('*', 'contact');
 
 
@@ -80,17 +79,35 @@ Route::group(['prefix' => '/admin', 'middleware' => 'admin.auth'], function(){
     Route::get('/restaurants/{id}/edit', 'FoodController@edit');
     Route::get('/restaurants/{id}', 'FoodController@show');
     Route::put('/restaurants/{id}', 'FoodController@update');
+    Route::resource('/restaurants','FoodController')->name('*', 'restaurants');
+
 
     Route::get('/rooms/create', 'RoomController@create');
     Route::get('/rooms/{id}/edit', 'RoomController@edit');
     Route::get('/rooms/{id}', 'RoomController@show');
     Route::put('/rooms/{id}', 'RoomController@update');
+    Route::resource('/rooms','RoomController')->name('*', 'rooms');
 
 
-
-    Route::resource('/restaurants','FoodController')->name('*', 'restaurants');
-    Route::resource('/booking','FlightController')->name('*', 'booking');
+    Route::get('/offers/create', 'TripController@create');
+    Route::get('/offers/{id}/edit', 'TripController@edit');
+    Route::get('/offers/{id}', 'TripController@show');
+    Route::put('/offers/{id}', 'TripController@update');
     Route::resource('/offers','TripController')->name('*', 'offers');
+
+
+    Route::get('/booking/create', 'FlightController@create');
+    Route::get('/booking/{id}/edit', 'FlightController@edit');
+    Route::get('/booking/{id}', 'FlightController@show');
+    Route::put('/booking/{id}', 'FlightController@update');
+    Route::resource('/booking','FlightController')->name('*', 'booking');
+
+
+
+
+    // Route::resource('/restaurants','FoodController')->name('*', 'restaurants');
+    // Route::resource('/booking','FlightController')->name('*', 'booking');
+    // Route::resource('/offers','TripController')->name('*', 'offers');
     Route::post('/replayForEmail/{contact}','ContactController@replayForEmail')->name('replayForEmail');
 });
 

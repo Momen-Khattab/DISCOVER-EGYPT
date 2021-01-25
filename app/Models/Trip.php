@@ -10,7 +10,7 @@ class Trip extends Model
     protected $table = 'trips';
     protected $fillable = ['trip_no', 'trip_name', 'capacity', 
                             'cost', 'has_offer', 'dead_line', 'image',
-                              'notes', 'status'];
+                              'notes',];
 
     public static function tripcapacity(){
         return ['10','15', '20'];

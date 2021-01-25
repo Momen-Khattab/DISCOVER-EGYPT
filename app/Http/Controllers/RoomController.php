@@ -19,7 +19,6 @@ class RoomController extends Controller
 
     public function index(){
         $rooms = Room::orderByDesc('id')->paginate(10);
-
         return view('admin.rooms.index', compact('rooms'));
     }
 
@@ -70,7 +69,6 @@ class RoomController extends Controller
 
         $room = Room::create($data);
         return redirect()->route('rooms.index')->withSuccess('Saved successfully');
-        // return back()->withSuccess('Saved successfully');
     }
 
     /**
@@ -81,8 +79,7 @@ class RoomController extends Controller
      */
     public function show($id)
     {
-        $rooms = Room::findOrFail($id);
-        
+        $room = Room::findOrFail($id);
         return view('admin.rooms.show', compact('room'));
     }
 
@@ -117,7 +114,6 @@ class RoomController extends Controller
             "cost_per_night" => 'nullable',
             "status"         => 'required|boolean',
             "has_offer"      => 'nullable|boolean',
-            // "image"       => "required|mime_types:jpeg,bmp,png,gif,jpg,tiff",
             "image"          => "nullable|image",
             "notes"          => "required|string"
         ], [], [

@@ -37,16 +37,13 @@
                   <td>{{ $item->size }}</td>
                   <td>{{ $item->state }}</td>
                   <td>
-                    {{--  <a href="{{ url('/admin/rooms/'.$item->id) }}" class="btn btn-success">  --}}
-                    <a href="{{ route('rooms.show', $item->id) }}" class="btn btn-success">
+                    <a href="{{ url('/admin/rooms/'.$item->id) }}" class="btn btn-success">
+                    {{--  <a href="{{ route('rooms.show', $item->id) }}" class="btn btn-success">  --}}
                         <i class="fa fa-eye"></i>
                     </a>
-                    <a href="{{ route('rooms.edit', $item->id) }}" class="btn btn-primary">
+                        <a href="{{ route('rooms.edit', $item->id) }}" class="btn btn-primary">
                         <i class="fa fa-edit"></i>
                     </a>
-                    {{--  <a href="#" onclick="" class="btn btn-danger">
-                        <i class="fa fa-trash"></i>
-                    </a>  --}}
                     <form action="{{ route('rooms.destroy', $item->id)}}" method="POST" style="display: inline;">
                       @method("DELETE")
                       @csrf

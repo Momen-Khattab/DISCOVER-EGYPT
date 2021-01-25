@@ -77,6 +77,18 @@
                           </div>
                     </div>
                 </div>
+                <div class="col-12 col-sm-6">
+                    <div class="form-group">
+                        <label>dead line</label>
+                          <div class="input-group" id="deadline" data-target-input="nearest">
+                              <input type="text" name="dead_line" autocomplete="off" class="form-control datepicker" {{ $errors->has('deadline') ? 'is-invalid' : ''}} data-target="#deadline">
+                              <div class="input-group-append" data-target="#deadline" data-toggle="datetimepicker">
+                                  <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                  {{ $errors->first('deadline') }}
+                              </div>
+                          </div>
+                      </div>
+                </div>
 
               </div>
               </div>

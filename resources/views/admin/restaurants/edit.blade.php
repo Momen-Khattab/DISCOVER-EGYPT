@@ -18,7 +18,6 @@
               <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group">
-                        {{--  <label for="exampleInputPassword1">{{ trans('app.restaurant_name') }}</label>  --}}
                         <label for="exampleInputPassword1">@lang('app.restaurant_name')</label>
                         <input type="text" class="form-control {{ $errors->has('restaurant_name') ? 'is-invalid' : ''}}" value="{{ $food->restaurant_name }}" name="restaurant_name" id="restaurant_name" placeholder="Restaurant Name">
                         <div class="invalid-feedback">
@@ -35,7 +34,8 @@
                           </div>
                     </div>
                 </div>
-                <!-- /.col -->
+              </div>
+              <div>
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputEmail1">@lang('app.food_no')</label>
