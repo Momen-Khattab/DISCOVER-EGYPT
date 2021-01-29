@@ -2,9 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\FlightReservationEmail;
 use App\Models\Contact;
+
 use App\Models\Food;
 use App\Models\FoodReservation;
+
+use App\Models\Rooms;
+use App\Models\RoomReservation;
+
+use App\Models\Flight;
+use App\Models\FlightReservation;
+
+use App\Models\Trip;
+use App\Models\TripReservation;
 use Exception;
 use Illuminate\Http\Request;
 use App\Mail\FoodReservationEmail;
@@ -71,6 +82,28 @@ class FrontController extends Controller
 
             // Send the receipt mail
             \Mail::to($reservation->user->email)->send(new FoodReservationEmail($reservation));
+            return back()->withSuccess('Reservation Done');
+        }catch(Exception $e){
+            // Alert::error('Reservation faild', $e->getMessage());
+            return back();
+        }
+        
+        
+    }
+
+
+    public function reservebooking(Request $request){
+        $user = auth('web')->user();
+        $booking = Flight::findOrFail($request->id);
+
+        try{
+            $reservation = new FlightReservation();
+            $reservation->user_id = $user->id;
+            $reservation->Flight_id = $booking->id;
+            $reservation->save();
+
+            // Send the receipt mail
+            \Mail::to($reservation->user->email)->send(new FlightReservationEmail($reservation));
             return back()->withSuccess('Reservation Done');
         }catch(Exception $e){
             // Alert::error('Reservation faild', $e->getMessage());

@@ -11,7 +11,7 @@
               </div>
             </div>
             <!-- /.card-header -->
-            <form action="{{ route('booking.update'),$booking->id }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('booking.update', $booking->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method("PUT")
             <div class="card-body" style="display: block;" >
@@ -40,9 +40,9 @@
                 <div class="col-12 col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">@lang('app.flight_company')</label>
-                        <select class="form-control {{ $errors->has('flight_company') ? 'is-invalid' : ''}}" value="{{ $booking->flight_company }}" name="flight_company" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
-                            <option value="single">egypt air</option>
-                            <option value="double">emirates</option>
+                        <select class="form-control {{ $errors->has('flight_company') ? 'is-invalid' : ''}}" name="flight_company" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                            <option value="egypt-air" {{ $booking->flight_company == 'egypt-air' ? 'selected' : ''}} >egypt air</option>
+                            <option value="emirates" {{ $booking->flight_company == 'emirates' ? 'selected' : ''}}>emirates</option>
                             <div class="invalid-feedback">
                                 {{ $errors->first('flight_company') }}
                               </div>
@@ -79,16 +79,6 @@
                           </div>
                     </div>
                 </div>
-
-                  <div class="col-sm-6">
-                    <div class="form-group">
-                        <h5>Flight status</h5>
-                        <div class="custom-control custom-switch">
-                          <input type="checkbox" class="custom-control-input" value="1" name="has_offer" id="customSwitch1" {{ $booking->status == '1' ? 'checked' : '' }}>
-                          <label class="custom-control-label" for="customSwitch1">@lang('app.has_offer')</label>
-                        </div>
-                      </div>
-                  </div>
               </div>
               <br>
               <div class="row">
@@ -144,6 +134,4 @@
         });
     });
 </script>
-@endsection
-
 @endsection

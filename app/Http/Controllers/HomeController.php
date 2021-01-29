@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FlightReservation;
+use App\Models\FoodReservation;
+use App\Models\RoomReservation;
+use App\Models\TripReservation;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,5 +31,17 @@ class HomeController extends Controller
 
     public function mail(){
         return view('emails.contact');
+    }
+
+    public function getLatestReservations(){
+        $latestFoodsReservations = FoodReservation::latest('created_at')->limit(5)->get();
+        $latestFlightsReservations = FlightReservation::latest('created_at')->limit(5)->get() ;
+        $latestRoomsReservations = RoomReservation::latest('created_at')->limit(5)->get() ;
+        $latestTripsReservations = TripReservation::latest('created_at')->limit(5)->get() ;
+
+
+        return view('admin.reservations.index', compact('latestFoodsReservations', 'latestFlightsReservations', 'latestRoomsReservations', 'latestTripsReservations'));
+
+
     }
 }

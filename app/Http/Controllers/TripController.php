@@ -45,6 +45,7 @@ class TripController extends Controller
      */
     public function store(Request $request)
     {
+
         $data = $this->validate($request, [
             // Validation rules
             "trip_no"               => 'required|string',

@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class TripReservation extends Model
 {
+    protected $table = 'trip_reservaions';
+
 /**
      * Relationships
      */

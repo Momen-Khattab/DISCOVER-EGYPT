@@ -108,13 +108,19 @@
                         <label for="exampleInputFile">@lang('app.image')</label>
                         <div class="input-group">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="uploadpic">
+                                <input type="file" class="custom-file-input" id="uploadpic" name="image">
                                 <label class="custom-file-label" for="exampleInputFile">Choose Picture</label>
                             </div>
                             <div class="input-group-append">
                                 <span class="input-group-text" id="">Upload</span>
                             </div>
                         </div>
+                        <br>
+                            <div class="img-responsive">
+                                @if (!empty($trip->image))
+                                <img src="{{ $trip->getImage() }}" style="height: 100px; width: 100px;" alt="">
+                                @endif
+                            </div>
                     </div>
 
                     <div class="row">

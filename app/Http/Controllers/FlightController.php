@@ -96,8 +96,8 @@ class FlightController extends Controller
     public function edit($id)
     {
         //
-        $flight = Flight::findOrFail($id);
-        return view('admin.booking.edit', compact('flight'));
+        $booking = Flight::findOrFail($id);
+        return view('admin.booking.edit', compact('booking'));
     }
 
     /**
@@ -110,16 +110,14 @@ class FlightController extends Controller
     public function update(Request $request, $id)
     {
         //
-
         $flight = flight::findOrFail($id);
         $this->validate($request, [
             // Validation rules
             "flight_no"             => 'required|string',
-            "company_name"          => 'required|string',
+            "flight_company"          => 'required|string',
             "airport_name"          => 'required|string',
             "flight_destinaion"     => 'required|string',
             "cost"                  => 'nullable',
-            "has_offer"             => 'nullable|boolean',
             "travel_date"           => 'nullable',
             "address"               => 'required|string',
             "company_number"        => 'nullable',
@@ -127,11 +125,10 @@ class FlightController extends Controller
         ], [], [
             // Translation 
             "flight_no"             => trans('app.flight_no'),
-            "company_name"          => trans('app.company_name'),
+            "flight_company"          => trans('app.company_name'),
             "airport_name"          => trans('app.airport_name'),
             "flight_destinaion"     => trans('app.flight_destinaion'),
             "cost"                  => trans('app.cost'),
-            "has_offer"             => trans('app.has_offer'),
             "travel_date"           => trans('app.travel_date'),
             "address"               => trans('app.address'),
             "company_number"        => trans('app.company_number')

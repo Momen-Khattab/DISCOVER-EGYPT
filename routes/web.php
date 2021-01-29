@@ -75,10 +75,13 @@ Route::group(['prefix' => '/admin', 'middleware' => 'admin.auth'], function(){
     Route::resource('/contact','ContactController')->name('*', 'contact');
 
 
+    Route::get('/reservations', 'HomeController@getLatestReservations')->name('reservations');
+
     Route::get('/restaurants/create', 'FoodController@create');
     Route::get('/restaurants/{id}/edit', 'FoodController@edit');
     Route::get('/restaurants/{id}', 'FoodController@show');
     Route::put('/restaurants/{id}', 'FoodController@update');
+    Route::delete('/restaurants/{id}', 'FoodController@destroy')->name('restaurants.destroy');
     Route::resource('/restaurants','FoodController')->name('*', 'restaurants');
 
 
@@ -86,6 +89,7 @@ Route::group(['prefix' => '/admin', 'middleware' => 'admin.auth'], function(){
     Route::get('/rooms/{id}/edit', 'RoomController@edit');
     Route::get('/rooms/{id}', 'RoomController@show');
     Route::put('/rooms/{id}', 'RoomController@update');
+    Route::delete('/rooms/{id}', 'RoomController@destroy')->name('rooms.destroy');
     Route::resource('/rooms','RoomController')->name('*', 'rooms');
 
 
@@ -93,6 +97,7 @@ Route::group(['prefix' => '/admin', 'middleware' => 'admin.auth'], function(){
     Route::get('/offers/{id}/edit', 'TripController@edit');
     Route::get('/offers/{id}', 'TripController@show');
     Route::put('/offers/{id}', 'TripController@update');
+    Route::delete('/offers/{id}', 'TripController@destroy')->name('offers.destroy');
     Route::resource('/offers','TripController')->name('*', 'offers');
 
 
@@ -100,6 +105,7 @@ Route::group(['prefix' => '/admin', 'middleware' => 'admin.auth'], function(){
     Route::get('/booking/{id}/edit', 'FlightController@edit');
     Route::get('/booking/{id}', 'FlightController@show');
     Route::put('/booking/{id}', 'FlightController@update');
+    Route::delete('/booking/{id}', 'FlightController@destroy')->name('booking.destroy');
     Route::resource('/booking','FlightController')->name('*', 'booking');
 
 
@@ -111,7 +117,6 @@ Route::group(['prefix' => '/admin', 'middleware' => 'admin.auth'], function(){
     Route::post('/replayForEmail/{contact}','ContactController@replayForEmail')->name('replayForEmail');
 });
 
-Route::resource('/admin/reservations','ReservationsController')->name('*', 'reservations');
 
 
 

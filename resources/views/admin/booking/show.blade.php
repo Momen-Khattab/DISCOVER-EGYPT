@@ -42,11 +42,7 @@
     <div class="row justify-content-center">
       <div class="col-sm-5">
         <div class="card">
-          <div class="card-header">
-            <div class="img-responsive">
-              <img src="#" style="height: 100%; width: 100%;" alt="">
-            </div>
-          </div>
+
           <div class="card-body">
             <div class="row">
               <div class="col-sm-9">

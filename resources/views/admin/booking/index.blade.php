@@ -43,9 +43,11 @@
                     <a href="{{ route('booking.edit', $item->id) }}" class="btn btn-primary">
                         <i class="fa fa-edit"></i>
                     </a>
-                    <a href="{{ route('booking.destroy', $item->id) }}" class="btn btn-danger">
-                        <i class="fa fa-trash"></i>
-                    </a>
+                    <form action="{{ route('booking.destroy', $item->id)}}" method="POST" style="display: inline;">
+                      @method("DELETE")
+                      @csrf
+                      <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                  </form>
                 </td>
               </tr>
           @endforeach
