@@ -52,7 +52,7 @@
                 <div class="col-12 col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">@lang('app.flight_cost')</label>
-                        <input type="number" class="form-control {{ $errors->has('flight_cost') ? 'is-invalid' : ''}}" value="{{ $booking->flight_cost }}" name="flight_cost" id="flight_cost" placeholder="$">
+                        <input type="number" class="form-control {{ $errors->has('flight_cost') ? 'is-invalid' : ''}}" value="{{ $booking->cost }}" name="flight_cost" id="flight_cost" placeholder="$">
                         <div class="invalid-feedback">
                             {{ $errors->first('flight_cost') }}
                           </div>
@@ -91,17 +91,26 @@
                           </div>
                     </div>
                 </div>
-                  <div class="col-sm-6">
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">seat_no</label>
+                            <label for="exampleInputEmail1">@lang('app.seat_no')</label>
                             <input type="text" class="form-control {{ $errors->has('seat_no') ? 'is-invalid' : ''}}" value="{{ $booking->seat_no }}" name="seat_no" id="seat_no" placeholder="Type...">
                             <div class="invalid-feedback">
                                 {{ $errors->first('seat_no') }}
                               </div>
                         </div>
                     </div>
-                  </div>
+
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">@lang('app.company_number')</label>
+                            <input type="number" class="form-control {{ $errors->has('company_number') ? 'is-invalid' : ''}}" value="{{ $booking->company_number }}" name="company_number" id="company_number" placeholder="Type...">
+                            <div class="invalid-feedback">
+                                {{ $errors->first('company_number') }}
+                              </div>
+                        </div>
+                    </div>
               </div>
             </div>
 

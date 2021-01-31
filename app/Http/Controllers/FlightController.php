@@ -49,22 +49,29 @@ class FlightController extends Controller
         $this->validate($request, [
             // Validation rules
             "flight_no"             => 'required|string',
-            "flight_company"          => 'required|string',
+            "flight_company"        => 'required|string',
             "airport_name"          => 'required|string',
             "flight_destinaion"     => 'required|string',
+            "notes"                 => 'nullable',
+            "cost"                  => 'required',
             "travel_date"           => 'nullable|date_format:d-m-Y',
             "address"               => 'required|string',
             "company_number"        => 'nullable',
+            "seat_no"               => 'nullable'
         
         ], [], [
             // Translation 
             "flight_no"             => trans('app.flight_no'),
-            "flight_company"          => trans('app.flight_company'),
+            "flight_company"        => trans('app.flight_company'),
             "airport_name"          => trans('app.airport_name'),
             "flight_destinaion"     => trans('app.flight_destinaion'),
+            "notes"                 => trans('app.notes'),
+            "cost"                  => trans('app.cost'),
             "travel_date"           => trans('app.travel_date'),
             "address"               => trans('app.address'),
-            "company_number"        => trans('app.company_number')
+            "company_number"        => trans('app.company_number'),
+            "seat_no"               => trans('app.seat_no')
+
         ]);
 
         $flight = Flight::create($request->all());
@@ -114,24 +121,28 @@ class FlightController extends Controller
         $this->validate($request, [
             // Validation rules
             "flight_no"             => 'required|string',
-            "flight_company"          => 'required|string',
+            "flight_company"        => 'required|string',
             "airport_name"          => 'required|string',
             "flight_destinaion"     => 'required|string',
+            "notes"                 => 'nullable',
             "cost"                  => 'nullable',
             "travel_date"           => 'nullable',
             "address"               => 'required|string',
             "company_number"        => 'nullable',
+            "seat_no"               => 'nullable'
         
         ], [], [
             // Translation 
             "flight_no"             => trans('app.flight_no'),
-            "flight_company"          => trans('app.company_name'),
+            "flight_company"        => trans('app.company_name'),
             "airport_name"          => trans('app.airport_name'),
             "flight_destinaion"     => trans('app.flight_destinaion'),
+            "notes"                 => trans('app.notes'),
             "cost"                  => trans('app.cost'),
             "travel_date"           => trans('app.travel_date'),
             "address"               => trans('app.address'),
-            "company_number"        => trans('app.company_number')
+            "company_number"        => trans('app.company_number'),
+            "seat_no"               => trans('app.seat_no')
         ]);
 
         $flight->update($request->except(['_token', '_method']));

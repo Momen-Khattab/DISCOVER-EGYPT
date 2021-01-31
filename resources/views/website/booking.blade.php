@@ -179,12 +179,12 @@
             <div class="tab-content py-5" id="v-pills-tabContent">
               <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                 <div class="row">
-                  @if ($flights->isEmpty())
+                  @if ($Flights->isEmpty())
                       <div class="alert alert-danger">
-                        No results found!
+                        No results founded!
                       </div>
                   @else
-                  @foreach ($flights as $item)
+                  @foreach ($Flights as $item)
                   <div class="col-lg-6">
                     <a href="javascript::void();" data-toggle="modal" data-target="#itemModal{{$item->id}}">
                     <div class="menus d-flex ftco-animate">

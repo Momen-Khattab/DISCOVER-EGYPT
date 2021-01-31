@@ -22,10 +22,12 @@
       <table class="table table-head-fixed text-nowrap">
         <thead>
           <tr>
-            <th>Room No.</th>
+            <th>Room number</th>
             <th>Hotel name</th>
             <th>Size</th>
-            <th>State</th>
+            <th>Cost</th>
+            <th>Availability</th>
+            <th>Has offer</th>
             <th>Control</th>
           </tr>
         </thead>
@@ -35,7 +37,9 @@
                   <td>{{ $item->room_no }}</td>
                   <td>{{ $item->hotel_name }}</td>
                   <td>{{ $item->size }}</td>
-                  <td>{{ $item->state }}</td>
+                  <td>{{ $item->cost_per_night }}$</td>
+                  <td>{{ $item->status }}</td>
+                  <td>{{ $item->has_offer }}</td>
                   <td>
                     <a href="{{ url('/admin/rooms/'.$item->id) }}" class="btn btn-success">
                     {{--  <a href="{{ route('rooms.show', $item->id) }}" class="btn btn-success">  --}}

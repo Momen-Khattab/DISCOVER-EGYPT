@@ -8,7 +8,7 @@ use App\Models\Contact;
 use App\Models\Food;
 use App\Models\FoodReservation;
 
-use App\Models\Rooms;
+use App\Models\Room;
 use App\Models\RoomReservation;
 
 use App\Models\Flight;
@@ -19,6 +19,8 @@ use App\Models\TripReservation;
 use Exception;
 use Illuminate\Http\Request;
 use App\Mail\FoodReservationEmail;
+use App\Mail\RoomReservationEmail;
+use App\Mail\TripReservationEmail;
 
 class FrontController extends Controller
 {
@@ -92,7 +94,54 @@ class FrontController extends Controller
     }
 
 
-    public function reservebooking(Request $request){
+    public function reserveRoom(Request $request){
+        $user = auth('web')->user();
+        $room = Room::findOrFail($request->id);
+        
+        try{
+            $reservation = new RoomReservation();
+            $reservation->user_id = $user->id;
+            $reservation->room_no = $room->id;
+            $reservation->save();
+            
+
+            // Send the receipt mail
+            \Mail::to($reservation->user->email)->send(new RoomReservationEmail($reservation));
+            return back()->withSuccess('Reservation Done');
+        }catch(Exception $e){
+            // Alert::error('Reservation faild', $e->getMessage());
+            return back();
+        }
+        
+        
+    }
+
+
+
+
+    public function reserveTrip(Request $request){
+        $user = auth('web')->user();
+        $trip = Trip::findOrFail($request->id);
+
+        try{
+            $reservation = new TripReservation();
+            $reservation->user_id = $user->id;
+            $reservation->trip_no = $trip->id;
+            $reservation->save();
+
+            // Send the receipt mail
+            \Mail::to($reservation->user->email)->send(new TripReservationEmail($reservation));
+            return back()->withSuccess('Reservation Done');
+        }catch(Exception $e){
+            // Alert::error('Reservation faild', $e->getMessage());
+            return back();
+        }
+        
+        
+    }
+
+
+    public function reserveflight(Request $request){
         $user = auth('web')->user();
         $booking = Flight::findOrFail($request->id);
 

@@ -69,6 +69,17 @@
                     </div>
                 </div>
 
+                <div class="col-12 col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">@lang('app.cost')</label>
+                        <input type="number" class="form-control {{ $errors->has('cost') ? 'is-invalid' : ''}}" name="cost" id="cost" placeholder="$">
+                        <div class="invalid-feedback">
+                            {{ $errors->first('cost') }}
+                          </div>
+                    </div>
+                </div>
+                
+
               </div>
 
               <div class="row">
@@ -81,13 +92,34 @@
                           </div>
                     </div>
                 </div>
-                
+
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputEmail1">@lang('app.address')</label>
                         <input type="text" class="form-control {{ $errors->has('address') ? 'is-invalid' : ''}}" name="address" id="address" placeholder="Airport address..">
                         <div class="invalid-feedback">
                             {{ $errors->first('address') }}
+                          </div>
+                    </div>
+                </div>
+
+                
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">@lang('app.seat_no')</label>
+                        <input type="number" class="form-control {{ $errors->has('seat_no') ? 'is-invalid' : ''}}" name="seat_no" id="seat_no" placeholder="seat number..">
+                        <div class="invalid-feedback">
+                            {{ $errors->first('seat_no') }}
+                          </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">@lang('app.company_number')</label>
+                        <input type="number" class="form-control {{ $errors->has('company_number') ? 'is-invalid' : ''}}" name="company_number" id="company_number" placeholder="01">
+                        <div class="invalid-feedback">
+                            {{ $errors->first('company_number') }}
                           </div>
                     </div>
                 </div>
@@ -107,10 +139,10 @@
                               {{ $errors->first('travel_date') }}
                             </div>
                         </div>
-
                     </div>
-                    
                 </div>
+                
+                
               </div>
             </div>
 

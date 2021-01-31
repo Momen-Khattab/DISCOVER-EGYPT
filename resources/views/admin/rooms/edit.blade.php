@@ -67,7 +67,7 @@
 
               <div class="row">
                 <div class="col-sm-6">    
-                    <h5>Room status</h5>                    
+                    <h5>@lang('app.status')</h5>                    
                     <div class="custom-control custom-radio">
                         <input class="custom-control-input" type="radio" id="customRadio1" checked value="1" name="status">
                         <label for="customRadio1" class="custom-control-label">Available</label>
@@ -80,10 +80,12 @@
 
                   <div class="col-sm-6">
                     <div class="form-group">
-                        <h5>@lang('app.status')</h5>
+                        <h5>@lang('app.has_offer')</h5>
                         <div class="custom-control custom-switch">
-                          <input type="checkbox" class="custom-control-input" value="1" name="has_offer" id="customSwitch1" {{ $room->status == '1' ? 'checked' : '' }}>
-                          <label class="custom-control-label" for="customSwitch1">Has offer</label>
+                          <input type="checkbox" class="custom-control-input" value="{{ $room->has_offer }}" name="has_offer" id="customSwitch1" {{ $room->has_offer == '1' ? 'checked' : '' }}>
+                          <label class="custom-control-label" {{ $errors->has('has_offer') ? 'is-invalid' : ''}} for="customSwitch1">Has  </label>
+                          {{ $errors->first('has_offer') }}
+
                         </div>
                       </div>
                   </div>

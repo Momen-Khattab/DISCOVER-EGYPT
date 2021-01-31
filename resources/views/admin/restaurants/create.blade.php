@@ -55,31 +55,31 @@
                               </div>
                         </div>
                     </div>
-                    <!-- /.col -->
+
                     <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">@lang('app.food_no')</label>
-                            <input type="text" class="form-control {{ $errors->has('food_no') ? 'is-invalid' : ''}}" name="food_no" id="romenumber" value="{{ old('food_no') }}" placeholder="Enter Number">
-                            <div class="invalid-feedback">
-                                {{ $errors->first('food_no') }}
-                              </div>
-                        </div>
-                    </div>
+                      <div class="form-group">
+                          <label for="exampleInputEmail1">@lang('app.food_no')</label>
+                          <input type="text" class="form-control {{ $errors->has('food_no') ? 'is-invalid' : ''}}" name="food_no" id="romenumber" value="{{ old('food_no') }}" placeholder="Enter Number">
+                          <div class="invalid-feedback">
+                              {{ $errors->first('food_no') }}
+                            </div>
+                      </div>
                   </div>
-      
-                  <div class="row">
-                    
-                    <div class="col-12 col-sm-6">
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">@lang('app.cost')</label>
-                            <input type="number" class="form-control {{ $errors->has('cost') ? 'is-invalid' : ''}}" name="cost" id="cost" value="{{ old('cost') }}" placeholder="$">
-                            <div class="invalid-feedback">
-                                {{ $errors->first('cost') }}
-                              </div>
-                        </div>
-                    </div>
+
+
+
+
+                    <div class="col-6 col-sm-6">
+                      <div class="form-group">
+                          <label for="exampleInputPassword1">@lang('app.cost')</label>
+                          <input type="number" class="form-control {{ $errors->has('cost') ? 'is-invalid' : ''}}" name="cost" id="cost" value="{{ old('cost') }}" placeholder="$">
+                          <div class="invalid-feedback">
+                              {{ $errors->first('cost') }}
+                            </div>
+                      </div>
                   </div>
-    
+                </div>
+   
                   <div class="row">
                     <div class="col-12 col-sm-6">
                       <div class="form-group">
@@ -90,59 +90,55 @@
                             </div>
                       </div>
                   </div>
-    
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                            <h5>@lang('app.has_offer')</h5>
-                            <div class="custom-control custom-switch">
-                              <input type="checkbox" class="custom-control-input" value="1" name="has_offer" id="customSwitch1" {{ old('has_offer') == '1' ? 'checked' : '' }}>
-                              <label class="custom-control-label" for="customSwitch1"></label>
-                            </div>
+
+                  <div class="col-12 col-sm-6">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">@lang('app.address')</label>
+                        <input type="text" class="form-control {{ $errors->has('address') ? 'is-invalid' : ''}}" name="address" id="address" value="{{ old('address') }}" placeholder="address">
+                        <div class="invalid-feedback">
+                            {{ $errors->first('address') }}
                           </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="form-group">
+                      <h5>@lang('app.has_offer')</h5>
+                      <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" value="1" name="has_offer" id="customSwitch1" {{ old('has_offer') == '1' ? 'checked' : '' }}>
+                        <label class="custom-control-label" for="customSwitch1"></label>
                       </div>
-                  </div>
-                  <br>
+                    </div>
+                </div>
+            </div>
                   <div class="row">
-    
-                    <div class="row">
-                      <div class="col-12 col-sm-6">
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">@lang('app.address')</label>
-                            <input type="text" class="form-control {{ $errors->has('address') ? 'is-invalid' : ''}}" name="address" id="address" value="{{ old('address') }}" placeholder="address">
-                            <div class="invalid-feedback">
-                                {{ $errors->first('address') }}
-                              </div>
-                        </div>
-                    </div>
-    
-    
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">@lang('app.notes')</label>
-                            <textarea name="notes" class="form-control {{ $errors->has('notes') ? 'is-invalid' : ''}}" id="" cols="30" rows="5" placeholder="Description">{{ old('notes') }}</textarea>
-                            <div class="invalid-feedback">
-                                {{ $errors->first('notes') }}
-                              </div>
-                        </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                          <label for="exampleInputPassword1">@lang('app.notes')</label>
+                          <textarea name="notes" class="form-control {{ $errors->has('notes') ? 'is-invalid' : ''}}" id="" cols="30" rows="5" placeholder="Description">{{ old('notes') }}</textarea>
+                          <div class="invalid-feedback">
+                              {{ $errors->first('notes') }}
+                            </div>
                       </div>
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="exampleInputFile">@lang('app.image')</label>
-                            <div class="input-group">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input {{ $errors->has('image') ? 'is-invalid' : ''}}" name="image" id="uploadpic">
-                                    <label class="custom-file-label" for="exampleInputFile">Choose Picture</label>
-                                </div>
-                                <div class="input-group-append">
-                                    <span class="input-group-text" id="">Upload</span>
-                                </div>
-    
-                                <div class="invalid-feedback">
-                                    {{ $errors->first('image') }}
-                                  </div>
-                        </div>
                     </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                          <label for="exampleInputFile">@lang('app.image')</label>
+                          <div class="input-group">
+                              <div class="custom-file">
+                                  <input type="file" class="custom-file-input {{ $errors->has('image') ? 'is-invalid' : ''}}" name="image" id="uploadpic">
+                                  <label class="custom-file-label" for="exampleInputFile">Choose Picture</label>
+                              </div>
+                              <div class="input-group-append">
+                                  <span class="input-group-text" id="">Upload</span>
+                              </div>
+  
+                              <div class="invalid-feedback">
+                                  {{ $errors->first('image') }}
+                                </div>
+                      </div>
                   </div>
+                </div>
               </div>
             </div>
 

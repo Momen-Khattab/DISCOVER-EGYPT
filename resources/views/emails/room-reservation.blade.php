@@ -503,7 +503,7 @@ a[x-apple-data-detectors] {
                    <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"> 
                      <tr style="border-collapse:collapse"> 
                       <td align="center" style="padding:0;Margin:0;font-size:0">
-                          <img class="adapt-img" src="{{ asset('images/shutterstock_1252500535.jpg') }}" alt="2017 banner" title="2017 banner" width="600" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic">
+                          <img class="adapt-img" src="{{ asset('images/room-5.jpg') }}" alt="2017 banner" title="2017 banner" width="600" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic">
                         </td> 
                      </tr> 
                    </table></td> 
@@ -517,7 +517,7 @@ a[x-apple-data-detectors] {
                   <td valign="top" align="center" style="padding:0;Margin:0;width:520px"> 
                    <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px"> 
                      <tr style="border-collapse:collapse"> 
-                      <td align="center" style="padding:0;Margin:0;padding-bottom:15px"><h1 style="Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:30px;font-style:normal;font-weight:normal;color:#666666" data-darkreader-inline-color>Food reservation receipt</h1></td> 
+                      <td align="center" style="padding:0;Margin:0;padding-bottom:15px"><h1 style="Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:30px;font-style:normal;font-weight:normal;color:#666666" data-darkreader-inline-color>Room reservation receipt</h1></td> 
                      </tr> 
                      <tr style="border-collapse:collapse"> 
                       <td esdev-links-color="#ffffff" style="padding:0;Margin:0;padding-bottom:15px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#666666" data-darkreader-inline-color>
@@ -526,7 +526,7 @@ a[x-apple-data-detectors] {
                      
                      <tr style="border-collapse:collapse"> 
                       <td esdev-links-color="#ffffff" style="padding:0;Margin:0;padding-bottom:15px"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#666666" data-darkreader-inline-color>
-                      According to your confirmation, we want to inform you that your reservation for food: <b>{{ $reservation->food->food_name ?? '' }}</b> with total price: <b>{{ $reservation->food->cost ?? '' }}$</b>, has been successfully confirmed!
+                      According to your confirmation, we want to inform you that your reservation for Room number: <b>{{ $reservation->room->room_no ?? '' }}</b>in<b>{{ $reservation->room->hotel_name ?? '' }}</b>  with total price: <b>{{ $reservation->room->cost_per_night ?? '' }}$</b>,per/night has been successfully confirmed!
                     </p>
                     </td> 
                      </tr>

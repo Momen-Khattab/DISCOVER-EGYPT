@@ -81,7 +81,7 @@
                     <div class="form-group">
                         <label>dead line</label>
                           <div class="input-group" id="deadline" data-target-input="nearest">
-                              <input type="text" name="dead_line" autocomplete="off" class="form-control datepicker" {{ $errors->has('deadline') ? 'is-invalid' : ''}} data-target="#deadline">
+                              <input type="text" name="dead_line" autocomplete="off" value="{{ $trip->dead_line }}" class="form-control datepicker" {{ $errors->has('deadline') ? 'is-invalid' : ''}} data-target="#deadline">
                               <div class="input-group-append" data-target="#deadline" data-toggle="datetimepicker">
                                   <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                   {{ $errors->first('deadline') }}
@@ -97,7 +97,7 @@
                   <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">@lang('app.notes')</label>
-                        <textarea name="notes" class="form-control {{ $errors->has('notes') ? 'is-invalid' : ''}}" id="" value="{{ $trip->notes }}" cols="30" rows="5" placeholder="Description"></textarea>
+                        <textarea name="notes" class="form-control {{ $errors->has('notes') ? 'is-invalid' : ''}}" id="" value="" cols="30" rows="5" placeholder="Description">{{ $trip->notes }}</textarea>
                         <div class="invalid-feedback">
                             {{ $errors->first('notes') }}
                           </div>
@@ -126,10 +126,10 @@
                     <div class="row">
                         <div class="col-sm-6">
                           <div class="form-group">
-                              <h5>@lang('app.has_discount')</h5>
+                              <h5>@lang('app.has_offer')</h5>
                               <div class="custom-control custom-switch">
-                                <input type="checkbox" class="custom-control-input" value="1" name="has_discount" id="customSwitch1">
-                                <label class="custom-control-label" for="customSwitch1">has_discount</label>
+                                <input type="checkbox" class="custom-control-input" value="{{ $trip->has_offer }}" name="has_offer" id="customSwitch1">
+                                <label class="custom-control-label" for="customSwitch1">has offer</label>
                               </div>
                             </div>
                         </div>

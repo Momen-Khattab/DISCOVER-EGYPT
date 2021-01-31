@@ -27,8 +27,6 @@
             <th>Restaurant name</th>
             <th>cost</th>
             <th>has_offer</th>
-            <th>address</th>
-            <th>Restaurant number</th>
             <th>Control</th>
           </tr>
         </thead>
@@ -40,8 +38,6 @@
                   <td>{{ $item->restaurant_name }}</td>
                   <td>{{ $item->cost }} $</td>
                   <td>{{ $item->has_offer }}</td>
-                  <td>{{ $item->address }}</td>
-                  <td>{{ $item->rest_no }}</td>
                   <td>
                     {{--  <a href="{{ url('/admin/restaurant/'.$item->id) }}" class="btn btn-success">  --}}
                     <a href="{{ route('restaurants.show', $item->id) }}" class="btn btn-success">

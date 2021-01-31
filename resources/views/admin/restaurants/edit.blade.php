@@ -34,32 +34,28 @@
                           </div>
                     </div>
                 </div>
-              </div>
-              <div>
+
                 <div class="col-sm-6">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">@lang('app.food_no')</label>
-                        <input type="text" class="form-control {{ $errors->has('food_no') ? 'is-invalid' : ''}}" name="food_no" id="romenumber" value="{{ $food->food_no }}" placeholder="Enter Number">
-                        <div class="invalid-feedback">
-                            {{ $errors->first('food_no') }}
-                          </div>
-                    </div>
-                </div>
-              </div>
-  
-              <div class="row">
-                
-                <div class="col-12 col-sm-6">
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">@lang('app.cost')</label>
-                        <input type="number" class="form-control {{ $errors->has('cost') ? 'is-invalid' : ''}}" name="cost" id="cost" value="{{ $food->cost }}" placeholder="$">
-                        <div class="invalid-feedback">
-                            {{ $errors->first('cost') }}
-                          </div>
-                    </div>
-                </div>
+                  <div class="form-group">
+                      <label for="exampleInputEmail1">@lang('app.food_no')</label>
+                      <input type="text" class="form-control {{ $errors->has('food_no') ? 'is-invalid' : ''}}" name="food_no" id="romenumber" value="{{ $food->food_no }}" placeholder="Enter Number">
+                      <div class="invalid-feedback">
+                          {{ $errors->first('food_no') }}
+                        </div>
+                  </div>
               </div>
 
+                <div class="col-6 col-sm-6">
+                  <div class="form-group">
+                      <label for="exampleInputPassword1">@lang('app.cost')</label>
+                      <input type="number" class="form-control {{ $errors->has('cost') ? 'is-invalid' : ''}}" name="cost" id="cost" value="{{ $food->cost }}" placeholder="$">
+                      <div class="invalid-feedback">
+                          {{ $errors->first('cost') }}
+                        </div>
+                  </div>
+              </div>              
+            </div>
+            
               <div class="row">
                 <div class="col-12 col-sm-6">
                   <div class="form-group">
@@ -71,15 +67,17 @@
                   </div>
               </div>
 
-                  <div class="col-sm-6">
-                    <div class="form-group">
-                        <h5>Has offer?</h5>
-                        <div class="custom-control custom-switch">
-                          <input type="checkbox" class="custom-control-input" value="1" name="has_offer" id="customSwitch1" {{ $food->has_offer == '1' ? 'checked' : '' }}>
-                          <label class="custom-control-label" for="customSwitch1">Has offer</label>
-                        </div>
-                      </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                    <h5>@lang('app.has_offer')</h5>
+                    <div class="custom-control custom-switch">
+                      <input type="checkbox" class="custom-control-input" value="{{ $food->has_offer }}" name="has_offer" id="customSwitch1" {{ $food->has_offer == '1' ? 'checked' : '' }}>
+                      <label class="custom-control-label" {{ $errors->has('has_offer') ? 'is-invalid' : ''}} for="customSwitch1">Has</label>
+                      {{ $errors->first('has_offer') }}
+
+                    </div>
                   </div>
+              </div>
               </div>
               <br>
               <div class="row">
@@ -93,18 +91,20 @@
                             {{ $errors->first('address') }}
                           </div>
                     </div>
-                </div>
 
-
-                  <div class="col-sm-6">
+                    <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">Notes</label>
-                        <textarea name="notes" class="form-control {{ $errors->has('notes') ? 'is-invalid' : ''}}" id="" cols="30" rows="5" placeholder="Description">{{ $food->notes }}</textarea>
+                        <textarea name="notes" class="form-control {{ $errors->has('notes') ? 'is-invalid' : ''}}" id="" cols="90" rows="5" placeholder="Description">{{ $food->notes }}</textarea>
                         <div class="invalid-feedback">
                             {{ $errors->first('notes') }}
                           </div>
                     </div>
                   </div>
+                </div>
+
+
+                  
                   <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputFile">@lang('app.image')</label>
@@ -116,19 +116,20 @@
                             <div class="input-group-append">
                                 <span class="input-group-text" id="">Upload</span>
                             </div>
+                            
 
                             <div class="invalid-feedback">
                                 {{ $errors->first('image') }}
-                              </div>
+                            </div>
+                            
+                            @if (!empty($food->image))
+                            <div class="col-sm-12">
+                              <div class="img-responsive"><img src="{{ $food->getImage() }}" style="height: 200px; width: 200px;" alt=""></div>
+                            </div>
+                            @endif                              
                         </div>
                     </div>
                   </div>
-                  @if (!empty($food->image))
-                  <div class="col-sm-6">
-                    <div class="img-responsive"><img src="{{ $food->getImage() }}" style="height: 200px; width: 200px;" alt=""></div>
-                  </div>
-                  @endif
-
               </div>
             </div>
 

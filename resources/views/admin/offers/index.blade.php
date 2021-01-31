@@ -25,8 +25,8 @@
             <th>Offer number</th>
             <th>Offer name</th>
             <th>Capacity</th>
+            <th>Cost</th>
             <th>Has discount</th>
-            <th>Notes</th>
             <th>Control</th>
           </tr>
         </thead>
@@ -36,8 +36,8 @@
                   <td>{{ $item->trip_no }}</td>
                   <td>{{ $item->trip_name }}</td>
                   <td>{{ $item->capacity }}</td>
-                  <td>{{ $item->has_discount }}</td>
-                  <td>{{ $item->notes }}</td>
+                  <td>{{ $item->cost }}$</td>
+                  <td>{{ $item->has_offer }}</td>
                   <td>
                 <a href="{{ route('offers.show', $item->id) }}" class="btn btn-success">
                     <i class="fa fa-eye"></i>

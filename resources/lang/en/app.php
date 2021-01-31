@@ -15,15 +15,12 @@ return [
     "trip_no"               => 'Trip Number',
     "trip_name"             => 'Trip Name',
     "capacity"              => 'Trip Capacity',
-    "has_offer"             => 'Trip Has Offer?',
     "dead_line"             => 'Trip Dead Line',
-    "company_number"        => 'Company Number',
 
 
     // Translate for Foods
     "food_no"               => 'Food Number',
     "restaurant_name"       => 'Restaurant Name',
-    "has_offer"             => 'This Food Has Offer?',
     "rest_no"                => 'Restaurant Number',
 
 
@@ -35,7 +32,7 @@ return [
     "airport_name"          => 'Airport Name',
     "flight_destinaion"     => 'Flight Destination',
     "travel_date"           => 'Travil Date',
-    "company_number"        => 'Company Number',
+    "seat_no"               => 'Seat number',
 
     //for all
     "cost"                  => 'The Cost',
@@ -43,5 +40,7 @@ return [
     "image"                 => 'Offer Image',
     "address"               => 'The Address',
     "notes"                 => "Additional Information",
+    "company_number"        => 'Company Number',
+
 
 ];

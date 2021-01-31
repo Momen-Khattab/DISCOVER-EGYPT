@@ -50,6 +50,9 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('/profileSave', 'FrontController@profileSave');
 
     Route::post('/reserve-food', 'FrontController@reserveFood');
+    Route::post('/reserve-room', 'FrontController@reserveRoom');
+    Route::post('/reserve-trip', 'FrontController@reserveTrip');
+    Route::post('/reserve-flight', 'FrontController@reserveflight');
 });
 
 Route::get('email-view', function(){

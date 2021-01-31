@@ -59,7 +59,7 @@
                 <span class="d-block mb-2"><i class="icon-check mr-2"></i>Flight Number:{{$flights->flight_no}} </span>
                 <span class="d-block mb-2"><i class="icon-check mr-2"></i>Company Name:{{$flights->company_name}} </span>
                 <span class="d-block mb-2"><i class="icon-check mr-2"></i>Airport Name:{{$flights->airport_name}} </span>
-                <span class="d-block mb-2"><i class="icon-check mr-2"></i>Discount?:{{$flights->has_offer}} </span>
+                <span class="d-block mb-2"><i class="icon-check mr-2"></i>Seat Number:{{$flights->seat_no}} </span>
                 <span class="d-block mb-2"><i class="icon-check mr-2"></i>Travel Date:{{$flights->travel_date}} </span>
                 <span class="d-block mb-2"><i class="icon-check mr-2"></i>Airport Address:{{$flights->address}} </span>
                 <span class="d-block mb-2"><i class="icon-check mr-2"></i>Company Number:{{$flights->company_number}} </span>
