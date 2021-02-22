@@ -13,7 +13,8 @@ class FlightController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function booking(){
-        return view('website.booking');
+        $flights = Flight::latest('id')->get();
+        return view('website.booking',compact('flights'));
     }
 
     public function index()
@@ -103,8 +104,8 @@ class FlightController extends Controller
     public function edit($id)
     {
         //
-        $booking = Flight::findOrFail($id);
-        return view('admin.booking.edit', compact('booking'));
+        $flights = Flight::findOrFail($id);
+        return view('admin.booking.edit', compact('flights'));
     }
 
     /**

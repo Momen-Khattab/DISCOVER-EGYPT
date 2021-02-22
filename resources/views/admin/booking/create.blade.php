@@ -60,8 +60,8 @@
                     <div class="form-group">
                         <label for="exampleInputPassword1">@lang('app.flight_company')</label>
                         <select class="form-control {{ $errors->has('flight_company') ? 'is-invalid' : ''}}" name="flight_company" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
-                            <option value="single">egypt air</option>
-                            <option value="double">emirates</option>
+                            <option value="egypt-air">egypt air</option>
+                            <option value="emirates">emirates</option>
                             <div class="invalid-feedback">
                                 {{ $errors->first('flight_company') }}
                               </div>

@@ -1,6 +1,6 @@
 @extends('website.layouts.front')
 
-@section('content')   
+@section('content')
 <style>
     /* ----- Variables ----- */
   $color-primary: #4c4c4c;
@@ -145,7 +145,7 @@
     background-color: #fff;
     border: 1px solid #ff6138;
   }
-</style> 
+</style>
     <section class="home-slider owl-carousel">
       <div class="slider-item" style="background-image: url('images/food/food3.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
@@ -165,7 +165,7 @@
         <div class="row justify-content-center mb-5 pb-5">
           <div class="col-md-7 text-center heading-section ftco-animate">
             <span class="subheading">Menu</span>
-            <h2>Restaurant &amp; Cafe</h2>
+            <h2>Restaurants</h2>
           </div>
         </div>
         <div class="row">
@@ -239,7 +239,7 @@
           </form>
         </div>
       </section>
-            
+
     </div>
   </div>
 </div>
@@ -253,5 +253,5 @@
         </div>
       </div>
     </section>
-  
+
 @endsection

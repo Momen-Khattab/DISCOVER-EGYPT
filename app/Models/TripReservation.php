@@ -16,6 +16,6 @@ class TripReservation extends Model
     }
 
     public function trip(){
-        return $this->belongsTo('App\Models\Trip', 'trip_no');
+        return $this->belongsTo('App\Models\Trip', 'trip_id'); // الربط بال Foreign key تمام؟ 
     }
 }

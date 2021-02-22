@@ -7,11 +7,11 @@
     {{--  food cards  --}}
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Latest flights reservations</h3>
+        <h3 class="card-title">Latest Foods reservations</h3>
         <div class="card-tools">
         </div>
       </div>
-      
+
       <!-- /.card-header -->
       <div class="card-body table-responsive p-0" style="height: 300px;">
         <table class="table table-head-fixed text-nowrap">
@@ -21,7 +21,7 @@
               <th>Food Number</th>
               <th>Food name</th>
               <th>Restaurant name</th>
-              
+
             </tr>
           </thead>
           @forelse ($latestFoodsReservations as $item)
@@ -40,7 +40,7 @@
         </table>
       </div>
       {{--  // Card -end  --}}
-    </div> 
+    </div>
 
 
     {{--  Flights cards  --}}
@@ -50,7 +50,7 @@
         <div class="card-tools">
         </div>
       </div>
-      
+
       <!-- /.card-header -->
       <div class="card-body table-responsive p-0" style="height: 300px;">
         <table class="table table-head-fixed text-nowrap">
@@ -60,7 +60,7 @@
               <th>travel Date</th>
               <th>ticket number</th>
               <th>flight destinaion</th>
-              
+
             </tr>
           </thead>
           @forelse ($latestFlightsReservations as $item)
@@ -79,7 +79,7 @@
         </table>
       </div>
       {{--  // Card -end  --}}
-    </div> 
+    </div>
 
 
     {{--  Rooms  --}}
@@ -89,7 +89,7 @@
         <div class="card-tools">
         </div>
       </div>
-      
+
       <!-- /.card-header -->
       <div class="card-body table-responsive p-0" style="height: 300px;">
         <table class="table table-head-fixed text-nowrap">
@@ -99,15 +99,15 @@
               <th>Hotel Name</th>
               <th>Room number</th>
               <th>Room status</th>
-          
+
             </tr>
           </thead>
-          @forelse ($latestFlightsReservations as $item)
+          @forelse ($latestRoomsReservations as $item)
         <tr>
           <td>{{ $item->user->getFullName() }}</td>
           <td>{{ $item->room->hotel_name }}</td>
-          <td>{{ $item->flight->room_no }}</td>
-          <td>{{ $item->flight->status }}</td>
+          <td>{{ $item->room->room_no }}</td>
+          <td>{{ $item->room->status }}</td>
       </tr>
         @empty
             <div class="alert alert-danger">
@@ -118,7 +118,7 @@
         </table>
       </div>
       {{--  // Card -end  --}}
-    </div> 
+    </div>
 
 
     {{--  Trips  --}}
@@ -128,7 +128,7 @@
         <div class="card-tools">
         </div>
       </div>
-      
+
       <!-- /.card-header -->
       <div class="card-body table-responsive p-0" style="height: 300px;">
         <table class="table table-head-fixed text-nowrap">
@@ -138,7 +138,7 @@
               <th>Trip name</th>
               <th>Trip Number</th>
               <th>dead_line</th>
-          
+
             </tr>
           </thead>
           @forelse ($latestTripsReservations as $item)
@@ -158,9 +158,9 @@
       </div>
       {{--  // Card -end  --}}
 
-    </div> 
+    </div>
 
-    
+
   </div>
 </div>
   @endsection

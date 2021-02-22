@@ -11,7 +11,6 @@ use Illuminate\Queue\SerializesModels;
 class RoomReservationEmail extends Mailable
 {
     use Queueable, SerializesModels;
-
     public $reservation;
 
     /**
@@ -21,7 +20,9 @@ class RoomReservationEmail extends Mailable
      */
     public function __construct(RoomReservation $reservation)
     {
+        //
         $this->reservation = $reservation;
+
     }
 
     /**

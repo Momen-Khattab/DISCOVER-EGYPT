@@ -11,7 +11,7 @@
               </div>
             </div>
             <!-- /.card-header -->
-            <form action="{{ route('booking.update', $booking->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('booking.update', $flights->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method("PUT")
             <div class="card-body" style="display: block;" >
@@ -19,7 +19,7 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">@lang('app.airport_name')</label>
-                        <input type="text" class="form-control {{ $errors->has('airport_name') ? 'is-invalid' : ''}}" value="{{ $booking->airport_name }}" name="airport_name" id="hotelname" placeholder="Type...">
+                        <input type="text" class="form-control {{ $errors->has('airport_name') ? 'is-invalid' : ''}}" value="{{ $flights->airport_name }}" name="airport_name" id="hotelname" placeholder="Type...">
                         <div class="invalid-feedback">
                             {{ $errors->first('airport_name') }}
                           </div>
@@ -28,7 +28,7 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputEmail1">@lang('app.flight_no')</label>
-                        <input type="text" class="form-control {{ $errors->has('flight_no') ? 'is-invalid' : ''}}" value="{{ $booking->flight_no }}" name="flight_no" id="romenumber" placeholder="Type...">
+                        <input type="text" class="form-control {{ $errors->has('flight_no') ? 'is-invalid' : ''}}" value="{{ $flights->flight_no }}" name="flight_no" id="romenumber" placeholder="Type...">
                         <div class="invalid-feedback">
                             {{ $errors->first('flight_no') }}
                           </div>
@@ -41,8 +41,8 @@
                     <div class="form-group">
                         <label for="exampleInputPassword1">@lang('app.flight_company')</label>
                         <select class="form-control {{ $errors->has('flight_company') ? 'is-invalid' : ''}}" name="flight_company" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
-                            <option value="egypt-air" {{ $booking->flight_company == 'egypt-air' ? 'selected' : ''}} >egypt air</option>
-                            <option value="emirates" {{ $booking->flight_company == 'emirates' ? 'selected' : ''}}>emirates</option>
+                            <option value="egypt-air" {{ $flights->flight_company == 'egypt-air' ? 'selected' : ''}} >egypt air</option>
+                            <option value="emirates" {{ $flights->flight_company == 'emirates' ? 'selected' : ''}}>emirates</option>
                             <div class="invalid-feedback">
                                 {{ $errors->first('flight_company') }}
                               </div>
@@ -52,7 +52,7 @@
                 <div class="col-12 col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">@lang('app.flight_cost')</label>
-                        <input type="number" class="form-control {{ $errors->has('flight_cost') ? 'is-invalid' : ''}}" value="{{ $booking->cost }}" name="flight_cost" id="flight_cost" placeholder="$">
+                        <input type="number" class="form-control {{ $errors->has('flight_cost') ? 'is-invalid' : ''}}" value="{{ $flights->cost }}" name="flight_cost" id="flight_cost" placeholder="$">
                         <div class="invalid-feedback">
                             {{ $errors->first('flight_cost') }}
                           </div>
@@ -64,7 +64,7 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputEmail1">@lang('app.flight_destinaion')</label>
-                        <input type="text" class="form-control {{ $errors->has('flight_destinaion') ? 'is-invalid' : ''}}" value="{{ $booking->flight_destinaion }}" name="flight_destinaion" id="flight_destinaion" placeholder="Type...">
+                        <input type="text" class="form-control {{ $errors->has('flight_destinaion') ? 'is-invalid' : ''}}" value="{{ $flights->flight_destinaion }}" name="flight_destinaion" id="flight_destinaion" placeholder="Type...">
                         <div class="invalid-feedback">
                             {{ $errors->first('flight_destinaion') }}
                           </div>
@@ -73,7 +73,7 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputEmail1">@lang('app.address')</label>
-                        <input type="text" class="form-control {{ $errors->has('address') ? 'is-invalid' : ''}}" value="{{ $booking->address }}" name="address" id="address" placeholder="Type...">
+                        <input type="text" class="form-control {{ $errors->has('address') ? 'is-invalid' : ''}}" value="{{ $flights->address }}" name="address" id="address" placeholder="Type...">
                         <div class="invalid-feedback">
                             {{ $errors->first('address') }}
                           </div>
@@ -85,7 +85,7 @@
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputEmail1">@lang('app.travel_date')</label>
-                        <input type="text" class="form-control {{ $errors->has('travel_date') ? 'is-invalid' : ''}}" value="{{ $booking->travel_date }}" name="travel_date" id="travel_date" placeholder="Type...">
+                        <input type="text" class="form-control {{ $errors->has('travel_date') ? 'is-invalid' : ''}}" value="{{ $flights->travel_date }}" name="travel_date" id="travel_date" placeholder="Type...">
                         <div class="invalid-feedback">
                             {{ $errors->first('travel_date') }}
                           </div>
@@ -94,7 +94,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">@lang('app.seat_no')</label>
-                            <input type="text" class="form-control {{ $errors->has('seat_no') ? 'is-invalid' : ''}}" value="{{ $booking->seat_no }}" name="seat_no" id="seat_no" placeholder="Type...">
+                            <input type="text" class="form-control {{ $errors->has('seat_no') ? 'is-invalid' : ''}}" value="{{ $flights->seat_no }}" name="seat_no" id="seat_no" placeholder="Type...">
                             <div class="invalid-feedback">
                                 {{ $errors->first('seat_no') }}
                               </div>
@@ -105,7 +105,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">@lang('app.company_number')</label>
-                            <input type="number" class="form-control {{ $errors->has('company_number') ? 'is-invalid' : ''}}" value="{{ $booking->company_number }}" name="company_number" id="company_number" placeholder="Type...">
+                            <input type="number" class="form-control {{ $errors->has('company_number') ? 'is-invalid' : ''}}" value="{{ $flights->company_number }}" name="company_number" id="company_number" placeholder="Type...">
                             <div class="invalid-feedback">
                                 {{ $errors->first('company_number') }}
                               </div>

@@ -15,6 +15,6 @@ class FlightReservation extends Model
     }
 
     public function flight(){
-        return $this->belongsTo('App\Models\Flight', 'flight_no');
+        return $this->belongsTo('App\Models\Flight', 'flight_id');
     }
 }

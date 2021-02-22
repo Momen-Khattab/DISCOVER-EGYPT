@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\FlightReservationEmail;
 use App\Models\Contact;
 
 use App\Models\Food;
@@ -18,9 +17,13 @@ use App\Models\Trip;
 use App\Models\TripReservation;
 use Exception;
 use Illuminate\Http\Request;
+
+
 use App\Mail\FoodReservationEmail;
 use App\Mail\RoomReservationEmail;
 use App\Mail\TripReservationEmail;
+use App\Mail\FlightReservationEmail;
+
 
 class FrontController extends Controller
 {
@@ -44,7 +47,7 @@ class FrontController extends Controller
             'gender' => 'Gender',
             'passport_id' => 'Passport ID',
         ]);
-        
+
         $user->update($data);
         return redirect()->to('/profile')->withSuccess('Saved successfully!');
     }
@@ -61,7 +64,7 @@ class FrontController extends Controller
             'subject' => 'Subject',
             'message' => 'Message',
         ]);
-        
+
         $contact = new Contact();
         $contact->name = $request->name;
         $contact->email = $request->email;
@@ -76,8 +79,7 @@ class FrontController extends Controller
         $user = auth('web')->user();
         $food = Food::findOrFail($request->id);
 
-        try{
-            $reservation = new FoodReservation();
+        $reservation = new FoodReservation();
             $reservation->user_id = $user->id;
             $reservation->food_id = $food->id;
             $reservation->save();
@@ -85,35 +87,25 @@ class FrontController extends Controller
             // Send the receipt mail
             \Mail::to($reservation->user->email)->send(new FoodReservationEmail($reservation));
             return back()->withSuccess('Reservation Done');
-        }catch(Exception $e){
-            // Alert::error('Reservation faild', $e->getMessage());
-            return back();
-        }
-        
-        
+
+
     }
 
 
     public function reserveRoom(Request $request){
         $user = auth('web')->user();
         $room = Room::findOrFail($request->id);
-        
-        try{
-            $reservation = new RoomReservation();
-            $reservation->user_id = $user->id;
-            $reservation->room_no = $room->id;
-            $reservation->save();
-            
+        $reservation = new RoomReservation();
+        $reservation->user_id = $user->id;
+        $reservation->room_id = $room->id;
+        $reservation->from = date('Y-m-d'); // تاريخ وهمي عشان بس ما يبقاش المكان فاضي..
+        $reservation->to = date('Y-m-d'); // تاريخ وهمي عشان بس ما يبقاش المكان فاضي..
+        $reservation->save();
 
-            // Send the receipt mail
-            \Mail::to($reservation->user->email)->send(new RoomReservationEmail($reservation));
-            return back()->withSuccess('Reservation Done');
-        }catch(Exception $e){
-            // Alert::error('Reservation faild', $e->getMessage());
-            return back();
-        }
-        
-        
+        // Send the receipt mail
+        \Mail::to($reservation->user->email)->send(new RoomReservationEmail($reservation));
+        return back()->withSuccess('Reservation Done');
+
     }
 
 
@@ -126,7 +118,9 @@ class FrontController extends Controller
         try{
             $reservation = new TripReservation();
             $reservation->user_id = $user->id;
-            $reservation->trip_no = $trip->id;
+            $reservation->trip_id = $trip->id;
+            $reservation->from = date('Y-m-d'); // تاريخ وهمي عشان بس ما يبقاش المكان فاضي..
+            $reservation->to = date('Y-m-d');
             $reservation->save();
 
             // Send the receipt mail
@@ -136,8 +130,8 @@ class FrontController extends Controller
             // Alert::error('Reservation faild', $e->getMessage());
             return back();
         }
-        
-        
+
+
     }
 
 
@@ -158,7 +152,7 @@ class FrontController extends Controller
             // Alert::error('Reservation faild', $e->getMessage());
             return back();
         }
-        
-        
+
+
     }
 }

@@ -1,6 +1,6 @@
 @extends('website.layouts.front')
 
-@section('content')   
+@section('content')
 <style>
     /* ----- Variables ----- */
   $color-primary: #4c4c4c;
@@ -145,7 +145,7 @@
     background-color: #fff;
     border: 1px solid #ff6138;
   }
-</style>     
+</style>
     <section class="home-slider owl-carousel">
       <div class="slider-item" style="background-image: url('images/booking/Serf6yS.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
@@ -165,30 +165,40 @@
         <div class="row justify-content-center mb-5 pb-5">
           <div class="col-md-7 text-center heading-section ftco-animate">
             <span class="subheading">Tickets</span>
-            <h2>******</h2>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12 dish-menu">
 
             <div class="nav nav-pills justify-content-center ftco-animate" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <a class="nav-link py-3 px-4 active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"><span class="flaticon-tray"></span> Main</a>
-              
+              <a class="nav-link py-3 px-3  " id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                <label for="cars">Travil From</label>
+                <select class="nav-link" name="from" id="from">
+                  <option value="sharm">sharm</option>
+                  <option value="cairo">cairo</option>
+                </select>
+            </a>
+                <a class="nav-link py-3 px-3 " id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                  <label for="cars">Travil To:</label>
+                  <select class="nav-link" name="to" id="to">
+                    <option value="rome">rome</option>
+                    <option value="madrid">madrid</option>
+                  </select>
+              </a>
             </div>
 
             <div class="tab-content py-5" id="v-pills-tabContent">
               <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                 <div class="row">
-                  @if ($Flights->isEmpty())
+                  @if ($flights->isEmpty())
                       <div class="alert alert-danger">
                         No results founded!
                       </div>
                   @else
-                  @foreach ($Flights as $item)
+                  @foreach ($flights as $item)
                   <div class="col-lg-6">
                     <a href="javascript::void();" data-toggle="modal" data-target="#itemModal{{$item->id}}">
                     <div class="menus d-flex ftco-animate">
-                      <div class="menu-img" style="background-image: url({{$item->getImage()}});"></div>
                       <div class="text d-flex">
                         <div class="one-half">
                           <h3>{{ $item->flight_destinaion }}</h3>
@@ -240,7 +250,7 @@
           </form>
         </div>
       </section>
-            
+
     </div>
   </div>
 </div>
@@ -254,5 +264,5 @@
         </div>
       </div>
     </section>
-  
+
 @endsection
