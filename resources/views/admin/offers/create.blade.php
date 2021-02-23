@@ -26,7 +26,7 @@
         <div class="card card-default">
             <div class="card-header">
               <h3 class="card-title">Add Trip Info</h3>
-  
+
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
               </div>
@@ -36,7 +36,7 @@
             @csrf
             <div class="card-body" style="display: block;" >
               <div class="row">
-                  
+
                 <div class="col-12 col-sm-6">
                     <div class="form-group">
                         <label for="exampleInputPassword1">@lang('app.trip_no')</label>
@@ -59,9 +59,9 @@
                     <div class="form-group">
                         <label for="exampleInputPassword1">@lang('app.capacity')</label>
                         <select class="form-control {{ $errors->has('capacity') ? 'is-invalid' : ''}}" value="{{ old('capacity') }}" name="capacity" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
-                            <option value="single"><=10</option>
-                            <option value="double"><=15</option>
-                            <option value="family"><=20</option>
+                            <option value="<=10"><=10</option>
+                            <option value="<=15"><=15</option>
+                            <option value="<=20"><=20</option>
                             <div class="invalid-feedback">
                                 {{ $errors->first('capacity') }}
                               </div>
@@ -144,7 +144,7 @@
                 @if ($errors->any())
                 <ul>
                     @foreach ($errors->all() as $error)
-                    <li> {{ $error}}      
+                    <li> {{ $error}}
                     @endforeach
                 </ul>
                 @endif
@@ -163,7 +163,7 @@
     $(function () {
         //Initialize Select2 Elements
         $('.select2').select2()
-    
+
         //Initialize Select2 Elements
         $('.select2bs4').select2({
           theme: 'bootstrap4'

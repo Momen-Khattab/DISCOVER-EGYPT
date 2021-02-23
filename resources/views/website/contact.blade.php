@@ -1,6 +1,6 @@
     @extends('website.layouts.front')
 
-@section('content')  
+@section('content')
     <section class="home-slider owl-carousel">
       <div class="slider-item" style="background-image: url('images/star_art_sky_night_people_silhouette_98142_1920x1080.jpg');" data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
@@ -81,7 +81,7 @@
                 <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
               </div>
             </form>
-          
+
           </div>
 
           <div class="col-md-6" id="map"></div>

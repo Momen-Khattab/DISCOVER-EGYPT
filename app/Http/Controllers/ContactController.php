@@ -50,7 +50,7 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         //
-      
+
     }
 
     /**
@@ -66,19 +66,20 @@ class ContactController extends Controller
     }
 
 
-    public function replayForEmail(Contact $contact, Request $request){
-        $this->validate($request, [
+    public function replayForEmail($id){
+        $this->validate(request(), [
             'content' => 'required|string|min:5'
         ],[], [
             'content' => 'Replay content'
         ]);
-
+        // Get contact
+        $contact = Contact::findOrFail($id);
         // Add repaly
         $admin = auth('admin')->user();
         $replay = new ContactReplay();
         $replay->contact_id = $contact->id;
         $replay->admin_id = $admin->id;
-        $replay->content = $request->content;
+        $replay->content = request()->content;
         $replay->save();
 
         Mail::to($replay->contact->email)->send(new ReplaySent($replay));
@@ -118,7 +119,7 @@ class ContactController extends Controller
     {
         //
         $contact = Contact::findOrFail($id);
-        
+
         $contact->delete();
         return redirect()->route('contact.index')->withSuccess('deleted successfully');
 

@@ -11,7 +11,7 @@
         @endif
       </div>
     </div>
-    
+
     <!-- /.card-header -->
     <div class="card-body table-responsive p-0" style="height: 300px;">
         @if ($rooms->isEmpty())
@@ -42,7 +42,6 @@
                   <td>{{ $item->has_offer }}</td>
                   <td>
                     <a href="{{ url('/admin/rooms/'.$item->id) }}" class="btn btn-success">
-                    {{--  <a href="{{ route('rooms.show', $item->id) }}" class="btn btn-success">  --}}
                         <i class="fa fa-eye"></i>
                     </a>
                         <a href="{{ route('rooms.edit', $item->id) }}" class="btn btn-primary">

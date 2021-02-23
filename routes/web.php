@@ -74,7 +74,12 @@ Route::group(['prefix' => '/admin', 'middleware' => 'admin.auth'], function(){
     Route::get('/', function(){
         return view('admin.index');
     });
-    
+
+    Route::get('/contact/create', 'ContactController@create');
+    Route::get('/contact/{id}/edit', 'ContactController@edit');
+    Route::get('/contact/{id}', 'ContactController@show');
+    Route::put('/roomcontacts/{id}', 'ContactController@update');
+    Route::delete('/contact/{id}', 'ContactController@destroy')->name('contact.destroy');
     Route::resource('/contact','ContactController')->name('*', 'contact');
 
 
@@ -117,7 +122,7 @@ Route::group(['prefix' => '/admin', 'middleware' => 'admin.auth'], function(){
     // Route::resource('/restaurants','FoodController')->name('*', 'restaurants');
     // Route::resource('/booking','FlightController')->name('*', 'booking');
     // Route::resource('/offers','TripController')->name('*', 'offers');
-    Route::post('/replayForEmail/{contact}','ContactController@replayForEmail')->name('replayForEmail');
+    Route::post('/replayForEmail/{id}','ContactController@replayForEmail')->name('replayForEmail');
 });
 
 

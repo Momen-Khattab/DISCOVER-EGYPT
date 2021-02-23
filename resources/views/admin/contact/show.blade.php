@@ -26,7 +26,7 @@
                   </tr>
                   <tr>
                     <td colspan="3">
-                      <form action="{{ route('replayForEmail', $contact) }}" method="POST">
+                      <form action="{{ route('replayForEmail', $contact->id) }}" method="POST">
                         @csrf
                         <div class="form-group">
                           <label for="content">Replay: </label>
@@ -60,7 +60,7 @@
                 </tbody>
               </table>
             </div>
-        </div>  
+        </div>
         </div>
       </div>
 

@@ -222,7 +222,7 @@
         <div class="product__photo">
           <div class="photo-container">
             <div class="photo-main">
-              <img src="#" alt="planes">
+              <img src="images/booking/fl.jpg" alt="planes">
             </div>
           </div>
         </div>

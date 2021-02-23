@@ -18,14 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/test', function(){
-    return response()->json([
-        'data' => true
-    ]);
-});
-Route::get('/test', function(){
-    return response()->json([
-        'status' => true,
-        'message' => 'It works!'
-    ]);
-});
+Route::get('/rooms', 'ApiController@getRooms');
+Route::get('/foods', 'ApiController@getFoods');
+Route::get('/trips', 'ApiController@getTrips');
+Route::get('/flights', 'ApiController@getFlights');
