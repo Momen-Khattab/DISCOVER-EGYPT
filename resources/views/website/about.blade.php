@@ -24,7 +24,7 @@
           <div class="text col-lg-6 order-first ftco-animate">
             <div class="text-inner align-self-start">
               <span class="subheading">About US</span>
-              <h3 class="heading">Our Main Goal</h3>
+              <h3 class="heading">Our Main Goals</h3>
               <p>1-Increasing the rate of foreign investment inside Egypt </br> 2-Promoting the most beautiful places in Egypt </br> 3-Helping those who want to know the tourist attractions and everything related to ancient and modern Egyptian history </br> 4-Facilitating reservations, whether they are booking airline pilots or booking hotel tickets and arrangements for trips</p>
             </div>
           </div>
@@ -79,5 +79,5 @@
         </div>
       </div>
     </section>
-    
+
 @endsection

@@ -173,16 +173,22 @@
             <div class="nav nav-pills justify-content-center ftco-animate" id="v-pills-tab" role="tablist" aria-orientation="vertical">
               <a class="nav-link py-3 px-3  " id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
                 <label for="cars">Travil From</label>
-                <select class="nav-link" name="from" id="from">
-                  <option value="sharm">sharm</option>
-                  <option value="cairo">cairo</option>
-                </select>
+                <select class="nav-link" onchange="run()" name="from" id="fromid">
+                  <option value="madrid">Madrid</option>
+                  <option value="rome">Rome</option>
+                  <option value="paris">Paris</option>
+                  <option value="moscow">Moscow</option>
+                </select><br>
+                {{--  <input type="text" disabled id="srt" placeholder="The location is"><br>  --}}
+
+                <input type="date" id="dateid" name="date">Date<br>
+
+                {{--  //////////////////////  --}}
             </a>
                 <a class="nav-link py-3 px-3 " id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">
                   <label for="cars">Travil To:</label>
-                  <select class="nav-link" name="to" id="to">
-                    <option value="rome">rome</option>
-                    <option value="madrid">madrid</option>
+                  <select class="nav-link" disabled name="toid" id="to">
+                    <option value="egypt" >Egypt</option>
                   </select>
               </a>
             </div>
@@ -195,65 +201,80 @@
                         No results founded!
                       </div>
                   @else
+
+
+                  <script>
+                    function run() {
+                        var temp = document.getElementById("fromid").value;
+                        alert(temp)
+                    }
+                </script>
+
+
                   @foreach ($flights as $item)
-                  <div class="col-lg-6">
-                    <a href="javascript::void();" data-toggle="modal" data-target="#itemModal{{$item->id}}">
-                    <div class="menus d-flex ftco-animate">
-                      <div class="text d-flex">
-                        <div class="one-half">
-                          <h3>{{ $item->flight_destinaion }}</h3>
-                          <p>
-                            {{ $item->flight_company }}
-                            {{$item->travel_date}}
-                          </p>
-                        </div>
-                        <div class="one-forth">
-                          <span class="price">${{$item->cost}}</span>
-                        </div>
-                      </div>
+                        {{--  @if ($item->flight_destinaion=='rome' & $item->travel_date=='11-02-2021')  --}}
+                        <div class="col-lg-6">
+                            <a href="javascript::void();" data-toggle="modal" data-target="#itemModal{{$item->id}}">
+                            <div class="menus d-flex ftco-animate">
+                                <div class="menu-img" style="background-image: url('images/booking/fl.jpg');"></div>
+                              <div class="text d-flex">
+                                <div class="one-half">
+                                  <h3>{{ $item->flight_destinaion }}</h3>
+                                  <p>
+                                    {{ $item->flight_company }}
+                                    {{$item->travel_date}}
+                                  </p>
+                                </div>
+                                <div class="one-forth">
+                                  <span class="price">${{$item->cost}}</span>
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                          </div>
+                          <!-- Modal -->
+        <div class="modal fade" id="itemModal{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <section class="product">
+                <div class="product__photo">
+                  <div class="photo-container">
+                    <div class="photo-main">
+                      <img src="images/booking/fl.jpg" alt="planes">
                     </div>
-                  </a>
                   </div>
-                  <!-- Modal -->
-<div class="modal fade" id="itemModal{{$item->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <section class="product">
-        <div class="product__photo">
-          <div class="photo-container">
-            <div class="photo-main">
-              <img src="images/booking/fl.jpg" alt="planes">
+                </div>
+                <div class="product__info">
+                  <div class="title">
+                    <h1>{{ $item->flight_destinaion }}</h1>
+                    <span>{{ $item->flight_company }}</span>
+                    <span>{{ $item->flight_no }}</span>
+                  </div>
+                  <div class="price">
+                    $ <span>{{ $item->cost }}</span>
+                  </div>
+                  <div class="description">
+                    <p class="features">
+                      <span class="d-block mb-2"><i class="icon-check mr-2"></i>Airport name:{{ $item->airport_name }} </span>
+                      <span class="d-block mb-2"><i class="icon-check mr-2"></i>Flight Number:{{$item->flight_no}} </span>
+                      <span class="d-block mb-2"><i class="icon-check mr-2"></i>Address:{{$item->address}} </span>
+                      <span class="d-block mb-2"><i class="icon-check mr-2"></i>Company number:{{$item->company_number}} </span>
+                    </p>
+                  </div>
+                  <form action="{{ url('/reserve-booking') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="id" value="{{ $item->id }}">
+                    <button class="buy--btn">Reserve Now</button>
+                  </form>
+                </div>
+              </section>
+
             </div>
           </div>
         </div>
-        <div class="product__info">
-          <div class="title">
-            <h1>{{ $item->flight_destinaion }}</h1>
-            <span>{{ $item->flight_company }}</span>
-            <span>{{ $item->flight_no }}</span>
-          </div>
-          <div class="price">
-            $ <span>{{ $item->cost }}</span>
-          </div>
-          <div class="description">
-            <p class="features">
-              <span class="d-block mb-2"><i class="icon-check mr-2"></i>Airport name:{{ $item->airport_name }} </span>
-              <span class="d-block mb-2"><i class="icon-check mr-2"></i>Flight Number:{{$item->flight_no}} </span>
-              <span class="d-block mb-2"><i class="icon-check mr-2"></i>Address:{{$item->address}} </span>
-              <span class="d-block mb-2"><i class="icon-check mr-2"></i>Company number:{{$item->company_number}} </span>
-            </p>
-          </div>
-          <form action="{{ url('/reserve-booking') }}" method="POST">
-            @csrf
-            <input type="hidden" name="id" value="{{ $item->id }}">
-            <button class="buy--btn">Reserve Now</button>
-          </form>
-        </div>
-      </section>
+                        {{--  @endif  --}}
 
-    </div>
-  </div>
-</div>
+
                   @endforeach
                   @endif
 
